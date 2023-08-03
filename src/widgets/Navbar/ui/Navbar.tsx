@@ -1,13 +1,13 @@
-import { Link } from "react-router-dom";
-import { classNames } from "shared/lib/classNames/classNames";
-import cls from './Navbar.module.scss';
-import { AppLink, AppLinkTheme } from "shared/ui/AppLink/AppLink";
+import { classNames } from 'shared/lib/classNames/classNames'
+import cls from './Navbar.module.scss'
+import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink'
+import { type FC } from 'react'
 
 interface NavbarProps {
-    className?: string;
+  className?: string
 }
 
-export const Navbar = ({className}: NavbarProps) => {
+export const Navbar: FC<NavbarProps> = ({ className }: NavbarProps) => {
     return (
         <div className={classNames(cls.navbar, {}, [className])}>
             <div className={cls.links}>
@@ -15,6 +15,5 @@ export const Navbar = ({className}: NavbarProps) => {
                 <AppLink theme={AppLinkTheme.SECONDARY} to={'/about'} >О сайте</AppLink>
             </div>
         </div>
-    );
-};
-
+    )
+}

@@ -1,10 +1,10 @@
-import { useState, useMemo, FC, PropsWithChildren } from 'react';
-import { LOCAL_STORAGE_THEME_KEY, Theme, ThemeContext } from "../lib/ThemeContext";
+import { useState, useMemo, type FC, type PropsWithChildren } from 'react'
+import { LOCAL_STORAGE_THEME_KEY, Theme, ThemeContext } from '../lib/ThemeContext'
 
-const defaultTheme: Theme = localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme || Theme.LIGHT;
+// eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
+const defaultTheme: Theme = localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme || Theme.LIGHT
 
-const ThemeProvider = ({children}: PropsWithChildren) => {
-    
+const ThemeProvider: FC<PropsWithChildren> = ({ children }: PropsWithChildren) => {
     const [theme, setTheme] = useState<Theme>(defaultTheme)
 
     const defaultProps = useMemo(() => ({
@@ -16,7 +16,7 @@ const ThemeProvider = ({children}: PropsWithChildren) => {
         <ThemeContext.Provider value={defaultProps}>
             {children}
         </ThemeContext.Provider>
-    );
-};
+    )
+}
 
-export default ThemeProvider;
+export default ThemeProvider

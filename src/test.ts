@@ -1,5 +1,5 @@
-export function someFn(arg: number): string {
-    console.log('RANDOM FUNCTION ' + arg);
+export function someFn (arg: number): string {
+    console.log('RANDOM FUNCTION ' + String(arg))
 
-    return '' + arg;
+    return String(arg)
 }
