@@ -1,4 +1,4 @@
-export default {
+module.exports = {
     "env": {
         "browser": true,
         "es2021": true,
@@ -42,6 +42,7 @@ export default {
         "react/react-in-jsx-scope": "off",
         "import/prefer-default-export": "off",
         "react/jsx-filename-extension": [2, { extensions: ['.js', '.jsx', '.tsx'] }],
-        "i18next/no-literal-string": ['error', {markupOnly: true}]
+        "i18next/no-literal-string": ['error', {markupOnly: true}],
+        "max-len": "off"
     }
 }
