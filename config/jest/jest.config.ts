@@ -4,6 +4,7 @@
  */
 
 import type {Config} from 'jest';
+import path from 'path';
 
 const config: Config = {
     clearMocks: true,
@@ -26,7 +27,7 @@ const config: Config = {
 
     // An array of directory names to be searched recursively up from the requiring module's location
     moduleDirectories: [
-        "node_modules"
+        "node_modules", 'src'
     ],
 
     // An array of file extensions your modules use
@@ -115,7 +116,11 @@ const config: Config = {
     // maxWorkers: "50%",
 
     // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
-    // moduleNameMapper: {},
+    moduleNameMapper: {
+        // '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$': '<rootDir>/__mocks__/fileMock.js',
+        '\\.(css|less|scss)$': 'identity-obj-proxy',
+        '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx')
+    },
 
     // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
     // modulePathIgnorePatterns: [],
@@ -142,7 +147,7 @@ const config: Config = {
     // resetModules: false,
 
     // A path to a custom resolver
-    // resolver: undefined,
+    // resolver: 'shared/assets',
 
     // Automatically restore mock state and implementation before every test
     // restoreMocks: false,
@@ -154,7 +159,9 @@ const config: Config = {
     // setupFiles: [],
 
     // A list of paths to modules that run some code to configure or set up the testing framework before each test
-    // setupFilesAfterEnv: [],
+    setupFilesAfterEnv: [
+        '<rootDir>/config/jest/setupTests.ts'
+    ],
 
     // The number of seconds after which a test is considered as slow and reported as such in the results.
     // slowTestThreshold: 5,
@@ -184,7 +191,7 @@ const config: Config = {
     // unmockedModulePathPatterns: undefined,
 
     // Indicates whether each individual test should be reported during the run
-    // verbose: undefined,
+    verbose: true,
 
     // An array of regexp patterns that are matched against all source file paths before re-running tests in watch mode
     // watchPathIgnorePatterns: [],

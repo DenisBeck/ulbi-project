@@ -2,10 +2,14 @@
     "presets": [
       "@babel/preset-env", 
       "@babel/preset-typescript",
-      "@babel/preset-react"
+      ["@babel/preset-react", {
+        "runtime": "automatic"
+     }]
     ],
     "plugins": [
         "i18next-extract",
-        "@babel/plugin-transform-react-jsx-source"
+        ["@babel/plugin-transform-react-jsx", {
+          "runtime": "automatic"
+        }]
       ]
 }
