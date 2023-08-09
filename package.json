@@ -14,7 +14,7 @@
     "test:unit": "jest --config ./config/jest/jest.config.ts",
     "test:ui": "npx loki test --config ./config/storybook",
     "test:ui:ok": "npx loki approve --config ./config/storybook",
-    "test:ui:ci": "npx loki --requireReference --reactUri file:./storybook-static",
+    "test:ui:ci": "concurrently -s first -k \"npm run storybook:build\" \"npx loki --requireReference --reactUri file:./storybook-static\"",
     "storybook": "storybook dev -p 6006 -c ./config/storybook",
     "storybook:build": "storybook build -c ./config/storybook"
   },
@@ -50,6 +50,7 @@
     "babel-jest": "^29.6.2",
     "babel-loader": "^9.1.3",
     "babel-plugin-i18next-extract": "^0.9.0",
+    "concurrently": "^8.2.0",
     "css-loader": "^6.8.1",
     "eslint": "^8.46.0",
     "eslint-config-prettier": "^8.9.0",
