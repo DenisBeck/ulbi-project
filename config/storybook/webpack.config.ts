@@ -15,7 +15,7 @@ export default ({config}: {config: webpack.Configuration}): webpack.Configuratio
     config.resolve?.extensions?.push('.ts', '.tsx');
 
     config.module.rules = config.module?.rules.map((rule: RuleSetRule) => {
-        if (((typeof (rule.test as string) === 'string') ? (rule.test as string) : '').includes('svg')) {
+        if (((typeof (rule.test as string) === 'string') ? (rule.test as string) : 'svg').includes('svg')) {
             return { ...rule, exclude: /\.svg$/i };
         }
 
