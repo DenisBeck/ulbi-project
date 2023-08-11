@@ -11,7 +11,6 @@ describe('Button', () => {
 
     test('check class in element', () => {
         render(<Button theme={ButtonTheme.CLEAR}>TEST</Button>);
-        console.log(screen);
         expect(screen.getByText('TEST')).toHaveClass('clear');
         screen.debug();
     });
