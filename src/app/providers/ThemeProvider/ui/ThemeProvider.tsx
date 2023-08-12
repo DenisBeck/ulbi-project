@@ -4,8 +4,14 @@ import { LOCAL_STORAGE_THEME_KEY, Theme, ThemeContext } from '../lib/ThemeContex
 // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
 const defaultTheme: Theme = localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme || Theme.LIGHT
 
-const ThemeProvider: FC<PropsWithChildren> = ({ children }: PropsWithChildren) => {
-    const [theme, setTheme] = useState<Theme>(defaultTheme)
+interface ThemeProviderProps extends PropsWithChildren {
+    initialTheme?: Theme;
+}
+
+const ThemeProvider: FC<ThemeProviderProps> = (props: ThemeProviderProps) => {
+    const { initialTheme, children} = props;
+
+    const [theme, setTheme] = useState<Theme>(initialTheme ?? defaultTheme)
 
     const defaultProps = useMemo(() => ({
         theme,

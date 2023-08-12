@@ -17,4 +17,9 @@
 
     // Цвета
     --primary-color: #0232c2;
+    --overlay-color: rgba(0 0 0 / 60%);
+    --bg-modal-color: #e8e8ea;
+
+    // z - Индексы
+    --modal-z-index: 10;
 }

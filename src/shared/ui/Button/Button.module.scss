@@ -21,9 +21,16 @@
     border: none;
 }
 
+.outline-inverted {
+    color: var(--inverted-secondary-color);
+    border: 1px solid var(--inverted-secondary-color);
+    background: transparent;
+    border-radius: 20px;
+}
+
 .background-inverted {
-    background: var(--inverted-bg-color);
     color: var(--inverted-primary-color);
+    background: var(--inverted-bg-color);
     border: none;
 }
 

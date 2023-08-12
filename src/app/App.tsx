@@ -1,14 +1,13 @@
-import { type FC, Suspense } from 'react'
+import { type FC, Suspense, useState } from 'react'
 import { useTheme } from './providers/ThemeProvider/lib/useTheme'
 import { classNames } from '../shared/lib/classNames/classNames'
 import { AppRouter } from './providers/router'
 import { Navbar } from 'widgets/Navbar'
 import { Sidebar } from 'widgets/Sidebar'
 
-import './styles/index.scss'
-
 const App: FC = () => {
     const { theme } = useTheme();
+
 
     return (
         <div className={classNames('app', {}, [theme])}>

@@ -23,7 +23,7 @@ module.exports = {
     "sourceType": "module",
     "project": ["tsconfig.strictNullChecks.json"]
   },
-  "plugins": ["react", "@typescript-eslint", "strict-null-checks", "i18next"],
+  "plugins": ["react", "@typescript-eslint", "strict-null-checks", "i18next", "react-hooks"],
   "rules": {
     "react/jsx-indent": [2, 4],
     "indent": [2, 4],
@@ -36,6 +36,8 @@ module.exports = {
       markupOnly: true,
       ignoreAttribute: ['data-testid']
     }],
-    "max-len": "off"
+    "max-len": "off",
+    "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
+    "react-hooks/exhaustive-deps": "error" // Checks effect dependencies
   }
 };
