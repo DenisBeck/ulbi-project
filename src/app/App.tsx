@@ -1,4 +1,4 @@
-import { type FC, Suspense, useState } from 'react'
+import { type FC, Suspense } from 'react'
 import { useTheme } from './providers/ThemeProvider/lib/useTheme'
 import { classNames } from '../shared/lib/classNames/classNames'
 import { AppRouter } from './providers/router'
@@ -7,7 +7,6 @@ import { Sidebar } from 'widgets/Sidebar'
 
 const App: FC = () => {
     const { theme } = useTheme();
-
 
     return (
         <div className={classNames('app', {}, [theme])}>
