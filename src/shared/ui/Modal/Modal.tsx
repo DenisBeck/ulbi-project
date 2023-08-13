@@ -1,4 +1,5 @@
-import { type ReactNode, type FC, useEffect, useCallback } from 'react'
+/* eslint-disable @typescript-eslint/strict-boolean-expressions */
+import { type ReactNode, type FC, useEffect, useCallback, useState } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './Modal.module.scss'
 import { Portal } from '../Portal/Portal';
@@ -9,6 +10,7 @@ interface ModalProps {
     children?: ReactNode;
     isOpen?: boolean;
     onClose?: () => void;
+    lazy?: boolean;
 }
 
 export const Modal: FC<ModalProps> = (props: ModalProps) => {
@@ -16,10 +18,18 @@ export const Modal: FC<ModalProps> = (props: ModalProps) => {
         className,
         children,
         isOpen,
-        onClose
+        onClose,
+        lazy
     } = props;
 
     const { theme } = useTheme();
+    const [ isMounted, setIsMounted ] = useState(false);
+
+    useEffect(() => {
+        if(isOpen) {
+            setIsMounted(true);
+        }
+    }, [ isOpen ])
 
     const closeHandler: VoidFunction = useCallback(() => {
         if(onClose != null) {
@@ -45,6 +55,9 @@ export const Modal: FC<ModalProps> = (props: ModalProps) => {
 
     const mods: Record<string, boolean> = {
         [cls.opened]: isOpen
+    }
+    if(lazy && !isMounted) {
+        return null;
     }
 
     return (

@@ -1,6 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './Button.module.scss'
-import { type FC, type ButtonHTMLAttributes } from 'react'
+import type { FC, ButtonHTMLAttributes } from 'react'
 
 export enum ButtonTheme {
   CLEAR = 'clear',

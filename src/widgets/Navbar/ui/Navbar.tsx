@@ -6,10 +6,10 @@ import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink'
 import { useTranslation } from 'react-i18next'
 import { RoutePath } from 'shared/config/routeConfig/routeConfig'
 import { Button, ButtonTheme } from 'shared/ui/Button/Button'
-import { Modal } from 'shared/ui/Modal/Modal'
+import { LoginModal } from 'features/AuthByUsername'
 
 interface NavbarProps {
-  className?: string
+  className?: string;
 }
 
 export const Navbar: FC<NavbarProps> = ({ className }: NavbarProps) => {
@@ -17,8 +17,12 @@ export const Navbar: FC<NavbarProps> = ({ className }: NavbarProps) => {
 
     const [ isAuthModal, setIsAuthModal ] = useState(false);
 
-    const onToggleModal = useCallback(() => {
-        setIsAuthModal((prev) => !prev);
+    const onCloseModal = useCallback(() => {
+        setIsAuthModal(false);
+    }, []);
+
+    const onOpenModal = useCallback(() => {
+        setIsAuthModal(true);
     }, [])
 
     return (
@@ -31,10 +35,11 @@ export const Navbar: FC<NavbarProps> = ({ className }: NavbarProps) => {
                 <Button 
                     theme={ ButtonTheme.OUTLINE_INVERTED }
                     className={ cls.login }
-                    onClick={ onToggleModal }>
+                    onClick={ onOpenModal }>
                     {t('Войти')}
                 </Button>
-                <Modal isOpen={ isAuthModal } onClose={ onToggleModal } >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Distinctio autem error numquam culpa voluptatibus adipisci tempore provident? Incidunt, facilis voluptatem. Sapiente quas natus vel repudiandae earum animi cum delectus totam.</Modal>
+                {/* <Modal isOpen={ isAuthModal } onClose={ onToggleModal } >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Distinctio autem error numquam culpa voluptatibus adipisci tempore provident? Incidunt, facilis voluptatem. Sapiente quas natus vel repudiandae earum animi cum delectus totam.</Modal> */}
+                <LoginModal isOpen={ isAuthModal } onClose={ onCloseModal } />
             </div>
         </div>
     )
