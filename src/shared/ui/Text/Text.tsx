@@ -1,5 +1,6 @@
+/* eslint-disable react/display-name */
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
-import { type FC } from 'react'
+import { memo, type FC } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './Text.module.scss'
 
@@ -15,7 +16,7 @@ interface TextProps {
     theme?: TextTheme;
 }
 
-export const Text: FC<TextProps> = (props: TextProps) => {
+export const Text: FC<TextProps> = memo((props: TextProps) => {
     const { 
         className, 
         title, 
@@ -28,4 +29,4 @@ export const Text: FC<TextProps> = (props: TextProps) => {
             { text && <p className={cls.text}>{ text }</p> }
         </div>
     );
-};
+});

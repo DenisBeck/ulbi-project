@@ -1,3 +1,4 @@
+/* eslint-disable react/display-name */
 import { classNames } from 'shared/lib/classNames/classNames'
 import { Theme, useTheme } from 'app/providers/ThemeProvider'
 
@@ -5,13 +6,13 @@ import cls from './ThemeSwitcher.module.scss'
 import LightIcon from 'shared/assets/icons/theme-light.svg'
 import DarkIcon from 'shared/assets/icons/theme-dark.svg'
 import { Button, ButtonTheme } from 'shared/ui/Button/Button'
-import { type FC } from 'react'
+import { memo, type FC } from 'react'
 
 interface ThemeSwitcherProps {
   className?: string
 }
 
-export const ThemeSwitcher: FC<ThemeSwitcherProps> = ({ className }: ThemeSwitcherProps) => {
+export const ThemeSwitcher: FC<ThemeSwitcherProps> = memo(({ className }: ThemeSwitcherProps) => {
     const { theme, toggleTheme } = useTheme()
     return (
         <Button
@@ -22,4 +23,4 @@ export const ThemeSwitcher: FC<ThemeSwitcherProps> = ({ className }: ThemeSwitch
             {theme === Theme.DARK ? <DarkIcon /> : <LightIcon />}
         </Button>
     )
-}
+})

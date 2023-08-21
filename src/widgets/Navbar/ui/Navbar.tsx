@@ -1,6 +1,7 @@
+/* eslint-disable react/display-name */
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
 /* eslint-disable i18next/no-literal-string */
-import { useState, type FC, useCallback, useEffect } from 'react'
+import { useState, type FC, useCallback, useEffect, memo } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './Navbar.module.scss'
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink'
@@ -15,7 +16,7 @@ interface NavbarProps {
   className?: string;
 }
 
-export const Navbar: FC<NavbarProps> = ({ className }: NavbarProps) => {
+export const Navbar: FC<NavbarProps> = memo(({ className }: NavbarProps) => {
     const { t } = useTranslation();
     const [ isAuthModal, setIsAuthModal ] = useState(false);
     const authData = useSelector(getUserAuthData);
@@ -76,4 +77,4 @@ export const Navbar: FC<NavbarProps> = ({ className }: NavbarProps) => {
             </div>
         </div>
     )
-}
+})

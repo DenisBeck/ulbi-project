@@ -1,6 +1,7 @@
+/* eslint-disable react/display-name */
 import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './Button.module.scss'
-import type { FC, ButtonHTMLAttributes } from 'react'
+import { type FC, type ButtonHTMLAttributes, memo } from 'react'
 
 export enum ButtonTheme {
   CLEAR = 'clear',
@@ -24,7 +25,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   disabled?: boolean;
 }
 
-export const Button: FC<ButtonProps> = (props: ButtonProps) => {
+export const Button: FC<ButtonProps> = memo((props: ButtonProps) => {
     const {
         className,
         children,
@@ -52,4 +53,4 @@ export const Button: FC<ButtonProps> = (props: ButtonProps) => {
             {children}
         </button>
     )
-}
+})
