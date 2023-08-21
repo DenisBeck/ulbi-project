@@ -3,10 +3,12 @@ import type { DeepPartial, ReducersMapObject } from '@reduxjs/toolkit';
 import type { StoryFn } from '@storybook/react';
 import { StoreProvider, type StateSchema } from 'app/providers/StoreProvider';
 import 'app/styles/index.scss';
+import { profileReducer } from 'entities/Profile';
 import { loginReducer } from 'features/AuthByUsername/model/slice/loginSlice';
 
 const defaultAsyncReducers: DeepPartial<ReducersMapObject<StateSchema>> = {
-    loginForm: loginReducer
+    loginForm: loginReducer,
+    profile: profileReducer,
 }
 
 // eslint-disable-next-line react/display-name
