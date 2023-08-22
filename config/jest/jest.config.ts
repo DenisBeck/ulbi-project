@@ -62,7 +62,8 @@ const config: Config = {
 
     // A set of global variables that need to be available in all test environments
     globals: {
-        '_IS_DEV_': true
+        '_IS_DEV_': true,
+        _API_: ''
     },
 
     // A list of reporter names that Jest uses when writing coverage reports
