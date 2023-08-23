@@ -40,9 +40,10 @@ module.exports = {
     "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
     "react-hooks/exhaustive-deps": "error", // Checks effect dependencies
     // "no-params-reassign": "off",
+    "no-undef": "off",
   },
   globals: {
     _IS_DEV_: true,
-    _API_: '',
+    _API_: true,
   }
 };

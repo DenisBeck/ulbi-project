@@ -1,4 +1,3 @@
-import type { DeepPartial } from "@reduxjs/toolkit";
 import { type RenderResult, render } from "@testing-library/react";
 import { type StateSchema, StoreProvider } from "app/providers/StoreProvider";
 import { type ReactNode } from "react";
@@ -14,7 +13,7 @@ export interface componentRenderOptions {
 export function componentRender(component: ReactNode, options: componentRenderOptions = {}): RenderResult {
     const { route = '/', initialState } = options;
     
-    return render(
+    return render (
         <StoreProvider initialState={initialState}>
             <MemoryRouter initialEntries={[route]}>
                 <I18nextProvider i18n={i18nForTests}>

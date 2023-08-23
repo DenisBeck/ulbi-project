@@ -1,5 +1,5 @@
 /* eslint-disable react/display-name */
-import { classNames } from 'shared/lib/classNames/classNames'
+import { type Mods, classNames } from 'shared/lib/classNames/classNames'
 import cls from './Button.module.scss'
 import { type FC, type ButtonHTMLAttributes, memo } from 'react'
 
@@ -29,14 +29,14 @@ export const Button: FC<ButtonProps> = memo((props: ButtonProps) => {
     const {
         className,
         children,
-        theme,
+        theme = ButtonTheme.CLEAR,
         square,
         disabled,
         size = ButtonSize.S,
         ...otherProps
     } = props
 
-    const mods: Record<string, boolean> = {
+    const mods: Mods = {
         [cls[theme]]: true,
         [cls.square]: square,
         [cls[size]]: true,

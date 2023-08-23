@@ -119,7 +119,7 @@ export const SquareSizeL: Story = {
     },
 };
 
-export const disabled: Story = {
+export const Disabled: Story = {
     args: {
         children: '>',
         theme: ButtonTheme.OUTLINE,

@@ -1,6 +1,5 @@
 import type { AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject } from "@reduxjs/toolkit";
 import { type AxiosInstance } from "axios";
-import { type CounterSchema } from "entities/Counter";
 import { type ProfileSchema } from "entities/Profile";
 import { type UserSchema } from "entities/User/";
 import { type LoginSchema } from "features/AuthByUsername";
@@ -9,7 +8,6 @@ import { type NavigateOptions, type To } from "react-router-dom";
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface StateSchema {
-    counter: CounterSchema
     user: UserSchema
 
     // асинхронные редюсеры
@@ -32,7 +30,7 @@ export interface ReduxStoreWithManager extends EnhancedStore<StateSchema> {
 
 export interface ThunkExtraArg {
     api: AxiosInstance;
-    navigate: (to: To, options?: NavigateOptions) => void;
+    navigate?: (to: To, options?: NavigateOptions) => void;
 }
 
 export interface ThunkConfig<T> {

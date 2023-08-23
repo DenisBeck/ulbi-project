@@ -2,5 +2,6 @@
     "Что-то пошло не так": "Something went wrong",
     "Произошла непредвиденная ошибка": "An unexpected error has occurred",
     "Обновить страницу": "Refresh page",
-    "Вызвать ошибку": "Throw error"
+    "Вызвать ошибку": "Throw error",
+    "Вы ввели неправильный логин или пароль": "Login or password you entered is wrong"
 }

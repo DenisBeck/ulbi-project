@@ -5,7 +5,6 @@ import { Button, ButtonTheme } from "./Button"
 describe('Button', () => {
     test('check element', () => {
         render(<Button>TEST</Button>);
-        console.log(screen);
         expect(screen.getByText('TEST')).toBeInTheDocument()
     });
 
