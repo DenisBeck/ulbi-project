@@ -3,5 +3,13 @@
     "Профиль": "Profile",
     "Редактировать": "Edit",
     "Ваше имя": "Your Name",
-    "Ваша фамилия": "Your Lastname"
+    "Ваша фамилия": "Your Lastname",
+    "Ваш возраст": "Your Age",
+    "Ваш город": "Your City",
+    "Ваш ник": "Your Nickname",
+    "Ваш аватар": "Your Avatar",
+    "Укажите валюту": "Specify Currency",
+    "Укажите страну": "Specify Country",
+    "Отменить": "Reset",
+    "Сохранить": "Save"
 }

@@ -3,5 +3,6 @@
     "Произошла непредвиденная ошибка": "An unexpected error has occurred",
     "Обновить страницу": "Refresh page",
     "Вызвать ошибку": "Throw error",
-    "Вы ввели неправильный логин или пароль": "Login or password you entered is wrong"
+    "Вы ввели неправильный логин или пароль": "Login or password you entered is wrong",
+    "Произошла ошибка при загрузке профиля": "An error occurred while loading the profile"
 }
