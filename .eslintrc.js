@@ -45,5 +45,6 @@ module.exports = {
   globals: {
     _IS_DEV_: true,
     _API_: true,
+    _PROJECT_: true,
   }
 };

@@ -11,5 +11,10 @@
     "Укажите валюту": "Specify Currency",
     "Укажите страну": "Specify Country",
     "Отменить": "Reset",
-    "Сохранить": "Save"
+    "Сохранить": "Save",
+    "Серверная ошибка при сохранении": "Server error on save",
+    "Неправильный возраст": "Incorrect age",
+    "Страна обязательна": "Country is required",
+    "Имя и фамилия обязательны": "First name and last name are required",
+    "Данные не указаны": "No data specified"
 }
