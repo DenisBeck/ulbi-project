@@ -41,7 +41,7 @@ module.exports = {
     "react-hooks/exhaustive-deps": "error", // Checks effect dependencies
     // "no-params-reassign": "off",
     "no-undef": "off",
-    "strict-boolean-expressions": "off"
+    "strict-boolean-expressions": 'off'
   },
   globals: {
     _IS_DEV_: true,

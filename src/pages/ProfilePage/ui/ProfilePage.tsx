@@ -38,6 +38,13 @@ const ProfilePage: FC<ProfilePageProps> = ({className}: ProfilePageProps) => {
         [ValidateProfileError.NO_DATA]: t('Данные не указаны'),
     }
 
+    const errorTranslates = (): string[] => {
+        if(!validateErrors?.length) {
+            return [];
+        }
+        return validateErrors?.map(error => validateErrorTranslates[error])
+    }
+
     useEffect(() => {
         if(_PROJECT_ !== 'storybook') {
             dispatch(fetchProfileData() as unknown as AnyAction)
@@ -82,9 +89,9 @@ const ProfilePage: FC<ProfilePageProps> = ({className}: ProfilePageProps) => {
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <div>
                 <ProfilePageHeader readonly={ readonly } />
-                {validateErrors?.length && validateErrors.map(err => (
-                    <Text key={err} theme={TextTheme.ERROR} text={validateErrorTranslates[err]} />
-                ))}
+                {errorTranslates().length && (
+                    <Text theme={TextTheme.ERROR} text={errorTranslates()} />
+                )}
                 <ProfileCard
                     data={ formData } 
                     isLoading={ isLoading }

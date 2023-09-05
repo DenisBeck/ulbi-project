@@ -11,7 +11,7 @@ interface ThemeProviderProps extends PropsWithChildren {
 const ThemeProvider: FC<ThemeProviderProps> = (props: ThemeProviderProps) => {
     const { initialTheme, children} = props;
 
-    const [theme, setTheme] = useState<Theme>(initialTheme ?? defaultTheme)
+    const [theme, setTheme] = useState<Theme>(defaultTheme ?? initialTheme )
 
     const defaultProps = useMemo(() => ({
         theme,

@@ -1,9 +1,10 @@
 import type { AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject } from "@reduxjs/toolkit";
-import { type AxiosInstance } from "axios";
-import { type ProfileSchema } from "entities/Profile";
-import { type UserSchema } from "entities/User/";
-import { type LoginSchema } from "features/AuthByUsername";
-import { type NavigateOptions, type To } from "react-router-dom";
+import type { AxiosInstance } from "axios";
+import type { ArticleDetailsSchema } from "entities/Article";
+import type { ProfileSchema } from "entities/Profile";
+import type { UserSchema } from "entities/User/";
+import type { LoginSchema } from "features/AuthByUsername";
+import type { NavigateOptions, To } from "react-router-dom";
 
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
@@ -13,6 +14,7 @@ export interface StateSchema {
     // асинхронные редюсеры
     loginForm?: LoginSchema,
     profile?: ProfileSchema,
+    articleDetails?: ArticleDetailsSchema
 }
 
 export type StateSchemaKey = keyof StateSchema;

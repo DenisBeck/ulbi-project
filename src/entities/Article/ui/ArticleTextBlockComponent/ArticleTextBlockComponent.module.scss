@@ -1,0 +1,11 @@
+.article-text-block-component {
+    font-size: 18px;
+
+    .title {
+        margin-bottom: 20px;
+    }
+
+    .text:not(:last-child) {
+        margin-bottom: 15px;
+    }
+}

@@ -58,7 +58,7 @@ const LoginForm: FC<LoginFormProps> = memo(({className, onSuccess}: LoginFormPro
         >
             <div className={classNames(cls['login-form'], {}, [className])}>
                 <Text title={ t('Форма авторизации') } />
-                { error && <Text text={ error } theme={ TextTheme.ERROR } /> }
+                { error && <Text text={ [ error ] } theme={ TextTheme.ERROR } /> }
                 <Input 
                     placeholder={t('Введите имя пользователя')} 
                     autofocus 

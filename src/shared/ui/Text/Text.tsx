@@ -15,12 +15,18 @@ export enum TextAlign {
     CENTER = 'center',
 }
 
+export enum TextSize {
+    S = 'size-s',
+    M = 'size-m',
+}
+
 interface TextProps {
     className?: string;
     title?: string;
-    text?: string;
+    text?: string[];
     theme?: TextTheme;
     align?: TextAlign;
+    size?: TextSize;
 }
 
 export const Text: FC<TextProps> = memo((props: TextProps) => {
@@ -30,17 +36,21 @@ export const Text: FC<TextProps> = memo((props: TextProps) => {
         text, 
         theme = TextTheme.PRIMARY,
         align = TextAlign.LEFT,
+        size = TextSize.S
     } = props;
 
     const mods: Mods = {
         [cls[theme]]: true,
         [cls[align]]: true,
+        [cls[size]]: true,
     }
 
     return (
         <div className={classNames(cls['text-wrapper'], mods, [className])}>
             { title && <h1 className={cls.title}>{ title }</h1> }
-            { text && <p className={cls.text}>{ text }</p> }
+            { text?.map(paragraph => (
+                <p key={paragraph} className={cls.text}>{ paragraph }</p>
+            ))}
         </div>
     );
 });
