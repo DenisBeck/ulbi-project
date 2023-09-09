@@ -2,6 +2,7 @@
 /* eslint-disable @typescript-eslint/restrict-template-expressions */
 import type { Reducer } from '@reduxjs/toolkit';
 import type { ReduxStoreWithManager, StateSchemaKey } from 'app/providers/StoreProvider/config/StateSchema';
+import React from 'react';
 import { type PropsWithChildren, type FC, useEffect } from 'react'
 import { useDispatch, useStore } from 'react-redux';
 
@@ -43,8 +44,9 @@ export const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = (props: Dynamic
     }, [])
 
     return (
-        <>
-            { children }
-        </>
+        <React.Fragment children={children} />
+        // <>
+        //     { children }
+        // </>
     );
 };

@@ -1,5 +1,5 @@
 /* eslint-disable react/display-name */
-import { useEffect, type FC, memo, useCallback } from 'react'
+import { useEffect, type FC, memo, useCallback, Fragment } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { useTranslation } from 'react-i18next';
 import { DynamicModuleLoader, type ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
@@ -21,6 +21,7 @@ import { type ArticleBlock, ArticleBlockType } from '../../model/types/article';
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 
 interface ArticleDetailsProps {
     className?: string;
@@ -51,11 +52,9 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo(({className, id}: Ar
         }
     }, [])
 
-    useEffect(() => {
-        if(_PROJECT_ !== 'storybook') {
-            dispatch(fetchArticleById(id) as unknown as AnyAction)
-        }
-    }, [dispatch, id])
+    useInitialEffect(() => {
+        dispatch(fetchArticleById(id) as unknown as AnyAction)
+    })
 
     let content;
 
@@ -103,7 +102,7 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo(({className, id}: Ar
                     </div>
                 </div>
                 
-                {article?.blocks.map(renderBlock)}
+                {article?.blocks?.map(renderBlock)}
             </>
         )
     }

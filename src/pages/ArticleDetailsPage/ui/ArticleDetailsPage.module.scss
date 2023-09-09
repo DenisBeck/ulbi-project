@@ -1,3 +1,11 @@
 .article-details {
     font-size: 18px;
 }
+
+.article-content:not(:last-child) {
+    margin-bottom: 35px;
+}
+
+.comment-text {
+    margin-bottom: 20px
+}

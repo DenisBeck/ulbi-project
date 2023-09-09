@@ -102,13 +102,15 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "role": "ADMIN"
+      "role": "ADMIN",
+      "avatar": "https://kartinkived.ru/wp-content/uploads/2021/12/avatarka-dlya-vatsapa-kot-v-kapyushone-s-raznym-czvetom-glaz.jpg"
     },
     {
       "id": "2",
       "username": "user",
       "password": "321",
-      "role": "USER"
+      "role": "USER",
+      "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
     }
   ],
   "profile": {
