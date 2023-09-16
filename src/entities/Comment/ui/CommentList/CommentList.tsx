@@ -1,7 +1,9 @@
+/* eslint-disable @typescript-eslint/strict-boolean-expressions */
+/* eslint-disable react/display-name */
 import { memo, type FC } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './CommentList.module.scss'
-import { Comment } from '../../model/types/comment';
+import { type Comment } from '../../model/types/comment';
 import { Text } from 'shared/ui/Text/Text';
 import { useTranslation } from 'react-i18next';
 import { CommentCard } from '../CommentCard/CommentCard';
@@ -19,6 +21,14 @@ export const CommentList: FC<CommentListProps> = memo((props: CommentListProps) 
         isLoading
     } = props;
     const { t } = useTranslation('article');
+
+    if(isLoading) {
+        return <div className={classNames(cls['comment-list'], {}, [className])}>
+            <CommentCard isLoading />
+            <CommentCard isLoading />
+            <CommentCard isLoading />
+        </div>
+    }
     
     return (
         <div className={classNames(cls['comment-list'], {}, [className])}>

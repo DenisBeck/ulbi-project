@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
-import { useEffect, type FC, useCallback } from 'react'
+import { type FC, useCallback } from 'react'
 import { DynamicModuleLoader, type ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { ProfileCard, fetchProfileData, getProfileError, getProfileForm, getProfileIsLoading, getProfileReadonly, getProfileValidateErrors, profileActions, profileReducer } from 'entities/Profile';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
@@ -11,6 +11,8 @@ import type { Country } from 'entities/Country';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { ValidateProfileError } from 'entities/Profile/model/types/profile';
 import { useTranslation } from 'react-i18next';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { useParams } from 'react-router-dom';
 
 const reducers: ReducersList = {
     profile: profileReducer
@@ -29,6 +31,7 @@ const ProfilePage: FC<ProfilePageProps> = ({className}: ProfilePageProps) => {
     const readonly = useSelector(getProfileReadonly);
     const formData = useSelector(getProfileForm);
     const validateErrors = useSelector(getProfileValidateErrors);
+    const { id } = useParams<{ id: string }>(); 
 
     const validateErrorTranslates = {
         [ValidateProfileError.SERVER_ERROR]: t('Серверная ошибка при сохранении'),
@@ -45,11 +48,11 @@ const ProfilePage: FC<ProfilePageProps> = ({className}: ProfilePageProps) => {
         return validateErrors?.map(error => validateErrorTranslates[error])
     }
 
-    useEffect(() => {
-        if(_PROJECT_ !== 'storybook') {
-            dispatch(fetchProfileData() as unknown as AnyAction)
+    useInitialEffect(() => {
+        if(id) {
+            dispatch(fetchProfileData(id) as unknown as AnyAction)
         }
-    }, [dispatch]);
+    })
 
     const onChangeFirstname = useCallback((value?: string) => {
         dispatch(profileActions.updateProfile({ first: value ?? '' }));
@@ -89,7 +92,7 @@ const ProfilePage: FC<ProfilePageProps> = ({className}: ProfilePageProps) => {
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <div>
                 <ProfilePageHeader readonly={ readonly } />
-                {errorTranslates().length && (
+                {errorTranslates() && (
                     <Text theme={TextTheme.ERROR} text={errorTranslates()} />
                 )}
                 <ProfileCard

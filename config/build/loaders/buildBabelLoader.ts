@@ -16,8 +16,8 @@ export function buildBabelLoader(isDev: boolean): webpack.RuleSetRule {
                             keyAsDefaultValue: true
                         }
                     ],
-                    [isDev && require.resolve('react-refresh/babel')].filter(Boolean),
-                ]
+                    isDev && require.resolve('react-refresh/babel'),
+                ].filter(Boolean)
             }
         }
     }

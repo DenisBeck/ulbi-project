@@ -7,9 +7,9 @@ import { validateProfileData } from "../validateProfileData/validateProfileData"
 import i18n from "shared/config/i18n/i18n";
 
 // eslint-disable-next-line @typescript-eslint/no-invalid-void-type
-export const updateProfileData = createAsyncThunk<Profile, void, ThunkConfig<ValidateProfileError[]>>(
+export const updateProfileData = createAsyncThunk<Profile, string, ThunkConfig<ValidateProfileError[]>>(
     'profile/updateProfileData',
-    async (_, { extra, rejectWithValue, getState}) => {
+    async (profileId, { extra, rejectWithValue, getState}) => {
         const formData = getProfileForm(getState());
 
         const errors = validateProfileData(formData);
@@ -19,7 +19,7 @@ export const updateProfileData = createAsyncThunk<Profile, void, ThunkConfig<Val
         }
 
         try {
-            const response = await extra.api.put<Profile>('/profile', formData);
+            const response = await extra.api.put<Profile>(`/profile/${profileId}`, formData);
 
             if(!response.data) {
                 throw new Error(i18n.t('Ошибка ввода данных'));
