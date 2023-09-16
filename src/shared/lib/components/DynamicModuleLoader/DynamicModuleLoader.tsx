@@ -44,9 +44,8 @@ export const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = (props: Dynamic
     }, [])
 
     return (
-        <React.Fragment children={children} />
-        // <>
-        //     { children }
-        // </>
+        <>
+            { children }
+        </>
     );
 };

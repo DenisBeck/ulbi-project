@@ -1,5 +1,5 @@
 /* eslint-disable react/display-name */
-import { useEffect, type FC, memo, useCallback, Fragment } from 'react'
+import { type FC, memo, useCallback, Fragment } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { useTranslation } from 'react-i18next';
 import { DynamicModuleLoader, type ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';

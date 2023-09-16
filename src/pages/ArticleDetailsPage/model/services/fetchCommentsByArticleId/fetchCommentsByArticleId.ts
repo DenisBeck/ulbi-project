@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import type { ThunkConfig } from "app/providers/StoreProvider";
-import { Comment } from "entities/Comment";
+import { type Comment } from "entities/Comment";
 import i18n from "shared/config/i18n/i18n";
 
 // eslint-disable-next-line @typescript-eslint/no-invalid-void-type
