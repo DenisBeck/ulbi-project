@@ -9,7 +9,7 @@ import { fetchArticleById } from 'entities/Article/model/services/fetchArticleBy
 import type { AnyAction } from '@reduxjs/toolkit';
 import { useSelector } from 'react-redux';
 import { getArticleDetailsData, getArticleDetailsError, getArticleDetailsIsLoading } from '../../model/selectors/articleDetails';
-import { Text, TextAlign, TextSize } from 'shared/ui/Text/Text';
+import { Text, TextAlign, TextSize, TextTag, TitleTag } from 'shared/ui/Text/Text';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 
@@ -72,7 +72,10 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo(({className, id}: Ar
         content = (
             <Text
                 align={TextAlign.CENTER}
-                title={t('Произошла ошибка при загрузке статьи')}
+                title={{
+                    content: t('Произошла ошибка при загрузке статьи'),
+                    tag: TitleTag.H2
+                }}
             />
         )
     } else {
@@ -88,17 +91,29 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo(({className, id}: Ar
                 <Text 
                     size={TextSize.M}
                     className={cls.title}
-                    title={article?.title}
-                    text={[article?.subtitle as string]}
+                    title={{
+                        content: article?.title ?? '',
+                        tag: TitleTag.H2
+                    }}
+                    text={[{
+                        content: article?.subtitle as string,
+                        tag: TextTag.P
+                    }]}
                 />
                 <div className={cls['articleinfo-wrapper']}>
                     <div className={cls.articleinfo}>
                         <Icon Svg={EyeIcon} className={cls.icon} />
-                        <Text text={[String(article?.views)]} />
+                        <Text text={[{
+                            content: String(article?.views),
+                            tag: TextTag.SPAN
+                        }]} />
                     </div>
                     <div className={cls.articleinfo}>
                         <Icon Svg={CalendarIcon} className={cls.icon} />
-                        <Text text={[article?.createdAt as string]} />
+                        <Text text={[{
+                            content: article?.createdAt as string,
+                            tag: TextTag.SPAN
+                        }]} />
                     </div>
                 </div>
                 

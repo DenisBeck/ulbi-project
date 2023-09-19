@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Text, TextSize, TextTheme } from './Text'
+import { Text, TextSize, TextTag, TextTheme, TitleTag } from './Text'
 import { ThemeDecorator } from 'shared/config/storybook'
 import { Theme } from 'app/providers/ThemeProvider'
 
@@ -17,71 +17,71 @@ type Story = StoryObj<typeof meta>
 
 export const Primary: Story = {
     args: {
-        title: 'Title lorem ipsum',
-        text: ['Description Description Description Description']
+        title: { content: 'Title lorem ipsum', tag: TitleTag.H1 },
+        text: [{ content: 'Description Description Description Description', tag: TextTag.P }]
     },
 };
 
 export const OnlyTitle: Story = {
     args: {
-        title: 'Title lorem ipsum',
+        title: { content: 'Title lorem ipsum', tag: TitleTag.H1 },
     },
 };
 
 export const OnlyText: Story = {
     args: {
-        text: ['Description Description Description Description']
+        text: [{ content: 'Description Description Description Description', tag: TextTag.P }]
     },
 };
 
 export const PrimaryDark: Story = {
     args: {
-        title: 'Title lorem ipsum',
-        text: ['Description Description Description Description'],
+        title: { content: 'Title lorem ipsum', tag: TitleTag.H1 },
+        text: [{ content: 'Description Description Description Description', tag: TextTag.P }]
     },
     decorators: [ThemeDecorator(Theme.DARK)]
 };
 
 export const OnlyTitleDark: Story = {
     args: {
-        title: 'Title lorem ipsum',
+        title: { content: 'Title lorem ipsum', tag: TitleTag.H1 },
     },
     decorators: [ThemeDecorator(Theme.DARK)]
 };
 
 export const OnlyTextDark: Story = {
     args: {
-        text: ['Description Description Description Description']
+        text: [{ content: 'Description Description Description Description', tag: TextTag.P }]
     },
     decorators: [ThemeDecorator(Theme.DARK)]
 };
 
 export const Error: Story = {
     args: {
-        title: 'Title lorem ipsum',
-        text: ['Description Description Description Description'],
+        title: { content: 'Title lorem ipsum', tag: TitleTag.H1 },
+        text: [{ content: 'Description Description Description Description', tag: TextTag.P }],
         theme: TextTheme.ERROR
     },
 };
 
 export const ErrorOnlyTitle: Story = {
     args: {
-        title: 'Title lorem ipsum',
+        title: { content: 'Title lorem ipsum', tag: TitleTag.H1 },
         theme: TextTheme.ERROR
     },
 };
 
 export const ErrorOnlyText: Story = {
     args: {
-        text: ['Description Description Description Description'],
+        text: [{ content: 'Description Description Description Description', tag: TextTag.P }],
         theme: TextTheme.ERROR
     },
 };
 
 export const ErrorDark: Story = {
     args: {
-        title: 'Title lorem ipsum',
-        text: ['Description Description Description Description'],
+        title: { content: 'Title lorem ipsum', tag: TitleTag.H1 },
+        text: [{ content: 'Description Description Description Description', tag: TextTag.P }],
         theme: TextTheme.ERROR
     },
     decorators: [ThemeDecorator(Theme.DARK)]
@@ -89,7 +89,7 @@ export const ErrorDark: Story = {
 
 export const ErrorOnlyTitleDark: Story = {
     args: {
-        title: 'Title lorem ipsum',
+        title: { content: 'Title lorem ipsum', tag: TitleTag.H1 },
         theme: TextTheme.ERROR
     },
     decorators: [ThemeDecorator(Theme.DARK)]
@@ -97,7 +97,7 @@ export const ErrorOnlyTitleDark: Story = {
 
 export const ErrorOnlyTextDark: Story = {
     args: {
-        text: ['Description Description Description Description'],
+        text: [{ content: 'Description Description Description Description', tag: TextTag.P }],
         theme: TextTheme.ERROR
     },
     decorators: [ThemeDecorator(Theme.DARK)]
@@ -105,16 +105,16 @@ export const ErrorOnlyTextDark: Story = {
 
 export const SizeM: Story = {
     args: {
-        title: 'Title lorem ipsum',
-        text: ['Description Description Description Description'],
+        title: { content: 'Title lorem ipsum', tag: TitleTag.H1 },
+        text: [{ content: 'Description Description Description Description', tag: TextTag.P }],
         size: TextSize.M
     },
 };
 
 export const SizeS: Story = {
     args: {
-        title: 'Title lorem ipsum',
-        text: ['Description Description Description Description'],
+        title: { content: 'Title lorem ipsum', tag: TitleTag.H1 },
+        text: [{ content: 'Description Description Description Description', tag: TextTag.P }],
         size: TextSize.S
     },
 };

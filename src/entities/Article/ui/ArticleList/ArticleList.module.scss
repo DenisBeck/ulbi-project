@@ -1,0 +1,16 @@
+.article-list {
+    display: flex;
+    gap: 30px;
+}
+
+.bricks {
+    &.article-list {
+        flex-wrap: wrap;
+    }
+}
+
+.lines {
+    &.article-list {
+        flex-direction: column;
+    }
+}

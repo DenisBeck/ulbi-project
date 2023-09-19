@@ -6,5 +6,6 @@ export function useInitialEffect(callback: () => void) {
         if(_PROJECT_ !== 'storybook') {
             callback();
         }
-    }, [callback])
+        // eslint-disable-next-line
+    }, [])
 }

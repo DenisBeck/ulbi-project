@@ -1,23 +1,33 @@
 /* eslint-disable react/display-name */
 import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './Sidebar.module.scss'
-import { type FC, useState, memo } from 'react'
+import { type FC, useState, memo, useMemo } from 'react'
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher'
 import { LangSwitcher } from 'widgets/LangSwitcher'
 import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button/Button'
-import { SidebarItemsList } from '../../model/items'
 import { SidebarItem } from '../SidebarItem/SidebarItem'
+import { useSelector } from 'react-redux'
+import { getSidebarItems } from 'widgets/Sidebar/model/selectors/getSidebarItems'
 
 interface SidebarProps {
   className?: string
 }
 
 export const Sidebar: FC<SidebarProps> = memo(({ className }: SidebarProps) => {
-    const [collapsed, setCollapsed] = useState(false)
+    const [collapsed, setCollapsed] = useState(false);
+    const sidebarItemsList = useSelector(getSidebarItems);
 
     const onToggle: VoidFunction = () => {
         setCollapsed(prev => !prev)
     }
+
+    const itemsList = useMemo(() => sidebarItemsList.map((item) => (
+        <SidebarItem
+            item={item}
+            collapsed={collapsed}
+            key={item.path}
+        />
+    )), [collapsed, sidebarItemsList]);
 
     return (
         <div data-testid="sidebar" className={classNames(cls.sidebar, { [cls.collapsed]: collapsed }, [className])}>
@@ -32,15 +42,7 @@ export const Sidebar: FC<SidebarProps> = memo(({ className }: SidebarProps) => {
                     collapsed ? '>' : '<'}
             </Button>
             <div className={cls.links}>
-                {
-                    SidebarItemsList.map(item => (
-                        <SidebarItem 
-                            item={ item } 
-                            collapsed={ collapsed } 
-                            key={ item.path }
-                        />
-                    ))
-                }
+                {itemsList}
             </div>
             <div className={cls.switchers}>
                 <ThemeSwitcher />

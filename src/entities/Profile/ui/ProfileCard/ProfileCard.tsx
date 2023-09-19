@@ -3,7 +3,7 @@ import { type FC } from 'react'
 import { type Mods, classNames } from 'shared/lib/classNames/classNames'
 import cls from './ProfileCard.module.scss'
 import { useTranslation } from 'react-i18next';
-import { Text, TextTheme } from 'shared/ui/Text/Text';
+import { Text, TextTag, TextTheme, TitleTag } from 'shared/ui/Text/Text';
 import { Input } from 'shared/ui/Input/Input';
 import type { Profile } from '../../model/types/profile';
 import { Loader } from 'shared/ui/Loader/Loader';
@@ -60,8 +60,8 @@ export const ProfileCard: FC<ProfileCardProps> = (props: ProfileCardProps) => {
             <div className={classNames(cls['profile-card'], {}, [className, cls.error])}>
                 <Text
                     theme={TextTheme.ERROR}
-                    title={t('Произошла ошибка при загрузке профиля')}
-                    text={ [ error ] }
+                    title={{ content: t('Произошла ошибка при загрузке профиля'), tag: TitleTag.H1 }}
+                    text={[{content: 'error', tag: TextTag.P}]}
                 />
             </div>
         )

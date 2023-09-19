@@ -8,7 +8,7 @@ import { useSelector } from 'react-redux';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 import type { Currency } from 'entities/Currency';
 import type { Country } from 'entities/Country';
-import { Text, TextTheme } from 'shared/ui/Text/Text';
+import { Text, TextTag, TextTheme } from 'shared/ui/Text/Text';
 import { ValidateProfileError } from 'entities/Profile/model/types/profile';
 import { useTranslation } from 'react-i18next';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
@@ -93,7 +93,15 @@ const ProfilePage: FC<ProfilePageProps> = ({className}: ProfilePageProps) => {
             <div>
                 <ProfilePageHeader readonly={ readonly } />
                 {errorTranslates() && (
-                    <Text theme={TextTheme.ERROR} text={errorTranslates()} />
+                    <Text 
+                        theme={TextTheme.ERROR} 
+                        text={errorTranslates().map(item => {
+                            return {
+                                content: item,
+                                tag: TextTag.P
+                            }
+                        })} 
+                    />
                 )}
                 <ProfileCard
                     data={ formData } 

@@ -6,7 +6,7 @@ import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './CommentCard.module.scss'
 import { type Comment } from '../../model/types/comment';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
-import { Text } from 'shared/ui/Text/Text';
+import { Text, TextTag, TitleTag } from 'shared/ui/Text/Text';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
@@ -44,9 +44,15 @@ export const CommentCard: FC<CommentCardProps> = memo((props: CommentCardProps) 
         <div className={classNames(cls['comment-card'], {}, [className])}>
             <AppLink className={cls.header} to={`${RoutePath.profile}${comment.user.id}`}>
                 {comment.user?.avatar ? <Avatar size={30} src={comment.user?.avatar} /> : null}
-                <Text title={comment.user?.username} />
+                <Text title={{
+                    content: comment.user?.username,
+                    tag: TitleTag.H3
+                }} />
             </AppLink>
-            <Text text={[comment.text]} />
+            <Text text={[{
+                content: comment.text,
+                tag: TextTag.P
+            }]} />
         </div>
     );
 });

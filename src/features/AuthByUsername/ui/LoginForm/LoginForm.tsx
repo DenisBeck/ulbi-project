@@ -10,7 +10,7 @@ import { useSelector } from 'react-redux';
 import { loginActions, loginReducer } from '../..//model/slice/loginSlice';
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
 import { type AnyAction } from '@reduxjs/toolkit';
-import { Text, TextTheme } from 'shared/ui/Text/Text';
+import { Text, TextTag, TextTheme, TitleTag } from 'shared/ui/Text/Text';
 import { getLoginUsername } from '../../model/selectors/getLoginUsername/getLoginUsername';
 import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword';
 import { getLoginError } from '../../model/selectors/getLoginError/getLoginError';
@@ -57,8 +57,8 @@ const LoginForm: FC<LoginFormProps> = memo(({className, onSuccess}: LoginFormPro
             removeAfterUnmount
         >
             <div className={classNames(cls['login-form'], {}, [className])}>
-                <Text title={ t('Форма авторизации') } />
-                { error && <Text text={ [ error ] } theme={ TextTheme.ERROR } /> }
+                <Text title={{content: t('Форма авторизации'), tag: TitleTag.H1}} />
+                { error && <Text text={ [{ content: error, tag: TextTag.P }] } theme={ TextTheme.ERROR } /> }
                 <Input 
                     placeholder={t('Введите имя пользователя')} 
                     autofocus 

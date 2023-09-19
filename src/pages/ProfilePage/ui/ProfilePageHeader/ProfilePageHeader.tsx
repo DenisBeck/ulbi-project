@@ -3,7 +3,7 @@ import { useCallback, type FC } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './ProfilePageHeader.module.scss'
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
-import { Text } from 'shared/ui/Text/Text';
+import { Text, TitleTag } from 'shared/ui/Text/Text';
 import { useTranslation } from 'react-i18next';
 import { getProfileData, profileActions, updateProfileData } from 'entities/Profile';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
@@ -42,7 +42,7 @@ export const ProfilePageHeader: FC<ProfilePageHeaderProps> = (props: ProfilePage
 
     return (
         <div className={classNames(cls['profile-page-header'], {}, [className])}>
-            <Text title={t('Профиль')} />
+            <Text title={{content: t('Профиль'), tag: TitleTag.H1}} />
             {canEdit && (
                 <div className={cls['btns-wrapper']}>
                     {

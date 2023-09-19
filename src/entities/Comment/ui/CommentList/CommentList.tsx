@@ -4,7 +4,7 @@ import { memo, type FC } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './CommentList.module.scss'
 import { type Comment } from '../../model/types/comment';
-import { Text } from 'shared/ui/Text/Text';
+import { Text, TextTag } from 'shared/ui/Text/Text';
 import { useTranslation } from 'react-i18next';
 import { CommentCard } from '../CommentCard/CommentCard';
 
@@ -41,7 +41,7 @@ export const CommentList: FC<CommentListProps> = memo((props: CommentListProps) 
                         isLoading={isLoading}
                     />
                 ))
-                : <Text text={[t('Комментарии отсутствуют')]} />
+                : <Text text={[{content: t('Комментарии отсутствуют'), tag: TextTag.P}]} />
             }
         </div>
     );

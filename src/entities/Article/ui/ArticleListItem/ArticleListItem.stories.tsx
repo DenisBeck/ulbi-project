@@ -1,12 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import ArticleDetailsPage from './ArticleDetailsPage'
-import { type Article } from 'entities/Article'
-import { ArticleType, ArticleBlockType } from 'entities/Article/model/types/article'
-import { StoreDecorator } from 'shared/config/storybook'
+import { ArticleListItem } from './ArticleListItem'
+import { ArticleView, type Article, ArticleType, ArticleBlockType } from '../../model/types/article';
 
-const meta: Meta<typeof ArticleDetailsPage> = {
-    title: 'pages/ArticleDetailsPage',
-    component: ArticleDetailsPage,
+const meta: Meta<typeof ArticleListItem> = {
+    title: 'entities/Article/ArticleListItem',
+    component: ArticleListItem,
     tags: ['autodocs'],
     // argTypes: {
     //     backgroundColor: { control: 'color' },
@@ -14,17 +12,20 @@ const meta: Meta<typeof ArticleDetailsPage> = {
 }
 
 const article: Article = {
-    "id": "1",
-    "title": "Javascript news",
+    "id": "2",
+    "title": "Javascript news Javascript news",
     "subtitle": "Что нового в JS за 2022 год",
     "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
     "views": 1022,
-    "createdAt": "26.02.2022",
     "user": {
         id: '1',
         username: 'Dennis',
+        avatar: 'https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg'
     },
-    "type": [ArticleType.IT],
+    "createdAt": "26.02.2022",
+    "type": [
+        ArticleType.IT, ArticleType.ECONOMICS, ArticleType.SCIENCE
+    ],
     "blocks": [
         {
             "id": "1",
@@ -90,15 +91,16 @@ const article: Article = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const Normal: Story = {
+export const Lines: Story = {
     args: {
-        
+        view: ArticleView.LINES,
+        article
     },
-    decorators: [
-        StoreDecorator({
-            articleDetails: {
-                data: article
-            }
-        })
-    ]
+}
+
+export const Bricks: Story = {
+    args: {
+        view: ArticleView.BRICKS,
+        article
+    },
 }

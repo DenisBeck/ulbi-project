@@ -1,0 +1,134 @@
+.types {
+    overflow: hidden;
+}
+
+.types-text {
+    font: var(--font-ss);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.title {
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.views {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 5px;
+}
+   
+.icon {
+    fill: var(--primary-color);
+}
+
+
+.lines {
+    .header {
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        margin-bottom: 5px;
+    }
+
+    .user {
+        display: flex;
+        align-items: center;
+        gap: 10px
+    }
+
+    .text-wrapper {
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
+    }
+
+    .types {
+        margin-bottom: 10px;
+    }
+
+    .img {
+        width: 100%;
+        max-height: 250px;
+        object-fit: contain;
+        margin-bottom: 15px;
+    }
+
+    .text-block {
+        max-height: 200px;
+        overflow-y: hidden;
+        margin-bottom: 15px;
+    }
+
+    .footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.bricks {
+    width: 230px;
+
+    .image-wrapper {
+        width: 100%;
+        height: 200px;
+        position: relative;
+
+        &:not(:last-child) {
+            margin-bottom: 15px;
+        }
+    }
+
+    .img {
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
+    }
+
+    .date {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 5px;
+        opacity: 0;
+        transition: all 0.3s ease 0s;
+    }
+
+    &.article-card {
+        transition: all 0.3s ease 0s;
+        cursor: pointer;
+
+        &:hover {
+            transform: scale(1.01);
+
+            .date {
+                opacity: 1;
+            }
+
+            .img {
+                opacity: 0.5;
+            }
+        }
+    }
+
+    .info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
+    }
+}
+
+
