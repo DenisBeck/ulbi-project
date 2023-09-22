@@ -1,6 +1,7 @@
 import { type FC, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Input } from 'shared/ui/Input/Input';
+import { Page } from 'shared/ui/Page/Page';
 
 const MainPage: FC = () => {
     const { t } = useTranslation('main');
@@ -11,7 +12,7 @@ const MainPage: FC = () => {
     }
 
     return (
-        <div>
+        <Page>
             {/* <Counter /> */}
 
             {t('Главная страница')}
@@ -20,7 +21,7 @@ const MainPage: FC = () => {
                 value={ value } 
                 placeholder='Введите текст'
             />
-        </div>
+        </Page>
     )
 }
 

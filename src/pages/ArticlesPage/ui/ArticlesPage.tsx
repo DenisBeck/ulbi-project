@@ -12,6 +12,8 @@ import { fetchArticlesList } from '../model/services/fetchArticlesList/fetchArti
 import type { AnyAction } from '@reduxjs/toolkit';
 import { useSelector } from 'react-redux';
 import { getArticlesPageIsLoading, getArticlesPageView } from '../model/selectors/articlesPageSelectors';
+import { Page } from 'shared/ui/Page/Page';
+import { fetchNextArticlesPage } from '../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 
 interface ArticlesPageProps {
     className?: string;
@@ -29,23 +31,33 @@ const ArticlesPage: FC<ArticlesPageProps> = ({className}: ArticlesPageProps) => 
     // const error = useSelector(getArticlesPageError);
     const view = useSelector(getArticlesPageView);
 
+
     const onChangeView = useCallback((view: ArticleView) => {
         dispatch(articlesPageActions.setView(view));
     }, [dispatch])
 
+    const onLoadNextPart = useCallback(() => {
+        dispatch(fetchNextArticlesPage() as unknown as AnyAction)
+        
+    }, [dispatch])
+
     useInitialEffect(() => {
-        dispatch(fetchArticlesList() as unknown as AnyAction);
         dispatch(articlesPageActions.initState());
+        dispatch(fetchArticlesList({
+            page: 1
+        }) as unknown as AnyAction);
     })
 
     return (
         <DynamicModuleLoader reducers={reducers}>
-            <ArticleViewSelector view={view} onViewClick={onChangeView} />
-            <ArticleList 
-                className={classNames(cls.articles, {}, [className])} 
-                isLoading={isLoading}
-                view={view} 
-                articles={articles} />
+            <Page onScrollEnd={onLoadNextPart}>
+                <ArticleViewSelector view={view} onViewClick={onChangeView} />
+                <ArticleList 
+                    className={classNames(cls.articles, {}, [className])} 
+                    isLoading={isLoading}
+                    view={view} 
+                    articles={articles} />
+            </Page>
         </DynamicModuleLoader>
     );
 };

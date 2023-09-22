@@ -124,9 +124,9 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo(({className, id}: Ar
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-            <div className={classNames(cls['article-details'], {}, [className])}>
+            <section className={classNames(cls['article-details'], {}, [className])}>
                 {content}
-            </div>
+            </section>
         </DynamicModuleLoader>
     );
 });

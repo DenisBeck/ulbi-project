@@ -42,7 +42,7 @@ export const Navbar: FC<NavbarProps> = memo(({ className }: NavbarProps) => {
 
     if(authData) {
         return (
-            <div className={classNames(cls.navbar, {}, [className])}>
+            <header className={classNames(cls.navbar, {}, [className])}>
                 <div className={cls.links}>
                     <AppLink theme={ AppLinkTheme.SECONDARY } to={ RoutePath.main} className={cls['main-link']} >{t('Главная')}</AppLink>
                     <AppLink theme={ AppLinkTheme.SECONDARY } to={ RoutePath.about} >{t('О сайте')}</AppLink>
@@ -56,7 +56,7 @@ export const Navbar: FC<NavbarProps> = memo(({ className }: NavbarProps) => {
                     </Button>
                     <LoginModal isOpen={ isAuthModal } onClose={ onCloseModal } />
                 </div>
-            </div>
+            </header>
         )
     }
 

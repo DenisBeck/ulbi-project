@@ -33,7 +33,7 @@ export const ArticleList: FC<ArticleListProps> = memo((props: ArticleListProps) 
     if(isLoading) {
         return (
             <div className={classNames(cls['article-list'], {}, [className, cls[view.toLowerCase()]])}>
-                {getSkeletons(view)}
+                
             </div>)
     }
 
@@ -44,11 +44,12 @@ export const ArticleList: FC<ArticleListProps> = memo((props: ArticleListProps) 
     }
 
     return (
-        <div className={classNames(cls['article-list'], {}, [className, cls[view.toLowerCase()]])}>
+        <section className={classNames(cls['article-list'], {}, [className, cls[view.toLowerCase()]])}>
             {articles.length > 0
                 ? articles.map(renderArticle)
                 : null
             }
-        </div>
+            {isLoading && getSkeletons(view)}
+        </section>
     );
 });
