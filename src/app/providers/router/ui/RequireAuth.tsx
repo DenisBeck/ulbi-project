@@ -12,7 +12,6 @@ export const RequireAuth: FC<RequireAuthProps> = ({ children }: RequireAuthProps
     const auth = useSelector(getUserAuthData);
     const location = useLocation();
 
-    console.log(auth);
     if(!auth) {
         return <Navigate to="/" state={{ from: location }} replace />
     }

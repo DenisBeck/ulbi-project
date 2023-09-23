@@ -8,7 +8,7 @@ import { Text, TextTag, TitleTag } from 'shared/ui/Text/Text';
 import EyeIcon from 'shared/assets/icons/eye-20-20.svg';
 import { Icon } from 'shared/ui/Icon/Icon';
 import { Card } from 'shared/ui/Card/Card';
-import { useHover } from 'shared/lib/hooks/useHover/useHover';
+// import { useHover } from 'shared/lib/hooks/useHover/useHover';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { useTranslation } from 'react-i18next';
@@ -30,9 +30,9 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo((props: ArticleLis
         article,
         view
     } = props;
-    const [isHover, bindHover] = useHover();
+    // const [isHover, bindHover] = useHover();
     const navigate = useNavigate();
-    console.log(isHover);
+    // console.log(isHover);
 
     const onOpenArticle = useCallback(() => {
         // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
@@ -59,7 +59,7 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo((props: ArticleLis
         ) as ArticleTextBlock;
         return (
             <Card 
-                {...bindHover} 
+                // {...bindHover} 
                 className={classNames(
                     cls['article-list-item'], 
                     {}, 
@@ -90,7 +90,7 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo((props: ArticleLis
 
     return (
         <Card 
-            {...bindHover} 
+            // {...bindHover} 
             onClick={onOpenArticle}
             className={classNames(
                 cls['article-list-item'], 

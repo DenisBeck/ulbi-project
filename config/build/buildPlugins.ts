@@ -1,6 +1,6 @@
 import HTMLWebpackPlugin from 'html-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
-import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
+// import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer' 
 import webpack from 'webpack'
 import { type BuildOptions } from './types/config'
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin'
@@ -23,9 +23,9 @@ export function buildPlugins ({ paths, isDev, apiUrl, project }: BuildOptions): 
     ]
 
     if(isDev) {
-        plugins.push(new BundleAnalyzerPlugin({
-            openAnalyzer: false
-        }));
+        // plugins.push(new BundleAnalyzerPlugin({
+        //     openAnalyzer: false
+        // }));
         plugins.push(new ReactRefreshWebpackPlugin());
     }
 

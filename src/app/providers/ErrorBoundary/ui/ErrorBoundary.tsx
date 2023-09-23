@@ -26,7 +26,6 @@ class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundarySta
   
     componentDidCatch(error: Error, errorInfo: ErrorInfo): void {
         // You can also log the error to an error reporting service
-        console.log(error, errorInfo);
         this.setState({
             error,
             errorInfo
@@ -36,8 +35,6 @@ class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundarySta
     render(): ReactNode {
         const { hasError } = this.state;
         const { children } = this.props;
-
-        console.log(children);
 
         if (hasError === true) {
             return (
