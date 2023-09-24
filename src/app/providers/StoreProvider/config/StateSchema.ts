@@ -7,11 +7,13 @@ import type { AddCommentFormSchema } from "features/AddCommentForm";
 import type { LoginSchema } from "features/AuthByUsername";
 import type { ArticleDetailsCommentsSchema } from "pages/ArticleDetailsPage";
 import type { ArticlesPageSchema } from "pages/ArticlesPage";
+import type { ScrollPageSchema } from "widgets/Page";
 
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface StateSchema {
-    user: UserSchema
+    user: UserSchema,
+    scrollPage: ScrollPageSchema,
 
     // асинхронные редюсеры
     loginForm?: LoginSchema,
@@ -19,7 +21,7 @@ export interface StateSchema {
     articleDetails?: ArticleDetailsSchema,
     articleDetailsComments?: ArticleDetailsCommentsSchema,
     addCommentForm?: AddCommentFormSchema,
-    articlesPage?: ArticlesPageSchema
+    articlesPage?: ArticlesPageSchema,
 }
 
 export type StateSchemaKey = keyof StateSchema;

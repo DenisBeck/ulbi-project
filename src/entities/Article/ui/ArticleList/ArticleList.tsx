@@ -30,13 +30,6 @@ export const ArticleList: FC<ArticleListProps> = memo((props: ArticleListProps) 
         view = ArticleView.BRICKS
     } = props;
 
-    if(isLoading) {
-        return (
-            <div className={classNames(cls['article-list'], {}, [className, cls[view.toLowerCase()]])}>
-                
-            </div>)
-    }
-
     const renderArticle = (article: Article): ReactNode => {
         return (
             <ArticleListItem article={article} view={view} key={article.id} />
@@ -45,11 +38,11 @@ export const ArticleList: FC<ArticleListProps> = memo((props: ArticleListProps) 
 
     return (
         <section className={classNames(cls['article-list'], {}, [className, cls[view.toLowerCase()]])}>
+            {isLoading && getSkeletons(view)}
             {articles.length > 0
                 ? articles.map(renderArticle)
                 : null
             }
-            {isLoading && getSkeletons(view)}
         </section>
     );
 });
