@@ -7,5 +7,15 @@
     "Введите текст комментария": "Input Comment Text",
     "Отправить": "Send",
     "Читать далее": "Read more",
-    "Назад к списку статей": "Back to article list"
+    "Назад к списку статей": "Back to article list",
+    "Сортировать по": "Sort by",
+    "Поиск": "Search",
+    "По возрастанию": "ascending",
+    "По убыванию": "descending",
+    "дате создания": "created date",
+    "названию": "title",
+    "просмотрам": "views",
+    "Все статьи": "All articles",
+    "Экономика": "Economics",
+    "Наука": "Science"
 }

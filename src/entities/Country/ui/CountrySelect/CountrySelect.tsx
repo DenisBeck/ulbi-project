@@ -1,6 +1,6 @@
 /* eslint-disable react/display-name */
 import { useCallback, type FC, memo } from 'react'
-import { Select, type SelectOption } from 'shared/ui/Select/Select';
+import { Select } from 'shared/ui/Select/Select';
 import { useTranslation } from 'react-i18next';
 import { Country } from '../../model/types/country';
 
@@ -11,7 +11,7 @@ interface CountrySelectProps {
     readonly?: boolean;
 }
 
-const options: SelectOption[]=[
+const options = [
     {value: Country.Armenia, content: Country.Armenia},
     {value: Country.Belarus, content: Country.Belarus},
     {value: Country.Kazakhstan, content: Country.Kazakhstan},

@@ -9,11 +9,11 @@
   "articles": [
     {
       "id": "1",
-      "title": "Javascript news",
+      "title": "Javascript news Свежие",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 590,
+      "createdAt": "26.08.2023",
       "userId": "1",
       "type": [
         "IT"
@@ -153,11 +153,11 @@
     },
     {
       "id": "3",
-      "title": "Kotlin news",
+      "title": "Kotlin news Свежие",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://miro.medium.com/max/1200/1*FNakkrty3kjOvNU8m5iQfw.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 830,
+      "createdAt": "26.05.2023",
       "userId": "1",
       "type": [
         "IT"
@@ -297,11 +297,11 @@
     },
     {
       "id": "5",
-      "title": "Python news",
+      "title": "Python news Свежие",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://miro.medium.com/v2/resize:fit:1200/1*m0H6-tUbW6grMlezlb52yw.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 1258,
+      "createdAt": "26.08.2022",
       "userId": "1",
       "type": [
         "IT"
@@ -441,11 +441,11 @@
     },
     {
       "id": "7",
-      "title": "Javascript news",
+      "title": "Javascript news еще свежее",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 112,
+      "createdAt": "24.09.2023",
       "userId": "1",
       "type": [
         "IT"
@@ -513,11 +513,11 @@
     },
     {
       "id": "8",
-      "title": "Python news",
+      "title": "Python news старые",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://miro.medium.com/v2/resize:fit:1200/1*m0H6-tUbW6grMlezlb52yw.png",
       "views": 1022,
-      "createdAt": "26.02.2022",
+      "createdAt": "26.02.2021",
       "userId": "1",
       "type": [
         "IT"
@@ -585,11 +585,11 @@
     },
     {
       "id": "9",
-      "title": "Kotlin news",
+      "title": "Kotlin news еще свежее",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://miro.medium.com/max/1200/1*FNakkrty3kjOvNU8m5iQfw.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 456,
+      "createdAt": "26.07.2023",
       "userId": "1",
       "type": [
         "IT"
@@ -657,11 +657,11 @@
     },
     {
       "id": "10",
-      "title": "Javascript news",
+      "title": "Javascript news старые",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 1876,
+      "createdAt": "26.01.2022",
       "userId": "1",
       "type": [
         "IT"
@@ -729,11 +729,11 @@
     },
     {
       "id": "11",
-      "title": "Python news",
+      "title": "Python news старые",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://miro.medium.com/v2/resize:fit:1200/1*m0H6-tUbW6grMlezlb52yw.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 1345,
+      "createdAt": "26.09.2021",
       "userId": "1",
       "type": [
         "IT"
@@ -801,11 +801,11 @@
     },
     {
       "id": "12",
-      "title": "Kotlin news",
+      "title": "Kotlin news старые",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://miro.medium.com/max/1200/1*FNakkrty3kjOvNU8m5iQfw.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 212,
+      "createdAt": "26.02.2020",
       "userId": "1",
       "type": [
         "IT"
@@ -873,11 +873,11 @@
     },
     {
       "id": "13",
-      "title": "Javascript news",
+      "title": "Javascript news новые",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 911,
+      "createdAt": "26.12.2022",
       "userId": "1",
       "type": [
         "IT"
@@ -945,11 +945,11 @@
     },
     {
       "id": "14",
-      "title": "Python news",
+      "title": "Python news новые",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://miro.medium.com/v2/resize:fit:1200/1*m0H6-tUbW6grMlezlb52yw.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 2345,
+      "createdAt": "26.01.2023",
       "userId": "1",
       "type": [
         "IT"
@@ -1017,11 +1017,11 @@
     },
     {
       "id": "15",
-      "title": "Kotlin news",
+      "title": "Kotlin news новые",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://miro.medium.com/max/1200/1*FNakkrty3kjOvNU8m5iQfw.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 1105,
+      "createdAt": "26.11.2022",
       "userId": "1",
       "type": [
         "IT"
@@ -1089,11 +1089,11 @@
     },
     {
       "id": "16",
-      "title": "Javascript news",
+      "title": "Javascript news новогодние",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 1322,
+      "createdAt": "31.12.2022",
       "userId": "1",
       "type": [
         "IT"
@@ -1161,11 +1161,11 @@
     },
     {
       "id": "17",
-      "title": "Python news",
+      "title": "Python news новогодние",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://miro.medium.com/v2/resize:fit:1200/1*m0H6-tUbW6grMlezlb52yw.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 763,
+      "createdAt": "01.01.2023",
       "userId": "1",
       "type": [
         "IT"
@@ -1236,8 +1236,8 @@
       "title": "Kotlin news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://miro.medium.com/max/1200/1*FNakkrty3kjOvNU8m5iQfw.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 98,
+      "createdAt": "24.02.2022",
       "userId": "1",
       "type": [
         "IT"
@@ -1299,6 +1299,54 @@
           "title": "Заголовок этого блока",
           "paragraphs": [
             "JavaScript — это язык, программы на котором можно выполнять в разных средах. В нашем случае речь идёт о браузерах и о серверной платформе Node.js. Если до сих пор вы не написали ни строчки кода на JS и читаете этот текст в браузере, на настольном компьютере, это значит, что вы буквально в считанных секундах от своей первой JavaScript-программы."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "19",
+      "title": "Экономическая статья - ИНФЛЯЦИЯ!",
+      "subtitle": "Экономика",
+      "img": "https://www.mirea.ru/upload/iblock/7cf/vvp_rf2018_1.jpg",
+      "views": 223,
+      "createdAt": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "ECONOMICS"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Заголовок этого блока",
+          "paragraphs": [
+            "Программа, которую по традиции называют «Hello, world!», очень проста. Она выводит куда-либо фразу «Hello, world!», или другую подобную, средствами некоего языка.",
+            "JavaScript — это язык, программы на котором можно выполнять в разных средах. В нашем случае речь идёт о браузерах и о серверной платформе Node.js. Если до сих пор вы не написали ни строчки кода на JS и читаете этот текст в браузере, на настольном компьютере, это значит, что вы буквально в считанных секундах от своей первой JavaScript-программы.",
+            "Существуют и другие способы запуска JS-кода в браузере. Так, если говорить об обычном использовании программ на JavaScript, они загружаются в браузер для обеспечения работы веб-страниц. Как правило, код оформляют в виде отдельных файлов с расширением .js, которые подключают к веб-страницам, но программный код можно включать и непосредственно в код страницы. Всё это делается с помощью тега <script>. Когда браузер обнаруживает такой код, он выполняет его. Подробности о теге script можно посмотреть на сайте w3school.com. В частности, рассмотрим пример, демонстрирующий работу с веб-страницей средствами JavaScript, приведённый на этом ресурсе. Этот пример можно запустить и средствами данного ресурса (ищите кнопку Try it Yourself), но мы поступим немного иначе. А именно, создадим в каком-нибудь текстовом редакторе (например — в VS Code или в Notepad++) новый файл, который назовём hello.html, и добавим в него следующий код:"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "20",
+      "title": "Научная статья - Биология",
+      "subtitle": "БиологиЯ",
+      "img": "https://www.profguide.io/images/article/a/4/b6QiBfIMbI.jpg",
+      "views": 799,
+      "createdAt": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "SCIENCE"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Заголовок этого блока",
+          "paragraphs": [
+            "Программа, которую по традиции называют «Hello, world!», очень проста. Она выводит куда-либо фразу «Hello, world!», или другую подобную, средствами некоего языка.",
+            "JavaScript — это язык, программы на котором можно выполнять в разных средах. В нашем случае речь идёт о браузерах и о серверной платформе Node.js. Если до сих пор вы не написали ни строчки кода на JS и читаете этот текст в браузере, на настольном компьютере, это значит, что вы буквально в считанных секундах от своей первой JavaScript-программы.",
+            "Существуют и другие способы запуска JS-кода в браузере. Так, если говорить об обычном использовании программ на JavaScript, они загружаются в браузер для обеспечения работы веб-страниц. Как правило, код оформляют в виде отдельных файлов с расширением .js, которые подключают к веб-страницам, но программный код можно включать и непосредственно в код страницы. Всё это делается с помощью тега <script>. Когда браузер обнаруживает такой код, он выполняет его. Подробности о теге script можно посмотреть на сайте w3school.com. В частности, рассмотрим пример, демонстрирующий работу с веб-страницей средствами JavaScript, приведённый на этом ресурсе. Этот пример можно запустить и средствами данного ресурса (ищите кнопку Try it Yourself), но мы поступим немного иначе. А именно, создадим в каком-нибудь текстовом редакторе (например — в VS Code или в Notepad++) новый файл, который назовём hello.html, и добавим в него следующий код:"
           ]
         }
       ]

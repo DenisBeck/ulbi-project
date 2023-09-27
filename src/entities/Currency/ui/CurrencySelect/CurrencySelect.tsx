@@ -1,6 +1,6 @@
 /* eslint-disable react/display-name */
 import { useCallback, type FC, memo } from 'react'
-import { Select, type SelectOption } from 'shared/ui/Select/Select';
+import { Select } from 'shared/ui/Select/Select';
 import { useTranslation } from 'react-i18next';
 import { Currency } from '../../model/types/currency';
 
@@ -11,7 +11,7 @@ interface CurrencySelectProps {
     readonly?: boolean;
 }
 
-const options: SelectOption[]=[
+const options = [
     {value: Currency.RUB, content: Currency.RUB},
     {value: Currency.EUR, content: Currency.EUR},
     {value: Currency.USD, content: Currency.USD},

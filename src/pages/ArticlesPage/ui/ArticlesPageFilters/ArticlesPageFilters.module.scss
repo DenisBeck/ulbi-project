@@ -1,0 +1,24 @@
+.article-page-filters {
+    font-size: 18px;
+
+    &:not(:last-child) {
+        margin-bottom: 30px;
+    }
+}
+
+.sort-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+    &:not(:last-child) {
+        margin-bottom: 15px;
+    }
+}
+
+.search {
+    &:not(:last-child) {
+        margin-bottom: 15px;
+    }
+}

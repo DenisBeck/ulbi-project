@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/strict-boolean-expressions */
 /* eslint-disable react/display-name */
 import { memo, type FC, type ReactNode, useRef, type MutableRefObject, type UIEvent } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
@@ -36,7 +37,6 @@ export const Page: FC<PageProps> = memo(({className, children, onScrollEnd}: Pag
     })
 
     const onScroll = useThrottle((e: UIEvent<HTMLElement>): void => {
-        console.log('SCROLL')
         dispatch(scrollPageActions.setScrollPosition({
             position: e.currentTarget.scrollTop,
             path: pathname
@@ -50,7 +50,7 @@ export const Page: FC<PageProps> = memo(({className, children, onScrollEnd}: Pag
             onScroll={onScroll}
         >
             {children}
-            <div ref={triggerRef} />
+            {onScrollEnd ? <div className={cls.trigger} ref={triggerRef} /> : null}
         </main>
     );
 });

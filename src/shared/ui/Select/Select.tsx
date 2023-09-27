@@ -1,24 +1,25 @@
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
 /* eslint-disable react/display-name */
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
-import { memo, type FC, useMemo, type ChangeEvent } from 'react'
+import { useMemo, type ChangeEvent } from 'react'
 import { type Mods, classNames } from 'shared/lib/classNames/classNames'
 import cls from './Select.module.scss'
 
-export interface SelectOption {
-    value: string;
+export interface SelectOption<T extends string> {
+    value: T;
     content: string;
 }
 
-interface SelectProps {
+interface SelectProps<T extends string> {
     className?: string;
     label?: string;
-    options?: SelectOption[];
-    value?: string;
-    onChange?: (value: string) => void;
+    options?: Array<SelectOption<T>>;
+    value?: T;
+    onChange?: (value: T) => void;
     readonly?: boolean;
 }
 
-export const Select: FC<SelectProps> = memo((props: SelectProps) => {
+export const Select = <T extends string>(props: SelectProps<T>) => {
     const {
         className,
         label,
@@ -45,7 +46,7 @@ export const Select: FC<SelectProps> = memo((props: SelectProps) => {
     }
 
     const onChangeHandler = (e: ChangeEvent<HTMLSelectElement>): void => {
-        onChange?.(e.target.value);
+        onChange?.(e.target.value as T);
     }
 
     return (
@@ -65,4 +66,4 @@ export const Select: FC<SelectProps> = memo((props: SelectProps) => {
             </select>
         </div>
     );
-});
+};
