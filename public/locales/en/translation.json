@@ -12,5 +12,6 @@
     "Войти": "Login",
     "Введите имя пользователя": "Input Username",
     "Введите пароль": "Input Password",
-    "Выйти": "Logout"
+    "Выйти": "Logout",
+    "Создать статью": "Create article"
 }

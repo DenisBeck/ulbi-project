@@ -11,6 +11,7 @@ import { Button, ButtonTheme } from 'shared/ui/Button/Button'
 import { LoginModal } from 'features/AuthByUsername'
 import { useDispatch, useSelector } from 'react-redux'
 import { getUserAuthData, userActions } from 'entities/User'
+import { Text, TextAlign, TextTheme, TitleTag } from 'shared/ui/Text/Text'
 
 interface NavbarProps {
   className?: string;
@@ -43,7 +44,14 @@ export const Navbar: FC<NavbarProps> = memo(({ className }: NavbarProps) => {
     if(authData) {
         return (
             <header className={classNames(cls.navbar, {}, [className])}>
+                <Text 
+                    className={cls.appname} 
+                    title={{content: 'Ulbi tv app', tag: TitleTag.H2}}
+                    theme={TextTheme.INVERTED}
+                    align={TextAlign.CENTER} 
+                />
                 <div className={cls.links}>
+                    <AppLink theme={ AppLinkTheme.SECONDARY } to={ RoutePath.article_create} className={cls['create-btn']} >{t('Создать статью')}</AppLink>
                     <AppLink theme={ AppLinkTheme.SECONDARY } to={ RoutePath.main} className={cls['main-link']} >{t('Главная')}</AppLink>
                     <AppLink theme={ AppLinkTheme.SECONDARY } to={ RoutePath.about} >{t('О сайте')}</AppLink>
                 </div>

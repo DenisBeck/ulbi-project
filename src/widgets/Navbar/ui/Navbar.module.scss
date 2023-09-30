@@ -13,3 +13,9 @@
     display: flex;
     gap: 20px;
 }
+
+.appname {
+    width: var(--sidebar-width);
+    text-align: center;
+    padding-inline: 15px;
+}
