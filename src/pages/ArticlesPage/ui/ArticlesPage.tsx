@@ -1,5 +1,4 @@
 import { memo, type FC, useCallback } from 'react'
-import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './ArticlesPage.module.scss'
 // import { useTranslation } from 'react-i18next';
 import { ArticleList } from 'entities/Article';
@@ -48,11 +47,14 @@ const ArticlesPage: FC<ArticlesPageProps> = ({className}: ArticlesPageProps) => 
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
             <Page onScrollEnd={onLoadNextPart}>
                 <ArticlesPageFilters />
-                <ArticleList 
-                    className={classNames(cls.articles, {}, [className])} 
-                    isLoading={isLoading}
-                    view={view} 
-                    articles={articles} />
+                <section>
+                    <ArticleList 
+                        className={cls.articles} 
+                        isLoading={isLoading}
+                        view={view} 
+                        articles={articles} 
+                    />
+                </section>
             </Page>
         </DynamicModuleLoader>
     );

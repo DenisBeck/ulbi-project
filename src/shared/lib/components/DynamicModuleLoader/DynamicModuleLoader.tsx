@@ -1,13 +1,13 @@
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
 /* eslint-disable @typescript-eslint/restrict-template-expressions */
 import type { Reducer } from '@reduxjs/toolkit';
-import type { ReduxStoreWithManager, StateSchemaKey } from 'app/providers/StoreProvider/config/StateSchema';
+import type { ReduxStoreWithManager, StateSchema, StateSchemaKey } from 'app/providers/StoreProvider/config/StateSchema';
 import React from 'react';
 import { type PropsWithChildren, type FC, useEffect } from 'react'
 import { useDispatch, useStore } from 'react-redux';
 
 export type ReducersList = {
-    [name in StateSchemaKey]?: Reducer
+    [name in StateSchemaKey]?: Reducer<NonNullable<StateSchema[name]>>
 }
 
 interface DynamicModuleLoaderProps extends PropsWithChildren {

@@ -1,6 +1,7 @@
+/* eslint-disable @typescript-eslint/restrict-plus-operands */
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
 /* eslint-disable react/display-name */
-import { memo, type FC, useCallback } from 'react'
+import { memo, type FC, type HTMLAttributeAnchorTarget } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './ArticleListItem.module.scss'
 import { type Article, ArticleView, ArticleBlockType, type ArticleTextBlock } from '../../model/types/article';
@@ -13,13 +14,14 @@ import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { useTranslation } from 'react-i18next';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
-import { useNavigate } from 'react-router-dom';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { AppLink } from 'shared/ui/AppLink/AppLink';
 
 interface ArticleListItemProps {
     className?: string;
     article: Article,
-    view: ArticleView
+    view: ArticleView,
+    target?: HTMLAttributeAnchorTarget
 }
 
 export const ArticleListItem: FC<ArticleListItemProps> = memo((props: ArticleListItemProps) => {
@@ -28,16 +30,11 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo((props: ArticleLis
     const {
         className,
         article,
-        view
+        view,
+        target,
     } = props;
     // const [isHover, bindHover] = useHover();
-    const navigate = useNavigate();
     // console.log(isHover);
-
-    const onOpenArticle = useCallback(() => {
-        // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
-        navigate(RoutePath.article_details + article.id)
-    }, [article.id, navigate])
 
     const types = (<Text className={cls.types} text={[{
         tag: TextTag.SPAN,
@@ -79,9 +76,12 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo((props: ArticleLis
                     <ArticleTextBlockComponent className={cls['text-block']} block={textBlock} />
                 )}
                 <div className={cls.footer}>
-                    <Button onClick={onOpenArticle} theme={ButtonTheme.OUTLINE}>
-                        {t('Читать далее')}...
-                    </Button>
+                    <AppLink target={target} to={RoutePath.article_details + article.id}>
+                        <Button theme={ButtonTheme.OUTLINE}>
+                            {t('Читать далее')}...
+                        </Button>
+                    </AppLink>
+                    
                     {views}
                 </div>
             </Card>
@@ -89,30 +89,32 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo((props: ArticleLis
     }
 
     return (
-        <Card 
+        <AppLink target={target} to={RoutePath.article_details + article.id}>
+            <Card 
             // {...bindHover} 
-            onClick={onOpenArticle}
-            className={classNames(
-                cls['article-list-item'], 
-                {}, 
-                [className, cls[view.toLowerCase()], cls['article-card']]
-            )}>
-            <div className={cls['image-wrapper']}>
-                <img src={article.img} className={cls.img} alt={article.title} />
-                <Text className={cls.date} text={[{
-                    tag: TextTag.SPAN,
-                    content: article.createdAt
-                }]}/>
-            </div>
-            <div className={cls.info}>
-                {types}
-                {views}
-            </div>
-            <Text text={[{
-                tag: TextTag.P,
-                content: article.title,
-                className: cls.title
-            }]} />
-        </Card>
+                className={classNames(
+                    cls['article-list-item'], 
+                    {}, 
+                    [className, cls[view.toLowerCase()], cls['article-card']]
+                )}>
+                <div className={cls['image-wrapper']}>
+                    <img src={article.img} className={cls.img} alt={article.title} />
+                    <Text className={cls.date} text={[{
+                        tag: TextTag.SPAN,
+                        content: article.createdAt
+                    }]}/>
+                </div>
+                <div className={cls.info}>
+                    {types}
+                    {views}
+                </div>
+                <Text text={[{
+                    tag: TextTag.P,
+                    content: article.title,
+                    className: cls.title
+                }]} />
+            </Card>
+        </AppLink>
+        
     );
 });

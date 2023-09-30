@@ -1412,6 +1412,12 @@
       "userId": "2",
       "text": "djfdjgf dflglfdkgfldgk lfdkglfdkgldfkgldfg",
       "id": "phniM76"
+    },
+    {
+      "articleId": "20",
+      "userId": "1",
+      "text": "treyttyuykkjhk",
+      "id": "tRUcPHY"
     }
   ],
   "users": [
@@ -1420,7 +1426,7 @@
       "username": "admin",
       "password": "123",
       "role": "ADMIN",
-      "avatar": "https://kartinkived.ru/wp-content/uploads/2021/12/avatarka-dlya-vatsapa-kot-v-kapyushone-s-raznym-czvetom-glaz.jpg" 
+      "avatar": "https://kartinkived.ru/wp-content/uploads/2021/12/avatarka-dlya-vatsapa-kot-v-kapyushone-s-raznym-czvetom-glaz.jpg"
     },
     {
       "id": "2",

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
 /* eslint-disable react/display-name */
-import { memo, type FC, type ReactNode } from 'react'
+import { memo, type FC, type ReactNode, type HTMLAttributeAnchorTarget } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './ArticleList.module.scss'
 import { type Article, ArticleView } from '../../model/types/article';
@@ -13,7 +13,8 @@ interface ArticleListProps {
     className?: string;
     articles: Article[];
     isLoading?: boolean;
-    view?: ArticleView
+    view?: ArticleView;
+    target?: HTMLAttributeAnchorTarget
 }
 
 const getSkeletons = (view: ArticleView): ReactNode => {
@@ -29,13 +30,20 @@ export const ArticleList: FC<ArticleListProps> = memo((props: ArticleListProps) 
         className,
         articles,
         isLoading,
-        view = ArticleView.BRICKS
+        view = ArticleView.BRICKS,
+        target,
     } = props;
     const { t } = useTranslation('article')
 
     const renderArticle = (article: Article): ReactNode => {
         return (
-            <ArticleListItem className={cls.item} article={article} view={view} key={article.id} />
+            <ArticleListItem 
+                className={cls.item} 
+                article={article} 
+                view={view} 
+                key={article.id} 
+                target={target}
+            />
         );
     }
 
@@ -49,12 +57,12 @@ export const ArticleList: FC<ArticleListProps> = memo((props: ArticleListProps) 
     }
 
     return (
-        <section className={classNames(cls['article-list'], {}, [className, cls[view.toLowerCase()]])}>
+        <div className={classNames(cls['article-list'], {}, [className, cls[view.toLowerCase()]])}>
             {isLoading && getSkeletons(view)}
             {articles.length > 0
                 ? articles.map(renderArticle)
                 : null
             }
-        </section>
+        </div>
     );
 });

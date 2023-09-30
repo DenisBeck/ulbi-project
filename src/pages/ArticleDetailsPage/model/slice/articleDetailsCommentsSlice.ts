@@ -8,11 +8,10 @@ import { fetchCommentsByArticleId } from "../services/fetchCommentsByArticleId/f
 const articleDetailsCommentsAdapter = createEntityAdapter<Comment>({
     selectId: (comment: Comment) => comment.id,
 })
-console.log(articleDetailsCommentsAdapter)
 
 export const getArticleComments = articleDetailsCommentsAdapter.getSelectors<StateSchema>(
     (state) => {
-        return state.articleDetailsComments || articleDetailsCommentsAdapter.getInitialState()
+        return state.articleDetailsPage?.comments || articleDetailsCommentsAdapter.getInitialState()
     }
 )
   
