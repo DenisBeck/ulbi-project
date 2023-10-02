@@ -4,6 +4,7 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import webpack from 'webpack'
 import { type BuildOptions } from './types/config'
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin'
+import CopyPlugin from "copy-webpack-plugin";
 
 export function buildPlugins ({ paths, isDev, apiUrl, project }: BuildOptions): webpack.WebpackPluginInstance[] {
     const plugins = [
@@ -19,7 +20,12 @@ export function buildPlugins ({ paths, isDev, apiUrl, project }: BuildOptions): 
             _IS_DEV_: JSON.stringify(isDev),
             _API_: JSON.stringify(apiUrl),
             _PROJECT_: JSON.stringify(project)
-        })
+        }),
+        new CopyPlugin({
+            patterns: [
+                { from: paths.locales, to: paths.buildLocales },
+            ],
+        }),
     ]
 
     if(isDev) {
