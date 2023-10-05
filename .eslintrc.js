@@ -23,7 +23,14 @@ module.exports = {
     "sourceType": "module",
     "project": ["tsconfig.strictNullChecks.json"]
   },
-  "plugins": ["react", "@typescript-eslint", "strict-null-checks", "i18next", "react-hooks"],
+  "plugins": [
+    "react", 
+    "@typescript-eslint", 
+    "strict-null-checks", 
+    "i18next", 
+    "react-hooks",
+    "ulbi-plugin"
+  ],
   "rules": {
     "react/jsx-indent": [2, 4],
     "indent": [2, 4],
@@ -41,7 +48,8 @@ module.exports = {
     "react-hooks/exhaustive-deps": "error", // Checks effect dependencies
     // "no-params-reassign": "off",
     "no-undef": "off",
-    "strict-boolean-expressions": 'off'
+    "strict-boolean-expressions": 'off',
+    "ulbi-plugin/path-checker": "error",
   },
   globals: {
     _IS_DEV_: true,
