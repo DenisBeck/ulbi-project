@@ -50,7 +50,7 @@ export const Select = <T extends string>(props: SelectProps<T>) => {
     }
 
     return (
-        <div className={classNames(cls.wrpapper, mods, [className])}>
+        <div className={classNames(cls.wrapper, mods, [className])}>
             {label && ( 
                 <span className={cls.label}>{ `${label}>` }</span>
             )}

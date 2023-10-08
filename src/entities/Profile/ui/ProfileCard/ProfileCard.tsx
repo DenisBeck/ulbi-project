@@ -130,6 +130,7 @@ export const ProfileCard: FC<ProfileCardProps> = (props: ProfileCardProps) => {
                     value={ data?.country }
                     onChange={ onChangeCountry } 
                     readonly={ readonly }
+                    className={cls.select}
                 />
             </div>
         </div>
