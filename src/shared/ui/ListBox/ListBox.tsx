@@ -6,14 +6,13 @@ import React from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { Button } from '../Button/Button'
 import { HStack } from '../Stack'
+import type { DropdownDirection } from '../../types'
 
 export interface ListBoxItem {
     value: string;
     content: ReactNode;
     disabled?: boolean;
 }
-
-type DropdownDirection = 'top' | 'bottom';
 
 interface ListBoxProps {
     items?: ListBoxItem[];
@@ -37,11 +36,11 @@ export const ListBox: FC<ListBoxProps> = (props: ListBoxProps) => {
         defaultValue,
         readonly,
         onChange,
-        direction = 'bottom',
+        direction = 'bottom right',
         label
     } = props;
 
-    const optionsClasses = [cls[direction]]
+    const optionsClasses = [cls[direction.split(' ')[0]], cls[direction.split(' ')[1]]]
 
     return (
         <HStack gap={'8'}>

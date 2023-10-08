@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/restrict-plus-operands */
 /* eslint-disable react/display-name */
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
 /* eslint-disable i18next/no-literal-string */
@@ -12,6 +13,8 @@ import { LoginModal } from 'features/AuthByUsername'
 import { useDispatch, useSelector } from 'react-redux'
 import { getUserAuthData, userActions } from 'entities/User'
 import { Text, TextAlign, TextTheme, TitleTag } from 'shared/ui/Text/Text'
+import { Avatar } from 'shared/ui/Avatar/Avatar'
+import { Dropdown } from 'shared/ui/Dropdown/Dropdown'
 
 interface NavbarProps {
   className?: string;
@@ -56,12 +59,21 @@ export const Navbar: FC<NavbarProps> = memo(({ className }: NavbarProps) => {
                     <AppLink theme={ AppLinkTheme.SECONDARY } to={ RoutePath.about} >{t('О сайте')}</AppLink>
                 </div>
                 <div className={cls.auth}>
-                    <Button 
-                        theme={ ButtonTheme.OUTLINE_INVERTED }
-                        className={ cls.login }
-                        onClick={ onLogout }>
-                        {t('Выйти')}
-                    </Button>
+                    <Dropdown 
+                        className={cls.dropdown}
+                        direction={'bottom left'}
+                        items={[
+                            {
+                                content: t('Профиль'),
+                                href: RoutePath.profile + authData.id,
+                            },
+                            {
+                                content: t('Выйти'),
+                                onClick: onLogout
+                            }
+                        ]}
+                        trigger={<Avatar size={30} src={authData.avatar} />}
+                    />
                     <LoginModal isOpen={ isAuthModal } onClose={ onCloseModal } />
                 </div>
             </header>
