@@ -9,7 +9,7 @@ import type { Profile } from '../../model/types/profile';
 import { Loader } from 'shared/ui/Loader/Loader';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { type Currency, CurrencySelect } from 'entities/Currency';
-import { type Country } from "entities/Country/model/types/country";
+import { type Country } from "entities/Country/model/consts/country";
 import { CountrySelect } from 'entities/Country';
 
 interface ProfileCardProps {

@@ -1,8 +1,11 @@
+/* eslint-disable @typescript-eslint/strict-boolean-expressions */
 import type webpack from 'webpack'
+import type { BuildBabelLoaderProps } from '../types/config'
+import babelRemovePropsPlugin from '../../babel/babelRemovePropsPlugin'
 
-export function buildBabelLoader(isDev: boolean): webpack.RuleSetRule {
+export function buildBabelLoader({isDev, isTsx}: BuildBabelLoaderProps): webpack.RuleSetRule {
     return {
-        test: /\.(js|jsx|tsx)$/,
+        test: isTsx ? /\.(js|jsx|tsx)$/ : /\.(js|js|ts)$/,
         exclude: /node_modules/,
         use: {
             loader: 'babel-loader',
@@ -14,6 +17,17 @@ export function buildBabelLoader(isDev: boolean): webpack.RuleSetRule {
                         {
                             locales: ['ru', 'en'],
                             keyAsDefaultValue: true
+                        }
+                    ],
+                    [
+                        "@babel/plugin-transform-typescript",
+                        { isTsx }
+                    ],
+                    "@babel/plugin-transform-runtime",
+                    isTsx && [
+                        babelRemovePropsPlugin,
+                        {
+                            props: ['data-testid']
                         }
                     ],
                     isDev && require.resolve('react-refresh/babel'),

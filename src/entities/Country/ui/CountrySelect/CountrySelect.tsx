@@ -2,7 +2,7 @@
 import { useCallback, type FC, memo } from 'react'
 import { Select } from 'shared/ui/Select/Select';
 import { useTranslation } from 'react-i18next';
-import { Country } from '../../model/types/country';
+import { Country } from '../../model/consts/country';
 
 interface CountrySelectProps {
     className?: string;

@@ -1424,6 +1424,12 @@
       "userId": "1",
       "text": "kkuykhjkjk;; прорпо",
       "id": "Yq1_Bbv"
+    },
+    {
+      "articleId": "19",
+      "userId": "1",
+      "text": "dffhg gfhghgj",
+      "id": "_5tsfI1"
     }
   ],
   "users": [
@@ -1431,14 +1437,27 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "role": "ADMIN",
+      "roles": [
+        "ADMIN"
+      ],
       "avatar": "https://kartinkived.ru/wp-content/uploads/2021/12/avatarka-dlya-vatsapa-kot-v-kapyushone-s-raznym-czvetom-glaz.jpg"
     },
     {
       "id": "2",
       "username": "user",
       "password": "321",
-      "role": "USER",
+      "roles": [
+        "USER"
+      ],
+      "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
+    },
+    {
+      "id": "3",
+      "username": "manager",
+      "password": "321",
+      "roles": [
+        "MANAGER"
+      ],
       "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
     }
   ],

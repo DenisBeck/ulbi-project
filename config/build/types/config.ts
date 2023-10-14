@@ -23,3 +23,7 @@ export interface BuildOptions {
   apiUrl: string;
   project: 'storybook' | 'frontend' | 'jest';
 }
+
+export interface BuildBabelLoaderProps extends BuildOptions {
+  isTsx?: boolean;
+}

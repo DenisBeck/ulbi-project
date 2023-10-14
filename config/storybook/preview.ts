@@ -1,4 +1,4 @@
-import { RouterDecorator, StyleDecorator, ThemeDecorator, } from "../../src/shared/config/storybook";
+import { RouterDecorator, StyleDecorator, SuspenseDecorator, ThemeDecorator, } from "../../src/shared/config/storybook";
 import { Theme } from "../../src/app/providers/ThemeProvider";
 
 export const parameters = {
@@ -16,6 +16,7 @@ export default {
         StyleDecorator,
         ThemeDecorator(Theme.LIGHT),
         RouterDecorator,
+        SuspenseDecorator,
         // TranslationDecorator,
         // StoreDecorator
     ],

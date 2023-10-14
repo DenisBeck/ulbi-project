@@ -4,7 +4,7 @@
 import { memo, type FC, type HTMLAttributeAnchorTarget } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './ArticleListItem.module.scss'
-import { type Article, ArticleView, ArticleBlockType, type ArticleTextBlock } from '../../model/types/article';
+import { type Article, type ArticleTextBlock } from '../../model/types/article';
 import { Text, TextTag, TitleTag } from 'shared/ui/Text/Text';
 import EyeIcon from 'shared/assets/icons/eye-20-20.svg';
 import { Icon } from 'shared/ui/Icon/Icon';
@@ -16,6 +16,7 @@ import { useTranslation } from 'react-i18next';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
+import { ArticleView, ArticleBlockType } from '../../model/consts/article';
 
 interface ArticleListItemProps {
     className?: string;

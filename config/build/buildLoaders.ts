@@ -22,19 +22,22 @@ export function buildLoaders (options: BuildOptions): webpack.RuleSetRule[] {
 
     const cssLoader = buildCssLoader(isDev);
 
-    const babelLoader = buildBabelLoader(isDev);
+    const codeBabelLoader = buildBabelLoader({ ...options, isTsx: false });
+    const tsxBabelLoader = buildBabelLoader({ ...options, isTsx: true });
 
-    const typescripLoader = {
-        test: /\.tsx?$/,
-        use: 'ts-loader',
-        exclude: /node_modules/
-    }
+    // const typescripLoader = {
+    //     test: /\.tsx?$/,
+    //     use: 'ts-loader',
+    //     exclude: /node_modules/
+    // }
 
     return [
         fileLoader,
         svgLoader,
-        babelLoader,
-        typescripLoader,
-        cssLoader
+        // babelLoader,
+        // typescripLoader,
+        codeBabelLoader,
+        tsxBabelLoader,
+        cssLoader,
     ]
 }

@@ -13,5 +13,7 @@
     "Введите имя пользователя": "Input Username",
     "Введите пароль": "Input Password",
     "Выйти": "Logout",
-    "Создать статью": "Create article"
+    "Создать статью": "Create article",
+    "Админ панель": "Admin Panel",
+    "У вас нет доступа к этой странице": "No access to the page"
 }

@@ -4,7 +4,7 @@ import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { getArticleComments } from '../../model/slice/articleDetailsCommentsSlice';
-import { memo, type FC, useCallback } from 'react'
+import { memo, type FC, useCallback, Suspense } from 'react'
 import { useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
@@ -13,6 +13,7 @@ import { CommentList } from 'entities/Comment';
 import { AddCommentForm } from 'features/AddCommentForm';
 import { t } from 'i18next';
 import { Text, TitleTag } from 'shared/ui/Text/Text';
+import { Loader } from 'shared/ui/Loader/Loader';
 
 interface ArticleDetailsCommentsProps {
     className?: string;
@@ -39,7 +40,9 @@ export const ArticleDetailsComments: FC<ArticleDetailsCommentsProps> = memo((pro
     return (
         <section className={classNames('', {}, [className])}>
             <Text title={{content: t('Комментарии'), tag: TitleTag.H2}} />
-            <AddCommentForm onSendComment={onSendComment} />
+            <Suspense fallback={<Loader />}>
+                <AddCommentForm onSendComment={onSendComment} />
+            </Suspense>
             <CommentList
                 isLoading={commentsIsLoading}
                 comments={comments}

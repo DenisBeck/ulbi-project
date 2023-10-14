@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { EditableProfileCard } from './EditableProfileCard'
+import { StoreDecorator } from 'shared/config/storybook'
 
 const meta: Meta<typeof EditableProfileCard> = {
     title: 'features/EditableProfileCard',
@@ -17,4 +18,5 @@ export const Light: Story = {
     args: {
         
     },
+    decorators: [StoreDecorator({})]
 }

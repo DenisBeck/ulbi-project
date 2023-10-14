@@ -21,11 +21,11 @@ import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/get
 import { getProfileValidateErrors } from '../../model/selectors/getProfileValidateErrors/getProfileValidateErrors';
 import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData';
 import { profileActions } from '../../model/slice/profileSlice';
-import { ValidateProfileError } from '../../model/types/editableProfileCardSchema';
+import { ValidateProfileError } from '../../model/consts/consts';
 
 interface EditableProfileCardProps {
     className?: string;
-    id: string;
+    id?: string;
 }
 
 export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
@@ -58,7 +58,10 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
     useInitialEffect(() => {
         if(id) {
             dispatch(fetchProfileData(id) as unknown as AnyAction)
+        } else {
+            return <Text text={[{content: t('Профиль не найден'), tag: TextTag.P}]} />;
         }
+        
     })
 
     const onChangeFirstname = useCallback((value?: string) => {

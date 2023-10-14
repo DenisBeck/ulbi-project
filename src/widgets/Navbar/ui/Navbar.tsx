@@ -11,7 +11,7 @@ import { RoutePath } from 'shared/config/routeConfig/routeConfig'
 import { Button, ButtonTheme } from 'shared/ui/Button/Button'
 import { LoginModal } from 'features/AuthByUsername'
 import { useDispatch, useSelector } from 'react-redux'
-import { getUserAuthData, userActions } from 'entities/User'
+import { getUserAuthData, isUserAdmin, isUserManager, userActions } from 'entities/User'
 import { Text, TextAlign, TextTheme, TitleTag } from 'shared/ui/Text/Text'
 import { Avatar } from 'shared/ui/Avatar/Avatar'
 import { Dropdown } from 'shared/ui/Dropdown/Dropdown'
@@ -25,6 +25,8 @@ export const Navbar: FC<NavbarProps> = memo(({ className }: NavbarProps) => {
     const [ isAuthModal, setIsAuthModal ] = useState(false);
     const authData = useSelector(getUserAuthData);
     const dispatch = useDispatch();
+    const isAdmin = useSelector(isUserAdmin);
+    const isManager = useSelector(isUserManager);
 
     const onCloseModal = useCallback(() => {
         setIsAuthModal(false);
@@ -43,6 +45,8 @@ export const Navbar: FC<NavbarProps> = memo(({ className }: NavbarProps) => {
             onCloseModal();
         }
     })
+
+    const isAdminPanelAvailable = isAdmin || isManager;
 
     if(authData) {
         return (
@@ -63,6 +67,10 @@ export const Navbar: FC<NavbarProps> = memo(({ className }: NavbarProps) => {
                         className={cls.dropdown}
                         direction={'bottom left'}
                         items={[
+                            ...(isAdminPanelAvailable ? [{
+                                content: t('Админ панель'),
+                                href: RoutePath.admin_panel,
+                            }] : []),
                             {
                                 content: t('Профиль'),
                                 href: RoutePath.profile + authData.id,
