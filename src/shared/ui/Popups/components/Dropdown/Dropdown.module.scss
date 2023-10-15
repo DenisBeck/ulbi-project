@@ -2,37 +2,12 @@
     position: relative;
 }
 
-.btn {
-    background: none;
-    outline: none;
-    margin: 0;
-    padding: 0;
-    border: none;
-    
-}
-
 .menu {
     background: var(--card-bg);
     position: absolute;
     z-index: 10000;
     border-radius: 8px;
     border: 1px solid var(--primary-color);
-
-    &.top {
-        bottom: 100%;
-    }
-
-    &.bottom {
-        top: 100%;
-    }
-
-    &.left {
-        right: 0;
-    }
-
-    &.right {
-        left: 0;
-    }
 }
 
 .item {
@@ -43,8 +18,4 @@
     outline: none;
     color: var(--primary-color);
     cursor: pointer;
-
-    &.active {
-        background: var(--inverted-primary-color);
-    }
 }

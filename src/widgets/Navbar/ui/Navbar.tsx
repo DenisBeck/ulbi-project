@@ -10,11 +10,12 @@ import { useTranslation } from 'react-i18next'
 import { RoutePath } from 'shared/config/routeConfig/routeConfig'
 import { Button, ButtonTheme } from 'shared/ui/Button/Button'
 import { LoginModal } from 'features/AuthByUsername'
-import { useDispatch, useSelector } from 'react-redux'
-import { getUserAuthData, isUserAdmin, isUserManager, userActions } from 'entities/User'
+import { useSelector } from 'react-redux'
+import { getUserAuthData } from 'entities/User'
 import { Text, TextAlign, TextTheme, TitleTag } from 'shared/ui/Text/Text'
-import { Avatar } from 'shared/ui/Avatar/Avatar'
-import { Dropdown } from 'shared/ui/Dropdown/Dropdown'
+import { HStack } from 'shared/ui/Stack'
+import { NotificationButton } from 'features/notificationButton'
+import { AvatarDropdown } from 'features/avatarDropdown'
 
 interface NavbarProps {
   className?: string;
@@ -24,9 +25,6 @@ export const Navbar: FC<NavbarProps> = memo(({ className }: NavbarProps) => {
     const { t } = useTranslation();
     const [ isAuthModal, setIsAuthModal ] = useState(false);
     const authData = useSelector(getUserAuthData);
-    const dispatch = useDispatch();
-    const isAdmin = useSelector(isUserAdmin);
-    const isManager = useSelector(isUserManager);
 
     const onCloseModal = useCallback(() => {
         setIsAuthModal(false);
@@ -36,17 +34,11 @@ export const Navbar: FC<NavbarProps> = memo(({ className }: NavbarProps) => {
         setIsAuthModal(true);
     }, [])
 
-    const onLogout = useCallback(() => {
-        dispatch(userActions.logout())
-    }, [dispatch])
-
     useEffect(() => {
         if(authData) {
             onCloseModal();
         }
     })
-
-    const isAdminPanelAvailable = isAdmin || isManager;
 
     if(authData) {
         return (
@@ -62,26 +54,11 @@ export const Navbar: FC<NavbarProps> = memo(({ className }: NavbarProps) => {
                     <AppLink theme={ AppLinkTheme.SECONDARY } to={ RoutePath.main} className={cls['main-link']} >{t('Главная')}</AppLink>
                     <AppLink theme={ AppLinkTheme.SECONDARY } to={ RoutePath.about} >{t('О сайте')}</AppLink>
                 </div>
+                <HStack gap='16' className={cls.actions}>
+                    <NotificationButton />
+                    <AvatarDropdown className={cls.dropdown} />
+                </HStack>
                 <div className={cls.auth}>
-                    <Dropdown 
-                        className={cls.dropdown}
-                        direction={'bottom left'}
-                        items={[
-                            ...(isAdminPanelAvailable ? [{
-                                content: t('Админ панель'),
-                                href: RoutePath.admin_panel,
-                            }] : []),
-                            {
-                                content: t('Профиль'),
-                                href: RoutePath.profile + authData.id,
-                            },
-                            {
-                                content: t('Выйти'),
-                                onClick: onLogout
-                            }
-                        ]}
-                        trigger={<Avatar size={30} src={authData.avatar} />}
-                    />
                     <LoginModal isOpen={ isAuthModal } onClose={ onCloseModal } />
                 </div>
             </header>
@@ -89,7 +66,7 @@ export const Navbar: FC<NavbarProps> = memo(({ className }: NavbarProps) => {
     }
 
     return (
-        <div className={classNames(cls.navbar, {}, [className])}>
+        <header className={classNames(cls.navbar, {}, [className])}>
             <div className={cls.links}>
                 <AppLink theme={ AppLinkTheme.SECONDARY } to={ RoutePath.main} className={cls['main-link']} >{t('Главная')}</AppLink>
                 <AppLink theme={ AppLinkTheme.SECONDARY } to={ RoutePath.about} >{t('О сайте')}</AppLink>
@@ -103,6 +80,6 @@ export const Navbar: FC<NavbarProps> = memo(({ className }: NavbarProps) => {
                 </Button>
                 {isAuthModal && <LoginModal isOpen={ isAuthModal } onClose={ onCloseModal } />}
             </div>
-        </div>
+        </header>
     )
 })

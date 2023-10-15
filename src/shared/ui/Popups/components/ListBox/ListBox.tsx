@@ -2,11 +2,11 @@
 import { type FC, Fragment, type ReactNode } from 'react'
 import { Listbox as HListBox } from '@headlessui/react'
 import cls from './ListBox.module.scss'
-import React from 'react'
+import popupCls from '../../styles/popup.module.scss';
 import { classNames } from 'shared/lib/classNames/classNames'
-import { Button } from '../Button/Button'
-import { HStack } from '../Stack'
-import type { DropdownDirection } from '../../types'
+import { Button } from '../../../Button/Button'
+import { HStack } from '../../../Stack'
+import type { DropdownDirection } from '../../../../types'
 
 export interface ListBoxItem {
     value: string;
@@ -40,7 +40,7 @@ export const ListBox: FC<ListBoxProps> = (props: ListBoxProps) => {
         label
     } = props;
 
-    const optionsClasses = [cls[direction.split(' ')[0]], cls[direction.split(' ')[1]]]
+    const optionsClasses = [popupCls[direction.split(' ')[0]], popupCls[direction.split(' ')[1]]]
 
     return (
         <HStack gap={'8'}>
@@ -52,7 +52,7 @@ export const ListBox: FC<ListBoxProps> = (props: ListBoxProps) => {
                 as={'div'}
                 className={classNames(cls.listbox, {[cls.readonly]: readonly}, [className])}
             >
-                <HListBox.Button as={'div'} className={cls.trigger}>
+                <HListBox.Button as={'div'} className={popupCls.trigger}>
                     <Button>
                         {selectedValue ?? defaultValue}
                     </Button>
@@ -69,8 +69,8 @@ export const ListBox: FC<ListBoxProps> = (props: ListBoxProps) => {
                                 <li className={classNames(
                                     cls.item, 
                                     {
-                                        [cls.active]: active,
-                                        [cls.disabled]: item.disabled,
+                                        [popupCls.active]: active,
+                                        [popupCls.disabled]: item.disabled,
                                     }
                                 )}>
                                     {selected && '!!!'}

@@ -2,14 +2,6 @@
     position: relative;
 }
 
-.trigger {
-    background: none;
-    border: none;
-    outline: none;
-    padding: 0;
-    margin: 0;
-}
-
 .items {
     background: var(--listbox-bg);
     position: absolute;
@@ -19,35 +11,11 @@
     min-width: 100%;
     max-width: fit-content;
     overflow: hidden;
-
-    &.top {
-        bottom: 100%;
-    }
-
-    &.bottom {
-        top: 100%;
-    }
-
-    &.left {
-        right: 0;
-    }
-
-    &.right {
-        left: 0;
-    }
 }
 
 .item {
     padding: 5px 10px;
     cursor: pointer;
-
-    &.active {
-        background: var(--inverted-primary-color);
-    }
-
-    &.disabled {
-        opacity: 0.4;
-    }
 }
 
 .label {
