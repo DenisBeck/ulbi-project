@@ -2,7 +2,7 @@
 /* eslint-disable react/display-name */
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
 /* eslint-disable i18next/no-literal-string */
-import { useState, type FC, useCallback, useEffect, memo } from 'react'
+import { useState, type FC, useCallback, memo } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './Navbar.module.scss'
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink'
@@ -33,12 +33,6 @@ export const Navbar: FC<NavbarProps> = memo(({ className }: NavbarProps) => {
     const onOpenModal = useCallback(() => {
         setIsAuthModal(true);
     }, [])
-
-    useEffect(() => {
-        if(authData) {
-            onCloseModal();
-        }
-    })
 
     if(authData) {
         return (

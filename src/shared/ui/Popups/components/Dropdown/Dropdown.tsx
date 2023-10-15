@@ -41,7 +41,7 @@ export const Dropdown: FC<DropdownProps> = (props: DropdownProps) => {
             <Menu.Items className={classNames(cls.menu, {}, menuClasses)}>
                 {items.map(item => {
                     const content = ({ active }: {active: boolean}) => (
-                        <div onClick={item.onClick} className={classNames(cls.item, {[popupCls.active]: active})}>{item.content}</div>
+                        <div key={item.href} onClick={item.onClick} className={classNames(cls.item, {[popupCls.active]: active})}>{item.content}</div>
                     )
                     if(item.href) {
                         return (
