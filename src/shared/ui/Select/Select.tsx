@@ -2,7 +2,7 @@
 /* eslint-disable react/display-name */
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
 import { useMemo, type ChangeEvent } from 'react'
-import { type Mods, classNames } from 'shared/lib/classNames/classNames'
+import { type Mods, classNames } from '@/shared/lib/classNames/classNames'
 import cls from './Select.module.scss'
 
 export interface SelectOption<T extends string> {

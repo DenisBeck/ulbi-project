@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
 import { type PayloadAction, createSlice } from '@reduxjs/toolkit'
 import type { User, UserSchema } from '../types/user'
-import { USER_LOCALSTORAGE_KEY } from 'shared/const/localstorage'
+import { USER_LOCALSTORAGE_KEY } from '@/shared/const/localstorage'
 
 const initialState: UserSchema = {
     _init: false

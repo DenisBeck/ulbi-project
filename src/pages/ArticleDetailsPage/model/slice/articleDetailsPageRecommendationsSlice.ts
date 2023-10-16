@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
 import { createEntityAdapter, createSlice } from '@reduxjs/toolkit'
 import type { ArticleDetailsRecommendationsSchema } from '../types/ArticleDetailsRecommendationsSchema'
-import type { Article } from 'entities/Article'
-import type { StateSchema } from 'app/providers/StoreProvider'
+import type { Article } from '@/entities/Article'
+import type { StateSchema } from '@/app/providers/StoreProvider'
 import { fetchArticleRecommendations } from '../services/fetchArticleRecommendations/fetchArticleRecommendations'
 
 const recommendationsAdapter = createEntityAdapter<Article>({

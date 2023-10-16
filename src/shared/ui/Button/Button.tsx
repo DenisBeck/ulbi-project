@@ -1,5 +1,5 @@
 /* eslint-disable react/display-name */
-import { type Mods, classNames } from 'shared/lib/classNames/classNames'
+import { type Mods, classNames } from '@/shared/lib/classNames/classNames'
 import cls from './Button.module.scss'
 import { type FC, type ButtonHTMLAttributes, memo } from 'react'
 

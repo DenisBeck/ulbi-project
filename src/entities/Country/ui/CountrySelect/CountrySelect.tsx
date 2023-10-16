@@ -1,6 +1,6 @@
 /* eslint-disable react/display-name */
 import { useCallback, type FC, memo } from 'react'
-import { Select } from 'shared/ui/Select/Select';
+import { Select } from '@/shared/ui/Select/Select';
 import { useTranslation } from 'react-i18next';
 import { Country } from '../../model/consts/country';
 

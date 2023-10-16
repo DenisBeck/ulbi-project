@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
 /* eslint-disable react/display-name */
 import { memo, type FC, type ReactNode, type HTMLAttributeAnchorTarget } from 'react'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import cls from './ArticleList.module.scss'
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
-import { Text, TextSize, TitleTag } from 'shared/ui/Text/Text';
+import { Text, TextSize, TitleTag } from '@/shared/ui/Text/Text';
 import { useTranslation } from 'react-i18next';
 import { ArticleView } from '../../model/consts/article';
 import type { Article } from '../../model/types/article';

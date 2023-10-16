@@ -1,9 +1,9 @@
 /* eslint-disable react/display-name */
 import { memo, type FC } from 'react'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import cls from './ArticleTextBlockComponent.module.scss'
 import { type ArticleTextBlock } from '../../model/types/article';
-import { Text, TextTag, TitleTag } from 'shared/ui/Text/Text';
+import { Text, TextTag, TitleTag } from '@/shared/ui/Text/Text';
 
 interface ArticleTextBlockComponentProps {
     className?: string;

@@ -103,6 +103,7 @@
     "stylelint": "^15.10.2",
     "stylelint-config-standard-scss": "^10.0.0",
     "ts-loader": "^9.4.4",
+    "ts-morph": "^20.0.0",
     "ts-node": "^10.9.1",
     "typescript": "^5.1.6",
     "webpack": "^5.69.1",
@@ -112,8 +113,10 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.17",
+    "@react-spring/web": "^9.7.3",
     "@reduxjs/toolkit": "^1.9.5",
     "@types/react-virtualized": "^9.21.23",
+    "@use-gesture/react": "^10.3.0",
     "axios": "^1.4.0",
     "i18next": "^23.4.1",
     "i18next-browser-languagedetector": "^7.1.0",

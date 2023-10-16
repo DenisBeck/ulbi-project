@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
-import { type UserRole, getUserRoles, getUserAuthData } from 'entities/User';
+import { type UserRole, getUserRoles, getUserAuthData } from '@/entities/User';
 import { type PropsWithChildren, type FC, useMemo } from 'react'
 import { useSelector } from 'react-redux';
 import { Navigate, useLocation } from 'react-router-dom';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
 
 export interface RequireAuthProps extends PropsWithChildren {
     children: JSX.Element;

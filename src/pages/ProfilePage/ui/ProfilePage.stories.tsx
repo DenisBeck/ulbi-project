@@ -1,13 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Theme } from 'app/providers/ThemeProvider'
-import { StoreDecorator, ThemeDecorator } from 'shared/config/storybook'
+import { Theme } from '@/app/providers/ThemeProvider'
+import { StoreDecorator, ThemeDecorator } from '@/shared/config/storybook'
 import ProfilePage from './ProfilePage'
-import { Country } from 'entities/Country'
-import { Currency } from 'entities/Currency'
+import { Country } from '@/entities/Country'
+import { Currency } from '@/entities/Currency'
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error
-import AvatarImg from 'shared/assets/tests/storybook.webp'
+import AvatarImg from '@/shared/assets/tests/storybook.webp'
 
 const meta: Meta<typeof ProfilePage> = {
     title: 'pages/ProfilePage',

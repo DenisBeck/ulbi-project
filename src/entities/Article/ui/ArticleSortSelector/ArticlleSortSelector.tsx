@@ -1,11 +1,11 @@
 /* eslint-disable react/display-name */
 import { memo, type FC, useMemo } from 'react'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import cls from './ArticleSortSelector.module.scss'
 import { useTranslation } from 'react-i18next';
-import { Select, type SelectOption } from 'shared/ui/Select/Select';
+import { Select, type SelectOption } from '@/shared/ui/Select/Select';
 import { ArticleSortField } from '../../model/consts/article';
-import type { SortOrder } from 'shared/types';
+import type { SortOrder } from '@/shared/types';
 
 interface ArticleSortSelectorProps {
     className?: string;

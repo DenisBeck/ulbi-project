@@ -3,7 +3,7 @@ import { useCallback, type FC, memo } from 'react'
 // import { Select } from 'shared/ui/Select/Select';
 import { useTranslation } from 'react-i18next';
 import { Currency } from '../../model/consts/currency';
-import { ListBox } from 'shared/ui/Popups';
+import { ListBox } from '@/shared/ui/Popups';
 
 interface CurrencySelectProps {
     className?: string;

@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import type { ThunkConfig } from "app/providers/StoreProvider";
-import { getArticleDetailsData } from "entities/Article";
-import type { Comment } from "entities/Comment";
-import { getUserAuthData } from "entities/User";
-import i18n from "shared/config/i18n/i18n";
+import type { ThunkConfig } from "@/app/providers/StoreProvider";
+import { getArticleDetailsData } from "@/entities/Article";
+import type { Comment } from "@/entities/Comment";
+import { getUserAuthData } from "@/entities/User";
+import i18n from "@/shared/config/i18n/i18n";
 import { fetchCommentsByArticleId } from "../fetchCommentsByArticleId/fetchCommentsByArticleId";
 
 export const addCommentForArticle = createAsyncThunk<Comment, string, ThunkConfig<string>>(

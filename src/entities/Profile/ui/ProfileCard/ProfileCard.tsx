@@ -1,16 +1,16 @@
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
 import { type FC } from 'react'
-import { type Mods, classNames } from 'shared/lib/classNames/classNames'
+import { type Mods, classNames } from '@/shared/lib/classNames/classNames'
 import cls from './ProfileCard.module.scss'
 import { useTranslation } from 'react-i18next';
-import { Text, TextTag, TextTheme, TitleTag } from 'shared/ui/Text/Text';
-import { Input } from 'shared/ui/Input/Input';
+import { Text, TextTag, TextTheme, TitleTag } from '@/shared/ui/Text/Text';
+import { Input } from '@/shared/ui/Input/Input';
 import type { Profile } from '../../model/types/profile';
-import { Loader } from 'shared/ui/Loader/Loader';
-import { Avatar } from 'shared/ui/Avatar/Avatar';
-import { type Currency, CurrencySelect } from 'entities/Currency';
-import { type Country } from "entities/Country/model/consts/country";
-import { CountrySelect } from 'entities/Country';
+import { Loader } from '@/shared/ui/Loader/Loader';
+import { Avatar } from '@/shared/ui/Avatar/Avatar';
+import { type Currency, CurrencySelect } from '@/entities/Currency';
+import { type Country } from "@/entities/Country/model/consts/country";
+import { CountrySelect } from '@/entities/Country';
 
 interface ProfileCardProps {
     className?: string;

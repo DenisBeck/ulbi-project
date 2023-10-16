@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
 /* eslint-disable react/display-name */
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { memo } from 'react';
-import { Card, CardTheme } from 'shared/ui/Card/Card';
-import { Text, TextTag, TitleTag } from 'shared/ui/Text/Text';
+import { Card, CardTheme } from '@/shared/ui/Card/Card';
+import { Text, TextTag, TitleTag } from '@/shared/ui/Text/Text';
 import cls from './NotificationItem.module.scss';
 import type { Notification } from '../../model/types/notification';
 

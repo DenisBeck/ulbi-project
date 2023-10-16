@@ -1,9 +1,9 @@
 /* eslint-disable react/display-name */
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import cls from './Code.module.scss'
 import { Button } from '../Button/Button';
 
-import CopyIcon from 'shared/assets/icons/copy-20-20.svg';
+import CopyIcon from '@/shared/assets/icons/copy-20-20.svg';
 import { Icon } from '../Icon/Icon';
 import { type FC, memo, useCallback } from 'react';
 

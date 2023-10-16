@@ -1,10 +1,10 @@
 import { memo, type FC, useCallback } from 'react'
 import cls from './ArticlesPage.module.scss'
-import { DynamicModuleLoader, type ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { DynamicModuleLoader, type ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { articlesPageReducer } from '../model/slice/articlesPageSlice';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import type { AnyAction } from '@reduxjs/toolkit';
-import { Page } from 'widgets/Page';
+import { Page } from '@/widgets/Page';
 import { fetchNextArticlesPage } from '../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import { ArticlesPageFilters } from './ArticlesPageFilters/ArticlesPageFilters';
 import { ArticleInfiniteList } from './ArticleInfiniteList/ArticleInfiniteList';

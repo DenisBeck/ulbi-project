@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
 import { type PayloadAction, createEntityAdapter, createSlice } from "@reduxjs/toolkit"
-import type { StateSchema } from "app/providers/StoreProvider"
-import type { Comment } from "entities/Comment"
+import type { StateSchema } from "@/app/providers/StoreProvider"
+import type { Comment } from "@/entities/Comment"
 import type { ArticleDetailsCommentsSchema } from "../types/ArticleDetailsCommentsSchema"
 import { fetchCommentsByArticleId } from "../services/fetchCommentsByArticleId/fetchCommentsByArticleId"
 

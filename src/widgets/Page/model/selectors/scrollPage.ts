@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
-import type { StateSchema } from "app/providers/StoreProvider";
+import type { StateSchema } from "@/app/providers/StoreProvider";
 import type { ScrollSchema } from "../types/scrollPageSchema";
 import { createSelector } from "@reduxjs/toolkit";
 

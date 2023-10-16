@@ -1,8 +1,8 @@
 /* eslint-disable react/display-name */
 import { memo, type FC, useMemo, useCallback } from 'react'
-import { classNames } from 'shared/lib/classNames/classNames'
-import { ArticleType } from 'entities/Article';
-import { Tabs, type TabItem } from 'shared/ui/Tabs/Tabs';
+import { classNames } from '@/shared/lib/classNames/classNames'
+import { ArticleType } from '@/entities/Article';
+import { Tabs, type TabItem } from '@/shared/ui/Tabs/Tabs';
 import { useTranslation } from 'react-i18next';
 
 interface ArticleTypeTabsProps {

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
-import { type StateSchema } from "app/providers/StoreProvider";
-import { ArticleSortField, ArticleType, ArticleView } from "entities/Article";
-import type { SortOrder } from "shared/types";
+import { type StateSchema } from "@/app/providers/StoreProvider";
+import { ArticleSortField, ArticleType, ArticleView } from "@/entities/Article";
+import type { SortOrder } from "@/shared/types";
 
 export const getArticlesPageIsLoading = (state: StateSchema): boolean => state.articlesPage?.isLoading || false;
 export const getArticlesPageError = (state: StateSchema): string | undefined => state.articlesPage?.error;

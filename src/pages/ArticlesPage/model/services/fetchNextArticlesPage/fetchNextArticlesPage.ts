@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-invalid-void-type */
 /* eslint-disable @typescript-eslint/no-floating-promises */
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import type { ThunkConfig } from "app/providers/StoreProvider";
+import type { ThunkConfig } from "@/app/providers/StoreProvider";
 import { getArticlesPageHasMore, getArticlesPageNum, getArticlesPageIsLoading } from "../../selectors/articlesPageSelectors";
 import { articlesPageActions } from "../../slice/articlesPageSlice";
 import { fetchArticlesList } from "../fetchArticlesList/fetchArticlesList";
