@@ -81,7 +81,7 @@ export const ListBox: FC<ListBoxProps> = (props: ListBoxProps) => {
                         </HListBox.Option>
                     ))}
                 </HListBox.Options>
-            </HListBox>
+            </HListBox> 
         </HStack>
     )
 }

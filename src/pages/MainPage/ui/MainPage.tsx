@@ -1,9 +1,9 @@
 /* eslint-disable i18next/no-literal-string */
 import { type FC } from 'react'
 import { useTranslation } from 'react-i18next'
-import { ListBox } from '@/shared/ui/Popups/components/ListBox/ListBox';
-import { HStack } from '@/shared/ui/Stack';
 import { Page } from '@/widgets/Page';
+import { StarRating } from '@/shared/ui/StarRating/StarRating';
+import { RatingCard } from '@/entities/Rating';
 
 const MainPage: FC = () => {
     const { t } = useTranslation('main');
@@ -16,24 +16,12 @@ const MainPage: FC = () => {
     return (
         <Page>
             {t('Главная страница')}
-            <div>skdjkgjfdg</div>
-            <HStack>
-                <div>hgjdfgf</div>
-                <ListBox 
-                    defaultValue={t('Выберите значение')}
-                    onChange={(value: string) => {}}
-                    selectedValue={undefined}
-                    items={[
-                        {value: '1', content: '123'},
-                        {value: '2', content: '12dsf3', disabled: true},
-                        {value: '3', content: 'hhjgh'},
-                    ]}
-                />
-            </HStack>
-            <div>skdjkgjfdg</div>
-            <div>skdjkgjfdg</div>
-            <div>skdjkgjfdg</div>
-            <div>skdjkgjfdg</div>
+            <StarRating size={50} />
+            <RatingCard 
+                title={'Как вам статья?'} 
+                feedbackTitle={'Оставьте отзыв о статье'}
+                hasFeedback
+            />
         </Page>
     )
 }

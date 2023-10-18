@@ -39,7 +39,7 @@ export const Dropdown: FC<DropdownProps> = (props: DropdownProps) => {
                 {trigger}
             </Menu.Button>
             <Menu.Items className={classNames(cls.menu, {}, menuClasses)}>
-                {items.map(item => {
+                {items.map((item, index) => {
                     const content = ({ active }: {active: boolean}) => (
                         <div key={item.href} onClick={item.onClick} className={classNames(cls.item, {[popupCls.active]: active})}>{item.content}</div>
                     )
@@ -56,7 +56,7 @@ export const Dropdown: FC<DropdownProps> = (props: DropdownProps) => {
                         )
                     }
                     return (
-                        <Menu.Item key={item.href} as={Fragment} disabled={item.disabled}>
+                        <Menu.Item key={index} as={Fragment} disabled={item.disabled}>
                             {content}
                         </Menu.Item>
                     )

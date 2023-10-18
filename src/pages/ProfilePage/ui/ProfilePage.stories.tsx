@@ -6,7 +6,6 @@ import { Country } from '@/entities/Country'
 import { Currency } from '@/entities/Currency'
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-expect-error
 import AvatarImg from '@/shared/assets/tests/storybook.webp'
 
 const meta: Meta<typeof ProfilePage> = {
