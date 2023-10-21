@@ -20,7 +20,7 @@ export const NotificationItem = memo((props: NotificationItemProps) => {
             theme={CardTheme.OUTLINED}
             className={classNames(cls['notification-item'], {}, [className])}
         >
-            <Text title={{content: item.title, tag: TitleTag.H3}} text={[{content: item.description, tag: TextTag.P}]} />
+            <Text title={{content: item.title ?? '', tag: TitleTag.H3}} text={[{content: item.description, tag: TextTag.P}]} />
         </Card>
     );
 

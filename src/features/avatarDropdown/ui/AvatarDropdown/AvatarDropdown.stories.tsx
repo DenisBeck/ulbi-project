@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { AvatarDropdown } from './AvatarDropdown'
+import { StoreDecorator } from '@/shared/config/storybook'
 
 const meta: Meta<typeof AvatarDropdown> = {
     title: 'features/AvatarDropdown',
@@ -17,4 +18,5 @@ export const Normal: Story = {
     args: {
         
     },
+    decorators: [StoreDecorator({})]
 }

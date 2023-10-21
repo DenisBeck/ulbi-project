@@ -49,7 +49,18 @@ module.exports = {
     // "no-params-reassign": "off",
     "no-undef": "off",
     "strict-boolean-expressions": 'off',
-    "ulbi-plugin/path-checker": "error",
+    "ulbi-plugin/path-checker": ["error", { alias: '@' }],
+    'ulbi-plugin/layer-imports': [
+      'error',
+      {
+          alias: '@',
+          ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
+      },
+    ],
+    "ulbi-plugin/public-api-imports": ["error", { 
+      alias: '@',
+      testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx']
+    }],
   },
   globals: {
     _IS_DEV_: true,

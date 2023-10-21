@@ -12,7 +12,7 @@ const config: StorybookConfig = {
         "@storybook/addon-interactions",
         "storybook-css-modules",
         '@storybook/addon-actions',
-        'storybook-addon-mock',
+        'storybook-addon-mock/register',
     ],
     framework: {
         name: "@storybook/react-webpack5",

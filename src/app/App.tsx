@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
 import { type FC, Suspense, useEffect } from 'react'
-import { useTheme } from './providers/ThemeProvider/lib/useTheme'
+import { useTheme } from '../shared/lib/hooks/useTheme/useTheme'
 import { classNames } from '../shared/lib/classNames/classNames'
 import { AppRouter } from './providers/router'
 import { Navbar } from '@/widgets/Navbar'

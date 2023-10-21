@@ -1587,6 +1587,12 @@
       "articleId": "12",
       "rate": 2,
       "id": "UtsMU78"
+    },
+    {
+      "userId": "1",
+      "articleId": "5",
+      "rate": 3,
+      "id": "_ReFKta"
     }
   ],
   "profile-ratings": [

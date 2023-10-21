@@ -20,13 +20,18 @@ import { getProfileIsLoading } from '../../model/selectors/getProfileIsLoading/g
 import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly';
 import { getProfileValidateErrors } from '../../model/selectors/getProfileValidateErrors/getProfileValidateErrors';
 import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData';
-import { profileActions } from '../../model/slice/profileSlice';
+import { profileActions, profileReducer } from '../../model/slice/profileSlice';
 import { ValidateProfileError } from '../../model/consts/consts';
+import { DynamicModuleLoader, type ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 
 interface EditableProfileCardProps {
     className?: string;
     id?: string;
 }
+
+const reducers: ReducersList = {
+    profile: profileReducer,
+};
 
 export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
     const { className } = props;
@@ -99,34 +104,37 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
     }, [dispatch]);
     
     return (
-        <div className={classNames(cls.EditableProfileCard, {}, [className])}>
-            <EditableProfileCardHeader readonly={readonly} />
-            {errorTranslates() && (
-                <Text 
-                    data-testid="EditableProfileCard.Error"
-                    theme={TextTheme.ERROR} 
-                    text={errorTranslates().map(item => {
-                        return {
-                            content: item,
-                            tag: TextTag.P
-                        }
-                    })} 
+        <DynamicModuleLoader reducers={reducers}>
+            <div className={classNames(cls.EditableProfileCard, {}, [className])}>
+                <EditableProfileCardHeader readonly={readonly} />
+                {errorTranslates() && (
+                    <Text 
+                        data-testid="EditableProfileCard.Error"
+                        theme={TextTheme.ERROR} 
+                        text={errorTranslates().map(item => {
+                            return {
+                                content: item,
+                                tag: TextTag.P
+                            }
+                        })} 
+                    />
+                )}
+                <ProfileCard
+                    data={ formData } 
+                    isLoading={ isLoading }
+                    error={ error }
+                    onChangeFirstname={ onChangeFirstname }
+                    onChangeLastname={ onChangeLastname }
+                    onChangeCity={ onChangeCity }
+                    onChangeAge={ onChangeAge }
+                    onChangeUsername={ onChangeUsername }
+                    onChangeAvatar={ onChangeAvatar }
+                    onChangeCurrency={ onChangeCurrency }
+                    onChangeCountry={ onChangeCountry }
+                    readonly={ readonly }
                 />
-            )}
-            <ProfileCard
-                data={ formData } 
-                isLoading={ isLoading }
-                error={ error }
-                onChangeFirstname={ onChangeFirstname }
-                onChangeLastname={ onChangeLastname }
-                onChangeCity={ onChangeCity }
-                onChangeAge={ onChangeAge }
-                onChangeUsername={ onChangeUsername }
-                onChangeAvatar={ onChangeAvatar }
-                onChangeCurrency={ onChangeCurrency }
-                onChangeCountry={ onChangeCountry }
-                readonly={ readonly }
-            />
-        </div>
+            </div>
+        </DynamicModuleLoader>
+        
     );
 });

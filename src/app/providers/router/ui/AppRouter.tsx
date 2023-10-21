@@ -1,9 +1,10 @@
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
 import { type FC, Suspense, memo, useCallback, type ReactElement } from 'react'
 import { Route, Routes } from 'react-router-dom'
-import { type AppRoutesProps, routeConfig } from '@/shared/config/routeConfig/routeConfig'
+import { routeConfig } from '../config/routeConfig'
 import { PageLoader } from '@/widgets/PageLoader'
 import { RequireAuth } from './RequireAuth'
+import type{ AppRoutesProps } from '@/shared/types/router'
 
 const AppRouter: FC = () => {
     const renderWithWrapper = useCallback((route: AppRoutesProps) => {

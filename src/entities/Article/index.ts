@@ -1,10 +1,20 @@
-export { ArticleDetails } from "./ui/ArticleDetails/ArticleDetails";
-export { ArticleList } from "./ui/ArticleList/ArticleList";
+export {
+    ArticleDetails,
+} from './ui/ArticleDetails/ArticleDetails';
 
-export { type Article,  } from "./model/types/article";
-export { ArticleView, ArticleSortField, ArticleType } from "./model/consts/article"
-export type { ArticleDetailsSchema } from "./model/types/articleDetailsSchema";
-export { getArticleDetailsData } from "./model/selectors/articleDetails";
+export type {
+    Article,
+} from './model/types/article';
 
-export { ArticleViewSelector } from "./ui/ArticleViewSelector/ArticleViewSelector";
-export { ArticleSortSelector } from "./ui/ArticleSortSelector/ArticlleSortSelector";
+export type { ArticleDetailsSchema } from './model/types/articleDetailsSchema';
+
+export { ArticleList } from './ui/ArticleList/ArticleList';
+export { ArticleViewSelector } from './ui/ArticleViewSelector/ArticleViewSelector';
+export { ArticleSortSelector } from './ui/ArticleSortSelector/ArticlleSortSelector';
+export { getArticleDetailsData } from './model/selectors/articleDetails';
+export {
+    ArticleView,
+    ArticleType,
+    ArticleSortField,
+    ArticleBlockType,
+} from './model/consts/article';

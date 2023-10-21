@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Theme } from '@/app/providers/ThemeProvider'
 import { StoreDecorator, ThemeDecorator } from '@/shared/config/storybook'
 import ProfilePage from './ProfilePage'
 import { Country } from '@/entities/Country'
@@ -7,6 +6,7 @@ import { Currency } from '@/entities/Currency'
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 import AvatarImg from '@/shared/assets/tests/storybook.webp'
+import { Theme } from '@/shared/const/theme'
 
 const meta: Meta<typeof ProfilePage> = {
     title: 'pages/ProfilePage',
