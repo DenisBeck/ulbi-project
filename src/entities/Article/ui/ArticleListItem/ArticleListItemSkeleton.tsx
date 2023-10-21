@@ -6,8 +6,8 @@ import cls from './ArticleListItem.module.scss'
 import { ArticleView } from '../../model/consts/article';
 // import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 // import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
-import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
-import { Card } from '@/shared/ui/Card/Card';
+import { Skeleton } from '@/shared/ui/Skeleton';
+import { Card } from '@/shared/ui/Card';
 
 interface ArticleListItemSkeletonProps {
     className?: string;

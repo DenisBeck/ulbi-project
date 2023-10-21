@@ -29,11 +29,13 @@ module.exports = {
     "strict-null-checks", 
     "i18next", 
     "react-hooks",
-    "ulbi-plugin"
+    "ulbi-plugin",
+    "unused-imports"
   ],
   "rules": {
     "react/jsx-indent": [2, 4],
     "indent": [2, 4],
+    "unused-imports/no-unused-imports": "error",
     "react/react-in-jsx-scope": "off",
     "import/prefer-default-export": "off",
     "react/jsx-filename-extension": [2, {

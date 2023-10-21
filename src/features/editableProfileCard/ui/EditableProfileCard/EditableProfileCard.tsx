@@ -11,7 +11,7 @@ import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { TextTheme, TextTag, Text } from '@/shared/ui/Text/Text';
+import { TextTheme, TextTag, Text } from '@/shared/ui/Text';
 import { EditableProfileCardHeader } from '../EditableProfileCardHeader/EditableProfileCardHeader';
 import { ProfileCard } from '@/entities/Profile';
 import { getProfileError } from '../../model/selectors/getProfileError/getProfileError';

@@ -3,7 +3,7 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { type FC, memo } from 'react';
-import { Text, TitleTag } from '@/shared/ui/Text/Text';
+import { Text, TitleTag } from '@/shared/ui/Text';
 import { VStack } from '@/shared/ui/Stack';
 import { ArticleList } from '@/entities/Article';
 import { useArticleRecommendationsList } from '../../api/articleRecommendationsApi';

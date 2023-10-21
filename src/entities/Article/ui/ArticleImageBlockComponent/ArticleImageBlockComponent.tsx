@@ -3,7 +3,7 @@ import { memo, type FC } from 'react'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import cls from './ArticleImageBlockComponent.module.scss'
 import { type ArticleImageBlock } from '../../model/types/article';
-import { Text, TextAlign, TextTag } from '@/shared/ui/Text/Text';
+import { Text, TextAlign, TextTag } from '@/shared/ui/Text';
 
 interface ArticleImageBlockComponentProps {
     className?: string;

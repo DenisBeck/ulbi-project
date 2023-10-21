@@ -12,7 +12,7 @@ import { classNames } from '@/shared/lib/classNames/classNames'
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useTranslation } from 'react-i18next';
-import { Text, TextTag } from '@/shared/ui/Text/Text';
+import { Text, TextTag } from '@/shared/ui/Text';
 
 interface ArticleInfiniteListProps {
     className?: string;

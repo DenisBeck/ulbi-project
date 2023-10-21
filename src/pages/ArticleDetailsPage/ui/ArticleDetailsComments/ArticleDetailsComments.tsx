@@ -12,8 +12,8 @@ import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitial
 import { CommentList } from '@/entities/Comment';
 import { AddCommentForm } from '@/features/AddCommentForm';
 import { t } from 'i18next';
-import { Text, TitleTag } from '@/shared/ui/Text/Text';
-import { Loader } from '@/shared/ui/Loader/Loader';
+import { Text, TitleTag } from '@/shared/ui/Text';
+import { Loader } from '@/shared/ui/Loader';
 
 interface ArticleDetailsCommentsProps {
     className?: string;
