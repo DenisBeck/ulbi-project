@@ -2,7 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { ArticleList } from './ArticleList'
 import { type Article,  } from '../../model/types/article'
 import { ArticleType, ArticleBlockType, ArticleView } from '../../model/consts/article'
-
+// eslint-disable-next-line ulbi-plugin/layer-imports
+import '@/app/styles/index.scss';
 const meta: Meta<typeof ArticleList> = {
     title: 'entities/Article/ArticleList',
     component: ArticleList,

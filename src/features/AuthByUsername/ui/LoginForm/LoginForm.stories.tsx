@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import LoginForm from './LoginForm'
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator'
-
+// eslint-disable-next-line ulbi-plugin/layer-imports
+import '@/app/styles/index.scss';
 const meta: Meta<typeof LoginForm> = {
     title: 'features/LoginForm',
     component: LoginForm,

@@ -2,7 +2,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Dropdown } from './Dropdown'
 import { Button } from '../../../Button/Button'
-
+// eslint-disable-next-line ulbi-plugin/layer-imports
+import '@/app/styles/index.scss';
 const meta: Meta<typeof Dropdown> = {
     title: 'shared/Dropdown',
     component: Dropdown,

@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import ArticleRating from './ArticleRating'
 import { StoreDecorator } from '@/shared/config/storybook'
-
+// eslint-disable-next-line ulbi-plugin/layer-imports
+import '@/app/styles/index.scss';
 const meta: Meta<typeof ArticleRating> = {
     title: 'features/ArticleRating',
     component: ArticleRating,

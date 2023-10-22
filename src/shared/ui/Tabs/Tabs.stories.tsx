@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Tabs } from './Tabs'
 import { action } from '@storybook/addon-actions'
-
+// eslint-disable-next-line ulbi-plugin/layer-imports
+import '@/app/styles/index.scss';
 const meta: Meta<typeof Tabs> = {
     title: 'shared/Tabs',
     component: Tabs,

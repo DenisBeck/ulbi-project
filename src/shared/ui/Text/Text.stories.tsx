@@ -2,7 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Text, TextSize, TextTag, TextTheme, TitleTag } from './Text'
 import { ThemeDecorator } from '@/shared/config/storybook'
 import { Theme } from '@/shared/const/theme'
-
+// eslint-disable-next-line ulbi-plugin/layer-imports
+import '@/app/styles/index.scss';
 const meta: Meta<typeof Text> = {
     title: 'shared/Text',
     component: Text,

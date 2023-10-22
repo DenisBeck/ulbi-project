@@ -2,7 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react'
 import AboutPage from './AboutPage'
 import { ThemeDecorator } from '@/shared/config/storybook'
 import { Theme } from '@/shared/const/theme'
-
+// eslint-disable-next-line ulbi-plugin/layer-imports
+import '@/app/styles/index.scss';
 const meta: Meta<typeof AboutPage> = {
     title: 'pages/AboutPage',
     component: AboutPage,

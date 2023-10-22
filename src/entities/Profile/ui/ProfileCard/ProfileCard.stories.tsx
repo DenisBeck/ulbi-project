@@ -2,7 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { ProfileCard } from './ProfileCard'
 import { Country } from '@/entities/Country'
 import { Currency } from '@/entities/Currency'
-
+// eslint-disable-next-line ulbi-plugin/layer-imports
+import '@/app/styles/index.scss';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 import AvatarImg from '@/shared/assets/tests/storybook.webp'
 

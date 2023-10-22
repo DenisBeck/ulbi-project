@@ -1,7 +1,8 @@
 /* eslint-disable i18next/no-literal-string */
 import type { Meta, StoryObj } from '@storybook/react'
 import { Flex } from './Flex'
-
+// eslint-disable-next-line ulbi-plugin/layer-imports
+import '@/app/styles/index.scss';
 const meta: Meta<typeof Flex> = {
     title: 'shared/Flex',
     component: Flex,

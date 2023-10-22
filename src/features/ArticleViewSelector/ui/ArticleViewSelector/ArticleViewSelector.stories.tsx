@@ -1,10 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { StarRating } from './StarRating'
-// eslint-disable-next-line ulbi-plugin/layer-imports
-import '@/app/styles/index.scss';
-const meta: Meta<typeof StarRating> = {
-    title: 'shared/StarRating',
-    component: StarRating,
+import { ArticleViewSelector } from './ArticleViewSelector'
+
+const meta: Meta<typeof ArticleViewSelector> = {
+    title: 'widget/ArticleViewSelector',
+    component: ArticleViewSelector,
     tags: ['autodocs'],
     // argTypes: {
     //     backgroundColor: { control: 'color' },

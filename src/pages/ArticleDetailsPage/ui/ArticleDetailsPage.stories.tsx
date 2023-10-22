@@ -3,7 +3,8 @@ import ArticleDetailsPage from './ArticleDetailsPage'
 import { type Article } from '@/entities/Article'
 import { ArticleType, ArticleBlockType } from '@/entities/Article'
 import { StoreDecorator } from '@/shared/config/storybook'
-
+// eslint-disable-next-line ulbi-plugin/layer-imports
+import '@/app/styles/index.scss';
 const meta: Meta<typeof ArticleDetailsPage> = {
     title: 'pages/ArticleDetailsPage',
     component: ArticleDetailsPage,

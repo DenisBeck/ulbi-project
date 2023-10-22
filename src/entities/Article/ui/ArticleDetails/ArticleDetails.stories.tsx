@@ -1,4 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
+// eslint-disable-next-line ulbi-plugin/layer-imports
+import '@/app/styles/index.scss';
 import { ArticleDetails } from './ArticleDetails'
 import { StoreDecorator } from '@/shared/config/storybook'
 import { type Article } from '../../model/types/article'

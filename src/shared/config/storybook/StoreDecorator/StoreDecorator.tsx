@@ -6,12 +6,14 @@ import { addCommentFormReducer } from '@/features/AddCommentForm/testing';
 import { loginReducer } from '@/features/AuthByUsername/testing';
 import { profileReducer } from '@/features/editableProfileCard/testing';
 import { type ReducersList } from '../../../lib/components/DynamicModuleLoader/DynamicModuleLoader'
+import { articleDetailsPageReducer } from '@/pages/ArticleDetailsPage/testing';
 
 const defaultAsyncReducers: ReducersList = {
     loginForm: loginReducer,
     profile: profileReducer,
     articleDetails: articleDetailsReducer,
     addCommentForm: addCommentFormReducer,
+    articleDetailsPage: articleDetailsPageReducer
 }
 
 // eslint-disable-next-line react/display-name

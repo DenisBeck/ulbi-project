@@ -1,63 +1,74 @@
-/* eslint-disable @typescript-eslint/restrict-template-expressions */
-import { UserRole } from '@/entities/User'
-import { AboutPage } from '@/pages/AboutPage'
-import { AdminPanelPage } from '@/pages/AdminPanelPage'
-import { ArticleDetailsPage } from '@/pages/ArticleDetailsPage'
-import { ArticleEditPage } from '@/pages/ArticleEditPage'
-import { ArticlesPage } from '@/pages/ArticlesPage'
-import { MainPage } from '@/pages/MainPage'
-import { NotFoundPage } from '@/pages/NotFoundPage'
-import { ProfilePage } from '@/pages/ProfilePage'
+import { MainPage } from '@/pages/MainPage';
+import { AboutPage } from '@/pages/AboutPage';
+import { ProfilePage } from '@/pages/ProfilePage';
+import { ArticlesPage } from '@/pages/ArticlesPage';
+import { ArticleDetailsPage } from '@/pages/ArticleDetailsPage';
+import { ArticleEditPage } from '@/pages/ArticleEditPage';
+import { AdminPanelPage } from '@/pages/AdminPanelPage';
+import { UserRole } from '@/entities/User';
 import { ForbiddenPage } from '@/pages/ForbiddenPage';
-import { AppRoutes, RoutePath } from '@/shared/const/router'
-import type { AppRoutesProps } from '@/shared/types/router'
+import { NotFoundPage } from '@/pages/NotFoundPage';
+import {
+    AppRoutes,
+    getRouteAbout,
+    getRouteAdmin,
+    getRouteArticleCreate,
+    getRouteArticleDetails,
+    getRouteArticleEdit,
+    getRouteForbidden,
+    getRouteArticles,
+    getRouteMain,
+    getRouteProfile,
+} from '@/shared/const/router';
+import type { AppRoutesProps } from '@/shared/types/router';
 
 export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
     [AppRoutes.MAIN]: {
-        path: RoutePath.main,
-        element: <MainPage />
+        path: getRouteMain(),
+        element: <MainPage />,
     },
     [AppRoutes.ABOUT]: {
-        path: RoutePath.about,
-        element: <AboutPage />
-    }, 
+        path: getRouteAbout(),
+        element: <AboutPage />,
+    },
     [AppRoutes.PROFILE]: {
-        path: `${RoutePath.profile}:id`,
+        path: getRouteProfile(':id'),
         element: <ProfilePage />,
         authOnly: true,
     },
     [AppRoutes.ARTICLES]: {
-        path: RoutePath.articles,
+        path: getRouteArticles(),
         element: <ArticlesPage />,
         authOnly: true,
     },
     [AppRoutes.ARTICLE_DETAILS]: {
-        path: `${RoutePath.article_details}:id`,
+        path: getRouteArticleDetails(':id'),
         element: <ArticleDetailsPage />,
         authOnly: true,
     },
     [AppRoutes.ARTICLE_CREATE]: {
-        path: RoutePath.article_create,
+        path: getRouteArticleCreate(),
         element: <ArticleEditPage />,
-        authOnly: true
+        authOnly: true,
     },
     [AppRoutes.ARTICLE_EDIT]: {
-        path: RoutePath.article_edit,
+        path: getRouteArticleEdit(':id'),
         element: <ArticleEditPage />,
-        authOnly: true
+        authOnly: true,
     },
     [AppRoutes.ADMIN_PANEL]: {
-        path: RoutePath.admin_panel,
+        path: getRouteAdmin(),
         element: <AdminPanelPage />,
         authOnly: true,
-        roles: [UserRole.ADMIN, UserRole.MANAGER]
+        roles: [UserRole.MANAGER, UserRole.ADMIN],
     },
     [AppRoutes.FORBIDDEN]: {
-        path: `${RoutePath.forbidden}`,
+        path: getRouteForbidden(),
         element: <ForbiddenPage />,
     },
+    // last
     [AppRoutes.NOT_FOUND]: {
-        path: RoutePath.not_found,
-        element: <NotFoundPage />
+        path: '*',
+        element: <NotFoundPage />,
     },
-}
+};

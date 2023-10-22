@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
 import { type UserRole, getUserRoles, getUserAuthData } from '@/entities/User';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteForbidden, getRouteMain } from '@/shared/const/router';
 import { type PropsWithChildren, type FC, useMemo } from 'react'
 import { useSelector } from 'react-redux';
 import { Navigate, useLocation } from 'react-router-dom';
@@ -27,11 +27,11 @@ export const RequireAuth: FC<RequireAuthProps> = ({ children, roles }: RequireAu
     }, [roles, userRoles]);
 
     if (!auth) {
-        return <Navigate to={RoutePath.main} state={{ from: location }} replace />;
+        return <Navigate to={getRouteMain()} state={{ from: location }} replace />;
     }
 
     if (!hasRequiredRoles) {
-        return <Navigate to={RoutePath.forbidden} state={{ from: location }} replace />;
+        return <Navigate to={getRouteForbidden()} state={{ from: location }} replace />;
     }
 
     return children

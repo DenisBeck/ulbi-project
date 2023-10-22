@@ -15,7 +15,7 @@ import { Text, TextAlign, TextTheme, TitleTag } from '@/shared/ui/Text'
 import { HStack } from '@/shared/ui/Stack'
 import { NotificationButton } from '@/features/notificationButton'
 import { AvatarDropdown } from '@/features/avatarDropdown'
-import { RoutePath } from '@/shared/const/router'
+import { getRouteAbout, getRouteArticleCreate, getRouteMain } from '@/shared/const/router'
 
 interface NavbarProps {
   className?: string;
@@ -44,9 +44,9 @@ export const Navbar: FC<NavbarProps> = memo(({ className }: NavbarProps) => {
                     align={TextAlign.CENTER} 
                 />
                 <div className={cls.links}>
-                    <AppLink theme={ AppLinkTheme.SECONDARY } to={ RoutePath.article_create} className={cls['create-btn']} >{t('Создать статью')}</AppLink>
-                    <AppLink theme={ AppLinkTheme.SECONDARY } to={ RoutePath.main} className={cls['main-link']} >{t('Главная')}</AppLink>
-                    <AppLink theme={ AppLinkTheme.SECONDARY } to={ RoutePath.about} >{t('О сайте')}</AppLink>
+                    <AppLink theme={ AppLinkTheme.SECONDARY } to={ getRouteArticleCreate() } className={cls['create-btn']} >{t('Создать статью')}</AppLink>
+                    <AppLink theme={ AppLinkTheme.SECONDARY } to={ getRouteMain() } className={cls['main-link']} >{t('Главная')}</AppLink>
+                    <AppLink theme={ AppLinkTheme.SECONDARY } to={ getRouteAbout() } >{t('О сайте')}</AppLink>
                 </div>
                 <HStack gap='16' className={cls.actions}>
                     <NotificationButton />
@@ -62,8 +62,8 @@ export const Navbar: FC<NavbarProps> = memo(({ className }: NavbarProps) => {
     return (
         <header className={classNames(cls.navbar, {}, [className])}>
             <div className={cls.links}>
-                <AppLink theme={ AppLinkTheme.SECONDARY } to={ RoutePath.main} className={cls['main-link']} >{t('Главная')}</AppLink>
-                <AppLink theme={ AppLinkTheme.SECONDARY } to={ RoutePath.about} >{t('О сайте')}</AppLink>
+                <AppLink theme={ AppLinkTheme.SECONDARY } to={ getRouteMain() } className={cls['main-link']} >{t('Главная')}</AppLink>
+                <AppLink theme={ AppLinkTheme.SECONDARY } to={ getRouteAbout() } >{t('О сайте')}</AppLink>
             </div>
             <div className={cls.auth}>
                 <Button 

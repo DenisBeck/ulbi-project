@@ -2,7 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Button, ButtonSize, ButtonTheme } from './Button';
 import { ThemeDecorator } from '@/shared/config/storybook';
 import { Theme } from '@/shared/const/theme';
-
+// eslint-disable-next-line ulbi-plugin/layer-imports
+import '@/app/styles/index.scss';
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta: Meta<typeof Button> = {
     title: 'shared/Button',

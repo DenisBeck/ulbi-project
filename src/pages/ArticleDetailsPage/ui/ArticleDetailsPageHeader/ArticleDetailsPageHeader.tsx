@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { getArticleDetailsData } from '@/entities/Article';
 import { getCanEditArticle } from '../../model/selectors/article';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteArticleDetails, getRouteArticles } from '@/shared/const/router';
 
 interface ArticleDetailsPageHeaderProps {
     className?: string;
@@ -21,16 +21,18 @@ export const ArticleDetailsPageHeader: FC<ArticleDetailsPageHeaderProps> = memo(
     const navigate = useNavigate();
     const article = useSelector(getArticleDetailsData);
 
+
     const canEdit = useSelector(getCanEditArticle);
 
     const onEdit = useCallback(() => {
+        if(!article?.id) return null;
         // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-        navigate(`${RoutePath.article_details}${article?.id}/edit`);
+        navigate(`${getRouteArticleDetails(article?.id)}/edit`);
     }, [navigate, article]);
 
 
     const onBackToList = useCallback(() => {
-        navigate(RoutePath.articles)
+        navigate(getRouteArticles())
     }, [navigate])
 
     return (

@@ -16,7 +16,7 @@ import { useTranslation } from 'react-i18next';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import { AppLink } from '@/shared/ui/AppLink';
 import { ArticleView, ArticleBlockType } from '../../model/consts/article';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteArticleDetails } from '@/shared/const/router';
 
 interface ArticleListItemProps {
     className?: string;
@@ -77,7 +77,7 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo((props: ArticleLis
                     <ArticleTextBlockComponent className={cls['text-block']} block={textBlock} />
                 )}
                 <div className={cls.footer}>
-                    <AppLink target={target} to={RoutePath.article_details + article.id}>
+                    <AppLink target={target} to={getRouteArticleDetails(article.id)}>
                         <Button theme={ButtonTheme.OUTLINE}>
                             {t('Читать далее')}...
                         </Button>
@@ -90,7 +90,7 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo((props: ArticleLis
     }
 
     return (
-        <AppLink target={target} to={RoutePath.article_details + article.id}>
+        <AppLink target={target} to={getRouteArticleDetails(article.id)}>
             <Card 
             // {...bindHover} 
                 className={classNames(

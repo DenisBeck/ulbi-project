@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { CommentList } from './CommentList'
-
+// eslint-disable-next-line ulbi-plugin/layer-imports
+import '@/app/styles/index.scss';
 const meta: Meta<typeof CommentList> = {
     title: 'entities/Comment/CommentList',
     component: CommentList,

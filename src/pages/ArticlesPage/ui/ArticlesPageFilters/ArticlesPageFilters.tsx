@@ -2,7 +2,7 @@
 import { memo, type FC, useCallback } from 'react'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import cls from './ArticlesPageFilters.module.scss'
-import { type ArticleView, ArticleViewSelector, ArticleSortSelector, type ArticleSortField, type ArticleType } from '@/entities/Article';
+import type { ArticleView, ArticleSortField, ArticleType } from '@/entities/Article';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { articlesPageActions } from '../../model/slice/articlesPageSlice';
 import { getArticlesPageOrder, getArticlesPageSearch, getArticlesPageSort, getArticlesPageType, getArticlesPageView } from '../../model/selectors/articlesPageSelectors';
@@ -15,6 +15,8 @@ import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchA
 import type { AnyAction } from '@reduxjs/toolkit';
 import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';
 import { ArticleTypeTabs } from '@/features/ArticleTypeTabs';
+import { ArticleSortSelector } from '@/features/ArticleSortSelector';
+import { ArticleViewSelector } from '@/features/ArticleViewSelector';
 
 interface ArticlePageFiltersProps {
     className?: string;
