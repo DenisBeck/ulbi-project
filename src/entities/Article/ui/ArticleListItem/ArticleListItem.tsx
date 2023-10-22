@@ -17,6 +17,8 @@ import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleT
 import { AppLink } from '@/shared/ui/AppLink';
 import { ArticleView, ArticleBlockType } from '../../model/consts/article';
 import { getRouteArticleDetails } from '@/shared/const/router';
+import { AppImage } from '@/shared/ui/AppImage';
+import { Skeleton } from '@/shared/ui/Skeleton';
 
 interface ArticleListItemProps {
     className?: string;
@@ -72,7 +74,12 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo((props: ArticleLis
                 </div>
                 <Text className={cls['text-wrapper']} title={{tag: TitleTag.H2, content: article.title, className: cls.title}} />
                 {types}
-                <img src={article.img} className={cls.img} alt={article.title} />
+                <AppImage 
+                    fallback={<Skeleton width={'100%'} height={250} />}
+                    src={article.img} 
+                    className={cls.img} 
+                    alt={article.title} 
+                />
                 {textBlock && (
                     <ArticleTextBlockComponent className={cls['text-block']} block={textBlock} />
                 )}
@@ -99,7 +106,12 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo((props: ArticleLis
                     [className, cls[view.toLowerCase()], cls['article-card']]
                 )}>
                 <div className={cls['image-wrapper']}>
-                    <img src={article.img} className={cls.img} alt={article.title} />
+                    <AppImage 
+                        fallback={<Skeleton width={250} height={250} />}
+                        src={article.img} 
+                        className={cls.img} 
+                        alt={article.title} 
+                    />
                     <Text className={cls.date} text={[{
                         tag: TextTag.SPAN,
                         content: article.createdAt

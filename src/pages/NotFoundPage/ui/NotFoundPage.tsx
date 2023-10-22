@@ -11,7 +11,7 @@ interface NotFoundPageProps {
 export const NotFoundPage: FC<NotFoundPageProps> = ({className}: NotFoundPageProps) => {
     const { t } = useTranslation('notFound');
     return (
-        <Page className={classNames(cls['not-found-page'], {}, [className])}>
+        <Page data-testid="NotFoundPage" className={classNames(cls['not-found-page'], {}, [className])}>
             {t('Страница не найдена')}
         </Page>
     );

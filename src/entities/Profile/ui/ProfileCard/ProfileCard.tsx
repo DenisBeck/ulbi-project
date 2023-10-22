@@ -69,13 +69,13 @@ export const ProfileCard: FC<ProfileCardProps> = (props: ProfileCardProps) => {
     const mods: Mods = {
         [cls.editing]: !readonly,
     }
-    
+
     return (
         <div className={classNames(cls['profile-card'], mods, [className])}>
             <div className={ cls.data }>
                 {data?.avatar && (
                     <div className={cls['avatar-wrapper']}>
-                        <Avatar src={ data?.avatar } />
+                        <Avatar fallbackInverted size={100} src={ data?.avatar } />
                     </div>
                 )}
                 <Input 

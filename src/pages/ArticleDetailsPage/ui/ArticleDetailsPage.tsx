@@ -27,7 +27,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = ({className}: ArticleDet
     
     if (!id) {
         return (
-            <Page className={classNames(cls['article-details'], {}, [className])}>
+            <Page data-testid='ArticleDetailsPage' className={classNames(cls['article-details'], {}, [className])}>
                 {t('Статья не найдена')}
             </Page>
         );

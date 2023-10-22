@@ -14,7 +14,7 @@ const MainPage: FC = () => {
     // }
 
     return (
-        <Page>
+        <Page data-testid='MainPage'>
             {t('Главная страница')}
             <StarRating size={50} />
             <RatingCard 

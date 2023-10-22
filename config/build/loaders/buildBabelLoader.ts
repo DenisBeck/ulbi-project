@@ -4,12 +4,14 @@ import type { BuildBabelLoaderProps } from '../types/config'
 import babelRemovePropsPlugin from '../../babel/babelRemovePropsPlugin'
 
 export function buildBabelLoader({isDev, isTsx}: BuildBabelLoaderProps): webpack.RuleSetRule {
+    const isProd = !isDev
     return {
         test: isTsx ? /\.(js|jsx|tsx)$/ : /\.(js|js|ts)$/,
         exclude: /node_modules/,
         use: {
             loader: 'babel-loader',
             options: {
+                cacheDirectory: true,
                 presets: ['@babel/preset-env'],
                 plugins: [
                     [
@@ -24,7 +26,7 @@ export function buildBabelLoader({isDev, isTsx}: BuildBabelLoaderProps): webpack
                         { isTsx }
                     ],
                     "@babel/plugin-transform-runtime",
-                    isTsx && [
+                    isTsx && isProd && [
                         babelRemovePropsPlugin,
                         {
                             props: ['data-testid']

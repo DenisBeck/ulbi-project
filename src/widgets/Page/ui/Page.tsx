@@ -12,14 +12,18 @@ import { useSelector } from 'react-redux';
 import { getScrollPositionByPath } from '../model/selectors/scrollPage';
 import type { StateSchema } from '@/app/providers/StoreProvider';
 import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle';
+import type { TestProps } from '@/shared/types/tests';
 
-interface PageProps {
+interface PageProps extends TestProps {
     className?: string;
     children: ReactNode;
     onScrollEnd?: () => void;
 }
 
-export const Page: FC<PageProps> = memo(({className, children, onScrollEnd}: PageProps) => {
+export const PAGE_ID = 'PAGE_ID';
+
+export const Page: FC<PageProps> = memo((props: PageProps) => {
+    const { className, children, onScrollEnd } = props;
     const wrapperRef = useRef() as MutableRefObject<HTMLDivElement>;
     const triggerRef = useRef() as MutableRefObject<HTMLDivElement>;
     const dispatch = useAppDispatch();
@@ -48,6 +52,8 @@ export const Page: FC<PageProps> = memo(({className, children, onScrollEnd}: Pag
             ref={wrapperRef} 
             className={classNames(cls.page, {}, [className])}
             onScroll={onScroll}
+            id={PAGE_ID}
+            data-testid={props["data-testid"] ?? 'Page'}
         >
             {children}
             {onScrollEnd ? <div className={cls.trigger} ref={triggerRef} /> : null}

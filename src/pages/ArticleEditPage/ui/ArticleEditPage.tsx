@@ -5,6 +5,7 @@ import { classNames } from '@/shared/lib/classNames/classNames'
 import cls from './ArticleEditPage.module.scss'
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
+import { Page } from '@/widgets/Page';
 
 interface ArticleEditPageProps {
     className?: string;
@@ -18,9 +19,9 @@ const ArticleEditPage: FC<ArticleEditPageProps> = memo((props: ArticleEditPagePr
     
     return (
         // eslint-disable-next-line i18next/no-literal-string
-        <div className={classNames(cls['article-edit-page'], {}, [className])}>
+        <Page data-testid='ArticleEditPage' className={classNames(cls['article-edit-page'], {}, [className])}>
             {isEdit && (Boolean(id)) ? t('Редактирование статьи с ID ') + (id as string) : t('Создание новой статьи')}
-        </div>
+        </Page>
     );
 });
 
