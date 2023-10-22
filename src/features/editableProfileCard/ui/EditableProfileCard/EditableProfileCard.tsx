@@ -1,8 +1,6 @@
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
 /* eslint-disable react/display-name */
-import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import cls from './EditableProfileCard.module.scss';
 import { memo, useCallback } from 'react';
 import type { AnyAction } from '@reduxjs/toolkit';
 import type { Country } from '@/entities/Country';
@@ -105,7 +103,7 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
     
     return (
         <DynamicModuleLoader reducers={reducers}>
-            <div className={classNames(cls.EditableProfileCard, {}, [className])}>
+            <div className={className}>
                 <EditableProfileCardHeader readonly={readonly} />
                 {errorTranslates() && (
                     <Text 
