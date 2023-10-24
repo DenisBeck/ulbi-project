@@ -23,6 +23,7 @@ import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/Articl
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { ArticleBlockType } from '../../model/consts/article';
+import { VStack } from '@/shared/ui/Stack';
 
 interface ArticleDetailsProps {
     className?: string;
@@ -89,35 +90,36 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo(({className, id}: Ar
                         className={cls.avatar}
                     />
                 </div>
-                <Text 
-                    size={TextSize.M}
-                    className={cls.title}
-                    title={{
-                        content: article?.title ?? '',
-                        tag: TitleTag.H2
-                    }}
-                    text={[{
-                        content: article?.subtitle as string,
-                        tag: TextTag.P
-                    }]}
-                />
-                <div className={cls['articleinfo-wrapper']}>
-                    <div className={cls.articleinfo}>
-                        <Icon Svg={EyeIcon} className={cls.icon} />
-                        <Text text={[{
-                            content: String(article?.views),
-                            tag: TextTag.SPAN
-                        }]} />
+                <VStack gap="4" max data-testid="ArticleDetails.Info">
+                    <Text 
+                        size={TextSize.M}
+                        className={cls.title}
+                        title={{
+                            content: article?.title ?? '',
+                            tag: TitleTag.H2
+                        }}
+                        text={[{
+                            content: article?.subtitle as string,
+                            tag: TextTag.P
+                        }]}
+                    />
+                    <div className={cls['articleinfo-wrapper']}>
+                        <div className={cls.articleinfo}>
+                            <Icon Svg={EyeIcon} className={cls.icon} />
+                            <Text text={[{
+                                content: String(article?.views),
+                                tag: TextTag.SPAN
+                            }]} />
+                        </div>
+                        <div className={cls.articleinfo}>
+                            <Icon Svg={CalendarIcon} className={cls.icon} />
+                            <Text text={[{
+                                content: article?.createdAt as string,
+                                tag: TextTag.SPAN
+                            }]} />
+                        </div>
                     </div>
-                    <div className={cls.articleinfo}>
-                        <Icon Svg={CalendarIcon} className={cls.icon} />
-                        <Text text={[{
-                            content: article?.createdAt as string,
-                            tag: TextTag.SPAN
-                        }]} />
-                    </div>
-                </div>
-                
+                </VStack>
                 {article?.blocks?.map(renderBlock)}
             </>
         )

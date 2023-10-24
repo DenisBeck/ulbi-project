@@ -21,7 +21,7 @@ export const ArticleRecommendationsList: FC<ArticleRecommendationsListProps> = m
     }
 
     return (
-        <VStack gap='8' className={classNames('', {}, [className])}>
+        <VStack data-testid="ArticleRecommendationsList" gap='8' className={classNames('', {}, [className])}>
             <Text title={{content: t('Рекомендуем'), tag: TitleTag.H2}} />
             <ArticleList 
                 articles={articles} 

@@ -35,7 +35,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = ({className}: ArticleDet
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-            <Page className={classNames(cls['article-details'], {}, [className])}>
+            <Page data-testid="ArticleDetailsPage" className={classNames(cls['article-details'], {}, [className])}>
                 <ArticleDetailsPageHeader />
                 <ArticleDetails id={id} className={cls['article-content']} />
                 <ArticleRating articleId={id} />

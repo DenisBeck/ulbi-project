@@ -60,6 +60,7 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo((props: ArticleLis
         return (
             <Card 
                 // {...bindHover} 
+                data-testid="ArticleListItem"
                 className={classNames(
                     cls['article-list-item'], 
                     {}, 
@@ -99,7 +100,8 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo((props: ArticleLis
     return (
         <AppLink target={target} to={getRouteArticleDetails(article.id)}>
             <Card 
-            // {...bindHover} 
+                // {...bindHover} 
+                data-testid="ArticleListItem"
                 className={classNames(
                     cls['article-list-item'], 
                     {}, 

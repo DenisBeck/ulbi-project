@@ -46,16 +46,18 @@ const AddCommentForm: FC<AddCommentFormProps> = memo((props: AddCommentFormProps
     return (
         // eslint-disable-next-line i18next/no-literal-string
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-            <div className={classNames(cls['add-comment-form'], {}, [className])}>
+            <div data-testid="AddCommentForm" className={classNames(cls['add-comment-form'], {}, [className])}>
                 <Input 
                     placeholder={t('Введите текст комментария')}
                     value={text}
                     onChange={onCommentTextChange}
                     className={cls['add-comment-input']}
+                    data-testid='AddCommentForm.Input'
                 />
                 <Button 
                     theme={ButtonTheme.OUTLINE}
                     onClick={onSendHandler}
+                    data-testid='AddCommentForm.Button'
                 >
                     {t('Отправить')}
                 </Button>
