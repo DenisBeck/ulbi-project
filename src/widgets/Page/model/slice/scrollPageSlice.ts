@@ -1,20 +1,23 @@
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
-import { type PayloadAction, createSlice } from '@reduxjs/toolkit'
-import type { ScrollPageSchema } from '../types/scrollPageSchema'
+import { type PayloadAction, createSlice } from '@reduxjs/toolkit';
+import type { ScrollPageSchema } from '../types/scrollPageSchema';
 
 const initialState: ScrollPageSchema = {
-    scroll: {}
-}
+    scroll: {},
+};
 
 export const scrollPageSlice = createSlice({
     name: 'scrollPage',
     initialState,
     reducers: {
-        setScrollPosition: (state, { payload }: PayloadAction<{ path: string, position: number }>) => {
+        setScrollPosition: (
+            state,
+            { payload }: PayloadAction<{ path: string; position: number }>,
+        ) => {
             state.scroll[payload.path] = payload.position;
-        }
-    }
-})
+        },
+    },
+});
 
-export const { actions: scrollPageActions } = scrollPageSlice
-export const { reducer: scrollPageReducer } = scrollPageSlice
+export const { actions: scrollPageActions } = scrollPageSlice;
+export const { reducer: scrollPageReducer } = scrollPageSlice;

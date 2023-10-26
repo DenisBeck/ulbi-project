@@ -1,5 +1,10 @@
-import { RouterDecorator, StyleDecorator, SuspenseDecorator, ThemeDecorator, } from "../../src/shared/config/storybook";
-import { Theme } from '../../src/shared/const/theme'
+import {
+    RouterDecorator,
+    StyleDecorator,
+    SuspenseDecorator,
+    ThemeDecorator,
+} from '../../src/shared/config/storybook';
+import { Theme } from '../../src/shared/const/theme';
 
 export const parameters = {
     actions: { argTypesRegex: '^on[A-Z].*' },
@@ -30,4 +35,3 @@ export default {
         // StoreDecorator
     ],
 };
-

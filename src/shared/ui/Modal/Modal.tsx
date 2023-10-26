@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
-import { type ReactNode, type FC } from 'react'
-import { type Mods, classNames } from '@/shared/lib/classNames/classNames'
-import cls from './Modal.module.scss'
+import { type ReactNode, type FC } from 'react';
+import { type Mods, classNames } from '@/shared/lib/classNames/classNames';
+import cls from './Modal.module.scss';
 import { Portal } from '../Portal/Portal';
 import { Overlay } from '../Overlay/Overlay';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
@@ -18,40 +18,34 @@ interface ModalProps {
 const ANIMATION_DELAY = 300;
 
 export const Modal: FC<ModalProps> = (props: ModalProps) => {
-    const {
-        className,
-        children,
-        isOpen,
-        onClose,
-        lazy
-    } = props;
+    const { className, children, isOpen, onClose, lazy } = props;
 
     const { theme } = useTheme();
-    const {
-        close,
-        isClosing,
-        isMounted
-    } = useModal({
+    const { close, isClosing, isMounted } = useModal({
         animationDelay: ANIMATION_DELAY,
         onClose,
-        isOpen
+        isOpen,
     });
 
     const mods: Mods = {
         [cls.opened]: isOpen,
         [cls.closing]: isClosing,
-    }
-    if(lazy && !isMounted) {
+    };
+    if (lazy && !isMounted) {
         return null;
     }
 
     return (
         <Portal>
-            <div className={classNames(cls.modal, mods, [className, theme, 'app-modal'])}>
+            <div
+                className={classNames(cls.modal, mods, [
+                    className,
+                    theme,
+                    'app-modal',
+                ])}
+            >
                 <Overlay onClick={close} />
-                <div className={cls.content}>
-                    {children}
-                </div>
+                <div className={cls.content}>{children}</div>
             </div>
         </Portal>
     );

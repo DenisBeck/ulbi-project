@@ -1,26 +1,28 @@
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
 /* eslint-disable @typescript-eslint/restrict-template-expressions */
-import type  { ReduxStoreWithManager, StateSchema, StateSchemaKey } from '@/app/providers/StoreProvider';
+import type {
+    ReduxStoreWithManager,
+    StateSchema,
+    StateSchemaKey,
+} from '@/app/providers/StoreProvider';
 import type { Reducer } from '@reduxjs/toolkit';
-import { type PropsWithChildren, type FC, useEffect } from 'react'
+import { type PropsWithChildren, type FC, useEffect } from 'react';
 import { useDispatch, useStore } from 'react-redux';
 
 export type ReducersList = {
-    [name in StateSchemaKey]?: Reducer<NonNullable<StateSchema[name]>>
-}
+    [name in StateSchemaKey]?: Reducer<NonNullable<StateSchema[name]>>;
+};
 
 interface DynamicModuleLoaderProps extends PropsWithChildren {
     reducers: ReducersList;
     removeAfterUnmount?: boolean;
 }
 
-export const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = (props: DynamicModuleLoaderProps) => {
-    const { 
-        children, 
-        reducers, 
-        removeAfterUnmount 
-    } = props;
-    
+export const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = (
+    props: DynamicModuleLoaderProps,
+) => {
+    const { children, reducers, removeAfterUnmount } = props;
+
     const store = useStore() as ReduxStoreWithManager;
     const dispatch = useDispatch();
 
@@ -31,26 +33,20 @@ export const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = (props: Dynamic
             // Добавляем новый редюсер, только если его нет
             if (!mounted) {
                 store.reducerManager.add(name as StateSchemaKey, reducer);
-                dispatch({ type: `@INIT ${name} reducer` })
+                dispatch({ type: `@INIT ${name} reducer` });
             }
-            
-        })
+        });
 
         return () => {
-            if(removeAfterUnmount) {
+            if (removeAfterUnmount) {
                 Object.entries(reducers).forEach(([name, reducer]) => {
                     store.reducerManager.remove(name as StateSchemaKey);
-                    dispatch({ type: `@DESTROY ${name} reducer` })
-                })
+                    dispatch({ type: `@DESTROY ${name} reducer` });
+                });
             }
-            
-        }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
+        };
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
-    return (
-        <>
-            { children }
-        </>
-    );
+    return <>{children}</>;
 };

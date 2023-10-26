@@ -4,7 +4,14 @@ module.exports = {
     "es2021": true,
     "jest": true
   },
-  "extends": ["eslint:recommended", "standard-with-typescript", "plugin:react/recommended", "prettier", "plugin:i18next/recommended", "plugin:storybook/recommended"],
+  "extends": [
+    "eslint:recommended", 
+    "standard-with-typescript", 
+    "plugin:react/recommended", 
+    "prettier", 
+    "plugin:i18next/recommended", 
+    "plugin:storybook/recommended"
+  ],
   "parser": '@typescript-eslint/parser',
   "overrides": [{
     "env": {
@@ -33,8 +40,8 @@ module.exports = {
     "unused-imports"
   ],
   "rules": {
-    "react/jsx-indent": [2, 4],
-    "indent": [2, 4],
+  //   "react/jsx-indent": [2, 4],
+  //   "indent": [2, 4],
     "unused-imports/no-unused-imports": "error",
     "react/react-in-jsx-scope": "off",
     "import/prefer-default-export": "off",

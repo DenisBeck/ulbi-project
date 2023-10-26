@@ -15,7 +15,7 @@ const meta: Meta<typeof Avatar> = {
     // argTypes: {
     //     backgroundColor: { control: 'color' },
     // },
-}
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;

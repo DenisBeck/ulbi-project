@@ -1,4 +1,4 @@
-import { type ReactNode, type FC } from 'react'
+import { type ReactNode, type FC } from 'react';
 import { createPortal } from 'react-dom';
 
 interface PortalProps {

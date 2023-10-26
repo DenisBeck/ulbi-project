@@ -11,30 +11,26 @@ const meta: Meta<typeof Navbar> = {
     // argTypes: {
     //     backgroundColor: { control: 'color' },
     // },
-}
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Light: Story = {
-    args: {
-        
-    },
-    decorators: [ StoreDecorator({}) ]
+    args: {},
+    decorators: [StoreDecorator({})],
 };
 
 export const Dark: Story = {
-    args: {
-        
-    },
-    decorators: [ ThemeDecorator(Theme.DARK), StoreDecorator({}) ],
+    args: {},
+    decorators: [ThemeDecorator(Theme.DARK), StoreDecorator({})],
 };
 
 export const Auth: Story = {
-    args: {
-        
-    },
-    decorators: [ StoreDecorator({
-        user: {authData: {}}
-    }) ],
+    args: {},
+    decorators: [
+        StoreDecorator({
+            user: { authData: {} },
+        }),
+    ],
 };

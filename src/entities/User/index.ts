@@ -1,9 +1,13 @@
-import { UserRole } from "./model/consts/user";
-import { getUserAuthData } from "./model/selectors/getUserAuthData/getUserAuthData";
-import { getUserInit } from "./model/selectors/getUserInit/getUserInit";
-import { getUserRoles, isUserAdmin, isUserManager } from "./model/selectors/roleSelectors/roleSelectors";
-import { userReducer, userActions } from "./model/slice/userSlice";
-import { type UserSchema, type User } from "./model/types/user";
+import { UserRole } from './model/consts/user';
+import { getUserAuthData } from './model/selectors/getUserAuthData/getUserAuthData';
+import { getUserInit } from './model/selectors/getUserInit/getUserInit';
+import {
+    getUserRoles,
+    isUserAdmin,
+    isUserManager,
+} from './model/selectors/roleSelectors/roleSelectors';
+import { userReducer, userActions } from './model/slice/userSlice';
+import { type UserSchema, type User } from './model/types/user';
 
 export {
     userActions,
@@ -16,4 +20,4 @@ export {
     isUserAdmin,
     isUserManager,
     getUserRoles,
-}
+};

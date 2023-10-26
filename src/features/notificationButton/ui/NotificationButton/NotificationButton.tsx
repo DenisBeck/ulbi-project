@@ -20,14 +20,14 @@ export const NotificationButton = memo((props: NotificationButtonProps) => {
     const [isOpen, setIsOpen] = useState(false);
 
     const onOpenDrawer = useCallback(() => {
-        setIsOpen(true)
-    }, [setIsOpen])
+        setIsOpen(true);
+    }, [setIsOpen]);
 
     const onCloseDrawer = useCallback(() => {
-        setIsOpen(false)
-    }, [setIsOpen])
+        setIsOpen(false);
+    }, [setIsOpen]);
 
-    const clientWidth = useResize(document.documentElement)
+    const clientWidth = useResize(document.documentElement);
 
     const trigger = (
         <Button onClick={onOpenDrawer} theme={ButtonTheme.CLEAR}>
@@ -35,7 +35,7 @@ export const NotificationButton = memo((props: NotificationButtonProps) => {
         </Button>
     );
 
-    if(clientWidth > 767.98) {
+    if (clientWidth > 767.98) {
         return (
             <Popover
                 className={classNames(cls.NotificationButton, {}, [className])}
@@ -44,7 +44,7 @@ export const NotificationButton = memo((props: NotificationButtonProps) => {
             >
                 <NotificationList className={cls.notifications} />
             </Popover>
-        )
+        );
     } else {
         return (
             <>
@@ -52,8 +52,7 @@ export const NotificationButton = memo((props: NotificationButtonProps) => {
                 <Drawer isOpen={isOpen} onClose={onCloseDrawer}>
                     <NotificationList />
                 </Drawer>
-                
             </>
-        )
+        );
     }
 });

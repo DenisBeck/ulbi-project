@@ -1,6 +1,6 @@
 /* eslint-disable i18next/no-literal-string */
-import type { Meta, StoryObj } from '@storybook/react'
-import { Flex } from './Flex'
+import type { Meta, StoryObj } from '@storybook/react';
+import { Flex } from './Flex';
 // eslint-disable-next-line ulbi-plugin/layer-imports
 import '@/app/styles/index.scss';
 const meta: Meta<typeof Flex> = {
@@ -10,10 +10,10 @@ const meta: Meta<typeof Flex> = {
     // argTypes: {
     //     backgroundColor: { control: 'color' },
     // },
-}
+};
 
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
 export const Row: Story = {
     args: {
@@ -26,8 +26,7 @@ export const Row: Story = {
             </>
         ),
     },
-} 
-
+};
 
 export const RowGap4: Story = {
     args: {

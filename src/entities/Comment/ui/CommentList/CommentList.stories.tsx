@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import { CommentList } from './CommentList'
+import type { Meta, StoryObj } from '@storybook/react';
+import { CommentList } from './CommentList';
 // eslint-disable-next-line ulbi-plugin/layer-imports
 import '@/app/styles/index.scss';
 const meta: Meta<typeof CommentList> = {
@@ -9,10 +9,10 @@ const meta: Meta<typeof CommentList> = {
     // argTypes: {
     //     backgroundColor: { control: 'color' },
     // },
-}
+};
 
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
 export const Normal: Story = {
     args: {
@@ -29,11 +29,11 @@ export const Normal: Story = {
             },
         ],
     },
-}
+};
 
 export const Loading: Story = {
     args: {
         comments: [],
         isLoading: true,
-    }
-}
+    },
+};

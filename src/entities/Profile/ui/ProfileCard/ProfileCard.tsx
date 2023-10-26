@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
-import { type FC } from 'react'
-import { type Mods, classNames } from '@/shared/lib/classNames/classNames'
-import cls from './ProfileCard.module.scss'
+import { type FC } from 'react';
+import { type Mods, classNames } from '@/shared/lib/classNames/classNames';
+import cls from './ProfileCard.module.scss';
 import { useTranslation } from 'react-i18next';
 import { Text, TextTag, TextTheme, TitleTag } from '@/shared/ui/Text';
 import { Input } from '@/shared/ui/Input';
@@ -9,7 +9,7 @@ import type { Profile } from '../../model/types/profile';
 import { Loader } from '@/shared/ui/Loader';
 import { Avatar } from '@/shared/ui/Avatar';
 import { type Currency, CurrencySelect } from '@/entities/Currency';
-import { type Country, CountrySelect } from "@/entities/Country";
+import { type Country, CountrySelect } from '@/entities/Country';
 
 interface ProfileCardProps {
     className?: string;
@@ -28,10 +28,10 @@ interface ProfileCardProps {
 }
 
 export const ProfileCard: FC<ProfileCardProps> = (props: ProfileCardProps) => {
-    const { 
-        className, 
-        data, 
-        error, 
+    const {
+        className,
+        data,
+        error,
         isLoading,
         readonly,
         onChangeFirstname,
@@ -42,99 +42,117 @@ export const ProfileCard: FC<ProfileCardProps> = (props: ProfileCardProps) => {
         onChangeAvatar,
         onChangeCurrency,
         onChangeCountry,
-    } = props
+    } = props;
 
     const { t } = useTranslation('profile');
 
-    if(isLoading) {
+    if (isLoading) {
         return (
-            <div className={classNames(cls['profile-card'], {[cls.loading]: true}, [className])}>
+            <div
+                className={classNames(
+                    cls['profile-card'],
+                    { [cls.loading]: true },
+                    [className],
+                )}
+            >
                 <Loader />
             </div>
-        )
+        );
     }
 
-    if(error) {
+    if (error) {
         return (
-            <div className={classNames(cls['profile-card'], {}, [className, cls.error])}>
+            <div
+                className={classNames(cls['profile-card'], {}, [
+                    className,
+                    cls.error,
+                ])}
+            >
                 <Text
                     theme={TextTheme.ERROR}
-                    title={{ content: t('Произошла ошибка при загрузке профиля'), tag: TitleTag.H1 }}
-                    text={[{content: 'error', tag: TextTag.P}]}
+                    title={{
+                        content: t('Произошла ошибка при загрузке профиля'),
+                        tag: TitleTag.H1,
+                    }}
+                    text={[{ content: 'error', tag: TextTag.P }]}
                 />
             </div>
-        )
+        );
     }
 
     const mods: Mods = {
         [cls.editing]: !readonly,
-    }
+    };
 
     return (
         <div className={classNames(cls['profile-card'], mods, [className])}>
-            <div className={ cls.data }>
+            <div className={cls.data}>
                 {data?.avatar && (
                     <div className={cls['avatar-wrapper']}>
-                        <Avatar fallbackInverted size={100} src={ data?.avatar } />
+                        <Avatar
+                            fallbackInverted
+                            size={100}
+                            src={data?.avatar}
+                        />
                     </div>
                 )}
-                <Input 
-                    value={ data?.first }
+                <Input
+                    value={data?.first}
                     placeholder={t('Ваше имя')}
                     className={cls.input}
-                    onChange={ onChangeFirstname }
-                    readonly={ readonly }
+                    onChange={onChangeFirstname}
+                    readonly={readonly}
                     data-testid="ProfileCard.firstname"
                 />
-                <Input 
-                    value={ data?.lastname }
+                <Input
+                    value={data?.lastname}
                     placeholder={t('Ваша фамилия')}
                     className={cls.input}
-                    onChange={ onChangeLastname }
-                    readonly={ readonly }
+                    onChange={onChangeLastname}
+                    readonly={readonly}
                     data-testid="ProfileCard.lastname"
                 />
-                <Input 
-                    value={ data?.age }
+                <Input
+                    value={data?.age}
                     placeholder={t('Ваш возраст')}
                     className={cls.input}
-                    onChange={ onChangeAge }
-                    readonly={ readonly }
+                    onChange={onChangeAge}
+                    readonly={readonly}
                     data-testid="ProfileCard.age"
                 />
-                <Input 
-                    value={ data?.city }
+                <Input
+                    value={data?.city}
                     placeholder={t('Ваш город')}
                     className={cls.input}
-                    onChange={ onChangeCity }
-                    readonly={ readonly }
+                    onChange={onChangeCity}
+                    readonly={readonly}
                     data-testid="ProfileCard.city"
                 />
-                <Input 
-                    value={ data?.username }
+                <Input
+                    value={data?.username}
                     placeholder={t('Ваш ник')}
                     className={cls.input}
-                    onChange={ onChangeUsername }
-                    readonly={ readonly }
+                    onChange={onChangeUsername}
+                    readonly={readonly}
                     data-testid="ProfileCard.username"
                 />
-                <Input 
-                    value={ data?.avatar }
+                <Input
+                    value={data?.avatar}
                     placeholder={t('Ваш аватар')}
                     className={cls.input}
-                    onChange={ onChangeAvatar }
-                    readonly={ readonly }
+                    onChange={onChangeAvatar}
+                    readonly={readonly}
                     data-testid="ProfileCard.avatar"
                 />
-                <CurrencySelect 
-                    value={ data?.currency }
-                    onChange={ onChangeCurrency } 
-                    readonly={ readonly }
+                <CurrencySelect
+                    value={data?.currency}
+                    onChange={onChangeCurrency}
+                    readonly={readonly}
                 />
-                <CountrySelect 
-                    value={ data?.country }
-                    onChange={ onChangeCountry } 
-                    readonly={ readonly }
+                <CountrySelect
+                    value={data?.country}
+                    onChange={onChangeCountry}
+                    readonly={readonly}
                     className={cls.select}
                 />
             </div>

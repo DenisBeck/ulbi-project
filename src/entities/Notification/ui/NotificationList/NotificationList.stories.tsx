@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import { NotificationList } from './NotificationList'
-import { StoreDecorator } from '@/shared/config/storybook'
+import type { Meta, StoryObj } from '@storybook/react';
+import { NotificationList } from './NotificationList';
+import { StoreDecorator } from '@/shared/config/storybook';
 // eslint-disable-next-line ulbi-plugin/layer-imports
 import '@/app/styles/index.scss';
 const meta: Meta<typeof NotificationList> = {
@@ -10,15 +10,13 @@ const meta: Meta<typeof NotificationList> = {
     // argTypes: {
     //     backgroundColor: { control: 'color' },
     // },
-}
+};
 
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
 export const Normal: Story = {
-    args: {
-        
-    },
+    args: {},
     parameters: {
         mockData: [
             {
@@ -29,21 +27,24 @@ export const Normal: Story = {
                     {
                         id: '1',
                         title: 'Уведомление',
-                        description: 'Поставь лайк и оставь комментарий под Ulbi TV',
+                        description:
+                            'Поставь лайк и оставь комментарий под Ulbi TV',
                     },
                     {
                         id: '2',
                         title: 'Уведомление 2',
-                        description: 'Поставь лайк и оставь комментарий под Ulbi TV',
+                        description:
+                            'Поставь лайк и оставь комментарий под Ulbi TV',
                     },
                     {
                         id: '3',
                         title: 'Уведомление 3',
-                        description: 'Поставь лайк и оставь комментарий под Ulbi TV',
+                        description:
+                            'Поставь лайк и оставь комментарий под Ulbi TV',
                     },
                 ],
             },
         ],
     },
-    decorators: [StoreDecorator({})]
-}
+    decorators: [StoreDecorator({})],
+};

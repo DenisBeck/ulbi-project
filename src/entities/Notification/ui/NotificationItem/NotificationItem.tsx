@@ -9,7 +9,7 @@ import type { Notification } from '../../model/types/notification';
 
 interface NotificationItemProps {
     className?: string;
-    item: Notification
+    item: Notification;
 }
 
 export const NotificationItem = memo((props: NotificationItemProps) => {
@@ -20,13 +20,21 @@ export const NotificationItem = memo((props: NotificationItemProps) => {
             theme={CardTheme.OUTLINED}
             className={classNames(cls['notification-item'], {}, [className])}
         >
-            <Text title={{content: item.title ?? '', tag: TitleTag.H3}} text={[{content: item.description, tag: TextTag.P}]} />
+            <Text
+                title={{ content: item.title ?? '', tag: TitleTag.H3 }}
+                text={[{ content: item.description, tag: TextTag.P }]}
+            />
         </Card>
     );
 
     if (item.href) {
         return (
-            <a className={cls.link} target="_blank" href={item.href} rel="noreferrer">
+            <a
+                className={cls.link}
+                target="_blank"
+                href={item.href}
+                rel="noreferrer"
+            >
                 {content}
             </a>
         );

@@ -1,10 +1,14 @@
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
 /* eslint-disable react/display-name */
 import {
-    type ImgHTMLAttributes, memo, type ReactElement, useLayoutEffect, useState,
+    type ImgHTMLAttributes,
+    memo,
+    type ReactElement,
+    useLayoutEffect,
+    useState,
 } from 'react';
 
-interface AppImageProps extends ImgHTMLAttributes<HTMLImageElement>{
+interface AppImageProps extends ImgHTMLAttributes<HTMLImageElement> {
     className?: string;
     fallback?: ReactElement;
     errorFallback?: ReactElement;
@@ -38,11 +42,9 @@ export const AppImage = memo((props: AppImageProps) => {
         return fallback;
     }
 
-    if (hasError && (errorFallback)) {
+    if (hasError && errorFallback) {
         return errorFallback;
     }
 
-    return (
-        <img className={className} src={src} alt={alt} {...otherProps} />
-    );
+    return <img className={className} src={src} alt={alt} {...otherProps} />;
 });

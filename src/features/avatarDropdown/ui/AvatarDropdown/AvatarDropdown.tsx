@@ -8,7 +8,10 @@ import { Avatar } from '@/shared/ui/Avatar';
 import { Dropdown } from '@/shared/ui/Popups';
 import { useDispatch, useSelector } from 'react-redux';
 import {
-    getUserAuthData, isUserAdmin, isUserManager, userActions,
+    getUserAuthData,
+    isUserAdmin,
+    isUserManager,
+    userActions,
 } from '@/entities/User';
 import { getRouteAdmin, getRouteProfile } from '@/shared/const/router';
 
@@ -35,24 +38,30 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
     }
 
     return (
-        <Dropdown 
+        <Dropdown
             className={classNames('', {}, [className])}
             direction={'bottom left'}
             items={[
-                ...(isAdminPanelAvailable ? [{
-                    content: t('Админ панель'),
-                    href: getRouteAdmin(),
-                }] : []),
+                ...(isAdminPanelAvailable
+                    ? [
+                          {
+                              content: t('Админ панель'),
+                              href: getRouteAdmin(),
+                          },
+                      ]
+                    : []),
                 {
                     content: t('Профиль'),
                     href: getRouteProfile(authData.id),
                 },
                 {
                     content: t('Выйти'),
-                    onClick: onLogout
-                }
+                    onClick: onLogout,
+                },
             ]}
-            trigger={<Avatar fallbackInverted size={30} src={authData.avatar} />}
+            trigger={
+                <Avatar fallbackInverted size={30} src={authData.avatar} />
+            }
         />
     );
 });

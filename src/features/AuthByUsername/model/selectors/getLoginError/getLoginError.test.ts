@@ -1,12 +1,12 @@
-import type { StateSchema } from "@/app/providers/StoreProvider";
-import { getLoginError } from "./getLoginError";
+import type { StateSchema } from '@/app/providers/StoreProvider';
+import { getLoginError } from './getLoginError';
 
 describe('getLoginError.test', () => {
     test('should return error', () => {
         const state: DeepPartial<StateSchema> = {
             loginForm: {
-                error: 'error'
-            }
+                error: 'error',
+            },
         };
         // eslint-disable-next-line @typescript-eslint/no-unnecessary-type-assertion
         expect(getLoginError(state as StateSchema)).toEqual('error');

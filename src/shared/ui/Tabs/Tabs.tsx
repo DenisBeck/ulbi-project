@@ -1,13 +1,12 @@
 /* eslint-disable react/display-name */
-import { memo, type FC, type ReactNode, useCallback } from 'react'
-import { classNames } from '@/shared/lib/classNames/classNames'
-import cls from './Tabs.module.scss'
+import { memo, type FC, type ReactNode, useCallback } from 'react';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import cls from './Tabs.module.scss';
 import { Card, CardTheme } from '../Card/Card';
 
 export interface TabItem {
     value: string;
     content: ReactNode;
-
 }
 
 interface TabsProps {
@@ -18,25 +17,27 @@ interface TabsProps {
 }
 
 export const Tabs: FC<TabsProps> = memo((props: TabsProps) => {
-    const {
-        className,
-        tabs,
-        value,
-        onTabClick,
-    } = props;
+    const { className, tabs, value, onTabClick } = props;
 
-    const clickHandle = useCallback((tab: TabItem) => {
-        return () => {
-            onTabClick(tab)
-        }
-    }, [onTabClick])
+    const clickHandle = useCallback(
+        (tab: TabItem) => {
+            return () => {
+                onTabClick(tab);
+            };
+        },
+        [onTabClick],
+    );
 
     return (
         <div className={classNames(cls.tabs, {}, [className])}>
-            {tabs.map(tab => (
-                <Card 
-                    theme={tab.value !== value ? CardTheme.NORMAL : CardTheme.OUTLINED}
-                    className={cls.tab} 
+            {tabs.map((tab) => (
+                <Card
+                    theme={
+                        tab.value !== value
+                            ? CardTheme.NORMAL
+                            : CardTheme.OUTLINED
+                    }
+                    className={cls.tab}
                     key={tab.value}
                     onClick={clickHandle(tab)}
                 >

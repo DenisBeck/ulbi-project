@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import { Select } from './Select'
+import type { Meta, StoryObj } from '@storybook/react';
+import { Select } from './Select';
 // eslint-disable-next-line ulbi-plugin/layer-imports
 import '@/app/styles/index.scss';
 const meta: Meta<typeof Select> = {
@@ -9,10 +9,10 @@ const meta: Meta<typeof Select> = {
     // argTypes: {
     //     backgroundColor: { control: 'color' },
     // },
-}
+};
 
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
     args: {
@@ -20,14 +20,12 @@ export const Primary: Story = {
         options: [
             {
                 value: '123',
-                content: 'Первый пункт'
+                content: 'Первый пункт',
             },
             {
                 value: '1234',
-                content: 'Второй пункт'
-            }
-            
-
-        ]
+                content: 'Второй пункт',
+            },
+        ],
     },
-}
+};

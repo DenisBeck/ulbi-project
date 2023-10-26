@@ -1,11 +1,14 @@
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
-import { memo, type FC } from 'react'
-import { classNames } from '@/shared/lib/classNames/classNames'
-import cls from './ArticleDetailsPage.module.scss'
+import { memo, type FC } from 'react';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import cls from './ArticleDetailsPage.module.scss';
 import { ArticleDetails } from '@/entities/Article';
 import { useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { DynamicModuleLoader, type ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import {
+    DynamicModuleLoader,
+    type ReducersList,
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { Page } from '@/widgets/Page';
 import { articleDetailsPageReducer } from '../model/slice';
 import { ArticleDetailsPageHeader } from './ArticleDetailsPageHeader/ArticleDetailsPageHeader';
@@ -18,16 +21,21 @@ interface ArticleDetailsPageProps {
 }
 
 const reducers: ReducersList = {
-    articleDetailsPage: articleDetailsPageReducer
-}
+    articleDetailsPage: articleDetailsPageReducer,
+};
 
-const ArticleDetailsPage: FC<ArticleDetailsPageProps> = ({className}: ArticleDetailsPageProps) => {
+const ArticleDetailsPage: FC<ArticleDetailsPageProps> = ({
+    className,
+}: ArticleDetailsPageProps) => {
     const { t } = useTranslation('article');
-    const { id } = useParams<{ id: string }>(); 
-    
+    const { id } = useParams<{ id: string }>();
+
     if (!id) {
         return (
-            <Page data-testid='ArticleDetailsPage' className={classNames(cls['article-details'], {}, [className])}>
+            <Page
+                data-testid="ArticleDetailsPage"
+                className={classNames(cls['article-details'], {}, [className])}
+            >
                 {t('Статья не найдена')}
             </Page>
         );
@@ -35,7 +43,10 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = ({className}: ArticleDet
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-            <Page data-testid="ArticleDetailsPage" className={classNames(cls['article-details'], {}, [className])}>
+            <Page
+                data-testid="ArticleDetailsPage"
+                className={classNames(cls['article-details'], {}, [className])}
+            >
                 <ArticleDetailsPageHeader />
                 <ArticleDetails id={id} className={cls['article-content']} />
                 <ArticleRating articleId={id} />
@@ -46,4 +57,4 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = ({className}: ArticleDet
     );
 };
 
-export default memo(ArticleDetailsPage)
+export default memo(ArticleDetailsPage);

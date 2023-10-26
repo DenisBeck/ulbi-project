@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import ArticlesPage from './ArticlesPage'
-import { StoreDecorator } from '@/shared/config/storybook'
+import type { Meta, StoryObj } from '@storybook/react';
+import ArticlesPage from './ArticlesPage';
+import { StoreDecorator } from '@/shared/config/storybook';
 // eslint-disable-next-line ulbi-plugin/layer-imports
 import '@/app/styles/index.scss';
 const meta: Meta<typeof ArticlesPage> = {
@@ -10,14 +10,12 @@ const meta: Meta<typeof ArticlesPage> = {
     // argTypes: {
     //     backgroundColor: { control: 'color' },
     // },
-}
+};
 
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
-    args: {
-        
-    },
-    decorators: [StoreDecorator({})]
-}
+    args: {},
+    decorators: [StoreDecorator({})],
+};

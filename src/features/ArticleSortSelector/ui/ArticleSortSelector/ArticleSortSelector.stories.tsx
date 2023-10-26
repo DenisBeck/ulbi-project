@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import { ArticleSortSelector } from './ArticleSortSelector'
+import type { Meta, StoryObj } from '@storybook/react';
+import { ArticleSortSelector } from './ArticleSortSelector';
 
 const meta: Meta<typeof ArticleSortSelector> = {
     title: 'widget/ArticleSortSelector',
@@ -8,13 +8,11 @@ const meta: Meta<typeof ArticleSortSelector> = {
     // argTypes: {
     //     backgroundColor: { control: 'color' },
     // },
-}
+};
 
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
 export const Light: Story = {
-    args: {
-        
-    },
-}
+    args: {},
+};

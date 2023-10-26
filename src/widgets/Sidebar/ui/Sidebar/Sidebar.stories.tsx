@@ -11,37 +11,35 @@ const meta: Meta<typeof Sidebar> = {
     // argTypes: {
     //     backgroundColor: { control: 'color' },
     // },
-}
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Light: Story = {
-    args: {
-        
-    },
-    decorators: [ StoreDecorator({
-        user: { authData: {} }
-    }) ]
+    args: {},
+    decorators: [
+        StoreDecorator({
+            user: { authData: {} },
+        }),
+    ],
 };
 
 export const Dark: Story = {
-    args: {
-        
-    },
-    decorators: [ 
+    args: {},
+    decorators: [
         ThemeDecorator(Theme.DARK),
         StoreDecorator({
-            user: { authData: {} }
-        })
+            user: { authData: {} },
+        }),
     ],
 };
 
 export const NoAuth: Story = {
-    args: {
-        
-    },
-    decorators: [ StoreDecorator({
-        user: {}
-    }) ]
+    args: {},
+    decorators: [
+        StoreDecorator({
+            user: {},
+        }),
+    ],
 };

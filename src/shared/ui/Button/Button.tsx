@@ -1,30 +1,30 @@
 /* eslint-disable react/display-name */
-import { type Mods, classNames } from '@/shared/lib/classNames/classNames'
-import cls from './Button.module.scss'
-import { type FC, type ButtonHTMLAttributes, memo } from 'react'
+import { type Mods, classNames } from '@/shared/lib/classNames/classNames';
+import cls from './Button.module.scss';
+import { type FC, type ButtonHTMLAttributes, memo } from 'react';
 
 export enum ButtonTheme {
-  CLEAR = 'clear',
-  OUTLINE = 'outline',
-  OUTLINE_RED = 'outline-red',
-  BACKGROUND = 'background',
-  BACKGROUND_INVERTED = 'background-inverted',
-  OUTLINE_INVERTED = 'outline-inverted',
+    CLEAR = 'clear',
+    OUTLINE = 'outline',
+    OUTLINE_RED = 'outline-red',
+    BACKGROUND = 'background',
+    BACKGROUND_INVERTED = 'background-inverted',
+    OUTLINE_INVERTED = 'outline-inverted',
 }
 
 export enum ButtonSize {
     M = 'size-m',
     S = 'size-s',
-    L = 'size-l'
+    L = 'size-l',
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  className?: string;
-  theme?: ButtonTheme;
-  square?: boolean;
-  size?: ButtonSize;
-  disabled?: boolean;
-  fullWidth?: boolean;
+    className?: string;
+    theme?: ButtonTheme;
+    square?: boolean;
+    size?: ButtonSize;
+    disabled?: boolean;
+    fullWidth?: boolean;
 }
 
 export const Button: FC<ButtonProps> = memo((props: ButtonProps) => {
@@ -37,7 +37,7 @@ export const Button: FC<ButtonProps> = memo((props: ButtonProps) => {
         fullWidth,
         size = ButtonSize.S,
         ...otherProps
-    } = props
+    } = props;
 
     const mods: Mods = {
         [cls[theme]]: true,
@@ -45,16 +45,16 @@ export const Button: FC<ButtonProps> = memo((props: ButtonProps) => {
         [cls[size]]: true,
         [cls.disabled]: disabled,
         [cls.fullwidth]: fullWidth,
-    }
+    };
 
     return (
         <button
             type="button"
-            disabled={ disabled }
+            disabled={disabled}
             className={classNames(cls.button, mods, [className])}
             {...otherProps}
         >
             {children}
         </button>
-    )
-})
+    );
+});

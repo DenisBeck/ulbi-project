@@ -9,23 +9,28 @@ interface BugButtonProps {
 }
 
 // Компонент для тестирования
-export const BugButton: FC<BugButtonProps> = ({className}: BugButtonProps) => {
-    const [ error, setError ] = useState(false);
+export const BugButton: FC<BugButtonProps> = ({
+    className,
+}: BugButtonProps) => {
+    const [error, setError] = useState(false);
 
     const throwError: VoidFunction = () => {
         setError(true);
-    }
+    };
 
     const { t } = useTranslation('error');
 
     useEffect(() => {
-        if(error) {
+        if (error) {
             throw new Error();
         }
-    }, [error])
+    }, [error]);
 
     return (
-        <Button onClick={ throwError } className={classNames(cls['bug-button'], {}, [className])}>
+        <Button
+            onClick={throwError}
+            className={classNames(cls['bug-button'], {}, [className])}
+        >
             {t('Вызвать ошибку')}
         </Button>
     );

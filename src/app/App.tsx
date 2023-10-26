@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
-import { type FC, Suspense, useEffect } from 'react'
-import { useTheme } from '../shared/lib/hooks/useTheme/useTheme'
-import { classNames } from '../shared/lib/classNames/classNames'
-import { AppRouter } from './providers/router'
-import { Navbar } from '@/widgets/Navbar'
-import { Sidebar } from '@/widgets/Sidebar'
-import { useDispatch, useSelector } from 'react-redux'
-import { getUserInit, userActions } from '@/entities/User'
+import { type FC, Suspense, useEffect } from 'react';
+import { useTheme } from '../shared/lib/hooks/useTheme/useTheme';
+import { classNames } from '../shared/lib/classNames/classNames';
+import { AppRouter } from './providers/router';
+import { Navbar } from '@/widgets/Navbar';
+import { Sidebar } from '@/widgets/Sidebar';
+import { useDispatch, useSelector } from 'react-redux';
+import { getUserInit, userActions } from '@/entities/User';
 
 const App: FC = () => {
     const { theme } = useTheme();
@@ -14,8 +14,8 @@ const App: FC = () => {
     const init = useSelector(getUserInit);
 
     useEffect(() => {
-        dispatch(userActions.initAuthData())
-    }, [dispatch])
+        dispatch(userActions.initAuthData());
+    }, [dispatch]);
 
     return (
         <div className={classNames('app', {}, [theme])}>
@@ -27,7 +27,7 @@ const App: FC = () => {
                 </div>
             </Suspense>
         </div>
-    )
-}
+    );
+};
 
-export default App
+export default App;

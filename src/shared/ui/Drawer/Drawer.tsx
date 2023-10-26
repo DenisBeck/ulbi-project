@@ -2,7 +2,10 @@
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
 /* eslint-disable react/display-name */
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { AnimationProvider, useAnimationLibs } from '../../lib/components/AnimationProvider';
+import {
+    AnimationProvider,
+    useAnimationLibs,
+} from '../../lib/components/AnimationProvider';
 import { memo, useCallback, type ReactNode, useEffect } from 'react';
 import { Overlay } from '../Overlay/Overlay';
 import cls from './Drawer.module.scss';
@@ -20,12 +23,7 @@ interface DrawerProps {
 const height = window.innerHeight - 100;
 
 export const DrawerContent = memo((props: DrawerProps) => {
-    const {
-        className,
-        children,
-        onClose,
-        isOpen,
-    } = props;
+    const { className, children, onClose, isOpen } = props;
     const { theme } = useTheme();
     const { Spring, Gesture } = useAnimationLibs();
     const [{ y }, api] = Spring.useSpring(() => ({ y: height }));
@@ -70,7 +68,10 @@ export const DrawerContent = memo((props: DrawerProps) => {
             }
         },
         {
-            from: () => [0, y.get()], filterTaps: true, bounds: { top: 0 }, rubberband: true,
+            from: () => [0, y.get()],
+            filterTaps: true,
+            bounds: { top: 0 },
+            rubberband: true,
         },
     );
 
@@ -79,7 +80,7 @@ export const DrawerContent = memo((props: DrawerProps) => {
     //     [cls.closing]: isClosing,
     // }
 
-    if(!isOpen) {
+    if (!isOpen) {
         return null;
     }
 
@@ -87,11 +88,21 @@ export const DrawerContent = memo((props: DrawerProps) => {
 
     return (
         <Portal>
-            <div className={classNames(cls.drawer,{}, [className, theme, 'app-drawer'])}>
+            <div
+                className={classNames(cls.drawer, {}, [
+                    className,
+                    theme,
+                    'app-drawer',
+                ])}
+            >
                 <Overlay onClick={close} />
-                <Spring.a.div 
+                <Spring.a.div
                     className={cls.sheet}
-                    style={{ display, bottom: `calc(-100vh + ${height - 100}px)`, y }}
+                    style={{
+                        display,
+                        bottom: `calc(-100vh + ${height - 100}px)`,
+                        y,
+                    }}
                     {...bind()}
                 >
                     {children}

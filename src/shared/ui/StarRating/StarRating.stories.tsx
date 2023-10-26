@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import { StarRating } from './StarRating'
+import type { Meta, StoryObj } from '@storybook/react';
+import { StarRating } from './StarRating';
 // eslint-disable-next-line ulbi-plugin/layer-imports
 import '@/app/styles/index.scss';
 const meta: Meta<typeof StarRating> = {
@@ -9,13 +9,11 @@ const meta: Meta<typeof StarRating> = {
     // argTypes: {
     //     backgroundColor: { control: 'color' },
     // },
-}
+};
 
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
 export const Light: Story = {
-    args: {
-        
-    },
-}
+    args: {},
+};

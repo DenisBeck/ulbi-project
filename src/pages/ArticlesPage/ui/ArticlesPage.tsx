@@ -1,6 +1,9 @@
-import { memo, type FC, useCallback } from 'react'
-import cls from './ArticlesPage.module.scss'
-import { DynamicModuleLoader, type ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { memo, type FC, useCallback } from 'react';
+import cls from './ArticlesPage.module.scss';
+import {
+    DynamicModuleLoader,
+    type ReducersList,
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { articlesPageReducer } from '../model/slice/articlesPageSlice';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import type { AnyAction } from '@reduxjs/toolkit';
@@ -14,22 +17,21 @@ interface ArticlesPageProps {
 }
 
 const reducers: ReducersList = {
-    articlesPage: articlesPageReducer
-}
+    articlesPage: articlesPageReducer,
+};
 
-const ArticlesPage: FC<ArticlesPageProps> = ({className}: ArticlesPageProps) => {
-    
+const ArticlesPage: FC<ArticlesPageProps> = ({
+    className,
+}: ArticlesPageProps) => {
     const dispatch = useAppDispatch();
-    
-    const onLoadNextPart = useCallback(() => {
-        dispatch(fetchNextArticlesPage() as unknown as AnyAction)
-        
-    }, [dispatch])
 
+    const onLoadNextPart = useCallback(() => {
+        dispatch(fetchNextArticlesPage() as unknown as AnyAction);
+    }, [dispatch]);
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
-            <Page data-testid='ArticlesPage' onScrollEnd={onLoadNextPart}>
+            <Page data-testid="ArticlesPage" onScrollEnd={onLoadNextPart}>
                 <ArticlesPageFilters />
                 <ArticleInfiniteList className={cls.articles} />
             </Page>

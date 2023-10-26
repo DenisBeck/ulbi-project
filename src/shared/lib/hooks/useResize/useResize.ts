@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
 export const useResize = (resizingElement: Element): number => {
     const width = resizingElement.clientWidth;
@@ -11,14 +11,13 @@ export const useResize = (resizingElement: Element): number => {
     };
 
     useEffect(() => {
-        window.addEventListener("resize", resizeHandler);
+        window.addEventListener('resize', resizeHandler);
         resizeHandler();
 
         return () => {
-            window.removeEventListener("resize", resizeHandler);
+            window.removeEventListener('resize', resizeHandler);
         };
     }, []);
 
     return clientWidth;
-}
-
+};

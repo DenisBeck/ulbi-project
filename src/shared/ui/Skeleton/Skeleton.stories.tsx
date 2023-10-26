@@ -1,7 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import { Skeleton } from './Skeleton'
-import { ThemeDecorator } from '@/shared/config/storybook'
-import { Theme } from '@/shared/const/theme'
+import type { Meta, StoryObj } from '@storybook/react';
+import { Skeleton } from './Skeleton';
+import { ThemeDecorator } from '@/shared/config/storybook';
+import { Theme } from '@/shared/const/theme';
 // eslint-disable-next-line ulbi-plugin/layer-imports
 import '@/app/styles/index.scss';
 const meta: Meta<typeof Skeleton> = {
@@ -11,17 +11,17 @@ const meta: Meta<typeof Skeleton> = {
     // argTypes: {
     //     backgroundColor: { control: 'color' },
     // },
-}
+};
 
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
 export const Normal: Story = {
     args: {
         width: '100%',
-        height: 200
+        height: 200,
     },
-}
+};
 
 export const Circle: Story = {
     args: {
@@ -29,15 +29,15 @@ export const Circle: Story = {
         width: 100,
         height: 100,
     },
-}
+};
 
 export const NormalDark: Story = {
     args: {
         width: '100%',
-        height: 200
+        height: 200,
     },
-    decorators: [ThemeDecorator(Theme.DARK)]
-}
+    decorators: [ThemeDecorator(Theme.DARK)],
+};
 
 export const CircleDark: Story = {
     args: {
@@ -45,16 +45,16 @@ export const CircleDark: Story = {
         width: 100,
         height: 100,
     },
-    decorators: [ThemeDecorator(Theme.DARK)]
-}
+    decorators: [ThemeDecorator(Theme.DARK)],
+};
 
 export const NormalOrange: Story = {
     args: {
         width: '100%',
-        height: 200
+        height: 200,
     },
-    decorators: [ThemeDecorator(Theme.ORANGE)]
-}
+    decorators: [ThemeDecorator(Theme.ORANGE)],
+};
 
 export const CircleOrange: Story = {
     args: {
@@ -62,5 +62,5 @@ export const CircleOrange: Story = {
         width: 100,
         height: 100,
     },
-    decorators: [ThemeDecorator(Theme.ORANGE)]
-}
+    decorators: [ThemeDecorator(Theme.ORANGE)],
+};

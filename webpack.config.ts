@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
-import path from 'path'
-import type webpack from 'webpack'
-import { buildWebpackConfig } from './config/build/buildWebpackConfig'
-import { type BuildEnv, type BuildPaths } from './config/build/types/config'
+import path from 'path';
+import type webpack from 'webpack';
+import { buildWebpackConfig } from './config/build/buildWebpackConfig';
+import { type BuildEnv, type BuildPaths } from './config/build/types/config';
 
 export default (env: BuildEnv): webpack.Configuration => {
     const paths: BuildPaths = {
@@ -12,12 +12,12 @@ export default (env: BuildEnv): webpack.Configuration => {
         src: path.resolve(__dirname, 'src'),
         locales: path.resolve(__dirname, 'public', 'locales'),
         buildLocales: path.resolve(__dirname, 'build', 'locales'),
-    }
+    };
 
-    const mode = env.mode || 'development';
-    const PORT = env.port || 3000;
-    const apiUrl = env.apiUrl || 'http://localhost:8000';
-    const isDev = mode === 'development'
+    const mode = env?.mode || 'development';
+    const PORT = env?.port || 3000;
+    const apiUrl = env?.apiUrl || 'http://localhost:8000';
+    const isDev = mode === 'development';
 
     const config: webpack.Configuration = buildWebpackConfig({
         mode,
@@ -25,8 +25,8 @@ export default (env: BuildEnv): webpack.Configuration => {
         isDev,
         port: PORT,
         apiUrl,
-        project: 'frontend'
-    })
+        project: 'frontend',
+    });
 
-    return config
-}
+    return config;
+};

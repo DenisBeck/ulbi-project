@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import LoginForm from './LoginForm'
-import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator'
+import type { Meta, StoryObj } from '@storybook/react';
+import LoginForm from './LoginForm';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 // eslint-disable-next-line ulbi-plugin/layer-imports
 import '@/app/styles/index.scss';
 const meta: Meta<typeof LoginForm> = {
@@ -10,34 +10,34 @@ const meta: Meta<typeof LoginForm> = {
     // argTypes: {
     //     backgroundColor: { control: 'color' },
     // },
-}
+};
 
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
-    args: {
-        
-    },
-    decorators: [StoreDecorator({
-        loginForm: { username: 'admin', password: '123' }
-    })]
+    args: {},
+    decorators: [
+        StoreDecorator({
+            loginForm: { username: 'admin', password: '123' },
+        }),
+    ],
 };
 
 export const WithError: Story = {
-    args: {
-        
-    },
-    decorators: [StoreDecorator({
-        loginForm: { username: 'admin', password: '123', error: 'ERROR' }
-    })]
-}
+    args: {},
+    decorators: [
+        StoreDecorator({
+            loginForm: { username: 'admin', password: '123', error: 'ERROR' },
+        }),
+    ],
+};
 
 export const Loading: Story = {
-    args: {
-        
-    },
-    decorators: [StoreDecorator({
-        loginForm: { username: 'admin', password: '123', isLoading: true }
-    })]
-}
+    args: {},
+    decorators: [
+        StoreDecorator({
+            loginForm: { username: 'admin', password: '123', isLoading: true },
+        }),
+    ],
+};

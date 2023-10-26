@@ -1,5 +1,5 @@
-import { rtkApi } from "@/shared/api/rtkApi";
-import type { Notification } from "../model/types/notification";
+import { rtkApi } from '@/shared/api/rtkApi';
+import type { Notification } from '../model/types/notification';
 
 const notificationApi = rtkApi.injectEndpoints({
     endpoints: (build) => ({
@@ -10,6 +10,6 @@ const notificationApi = rtkApi.injectEndpoints({
         }),
     }),
     overrideExisting: false,
-})
+});
 
 export const useNotifications = notificationApi.useGetNotificationsQuery;

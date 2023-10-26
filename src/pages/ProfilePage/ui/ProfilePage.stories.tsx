@@ -1,13 +1,13 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import { StoreDecorator, ThemeDecorator } from '@/shared/config/storybook'
-import ProfilePage from './ProfilePage'
-import { Country } from '@/entities/Country'
-import { Currency } from '@/entities/Currency'
+import type { Meta, StoryObj } from '@storybook/react';
+import { StoreDecorator, ThemeDecorator } from '@/shared/config/storybook';
+import ProfilePage from './ProfilePage';
+import { Country } from '@/entities/Country';
+import { Currency } from '@/entities/Currency';
 // eslint-disable-next-line ulbi-plugin/layer-imports
 import '@/app/styles/index.scss';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-import AvatarImg from '@/shared/assets/tests/storybook.webp'
-import { Theme } from '@/shared/const/theme'
+import AvatarImg from '@/shared/assets/tests/storybook.webp';
+import { Theme } from '@/shared/const/theme';
 
 const meta: Meta<typeof ProfilePage> = {
     title: 'pages/ProfilePage',
@@ -16,47 +16,48 @@ const meta: Meta<typeof ProfilePage> = {
     // argTypes: {
     //     backgroundColor: { control: 'color' },
     // },
-}
+};
 
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
 export const Normal: Story = {
-    args: {
-        
-    },
-    decorators: [StoreDecorator({
-        profile: {
-            form: {
-                username: 'admin',
-                age: 22,
-                country: Country.Ukraine,
-                lastname: 'ulbi tv',
-                first: 'asd',
-                city: 'asf',
-                currency: Currency.USD,
-                avatar: AvatarImg,
-            }
-        }
-    })]
-}
+    args: {},
+    decorators: [
+        StoreDecorator({
+            profile: {
+                form: {
+                    username: 'admin',
+                    age: 22,
+                    country: Country.Ukraine,
+                    lastname: 'ulbi tv',
+                    first: 'asd',
+                    city: 'asf',
+                    currency: Currency.USD,
+                    avatar: AvatarImg,
+                },
+            },
+        }),
+    ],
+};
 
 export const Dark: Story = {
-    args: {
-        
-    },
-    decorators: [ThemeDecorator(Theme.DARK), StoreDecorator({
-        profile: {
-            form: {
-                username: 'admin',
-                age: 22,
-                country: Country.Ukraine,
-                lastname: 'ulbi tv',
-                first: 'asd',
-                city: 'asf',
-                currency: Currency.USD,
-                avatar: AvatarImg,
-            }
-        }
-    })]
-}
+    args: {},
+    decorators: [
+        ThemeDecorator(Theme.DARK),
+        StoreDecorator({
+            profile: {
+                form: {
+                    username: 'admin',
+                    age: 22,
+                    country: Country.Ukraine,
+                    lastname: 'ulbi tv',
+                    first: 'asd',
+                    city: 'asf',
+                    currency: Currency.USD,
+                    avatar: AvatarImg,
+                },
+            },
+        }),
+    ],
+};

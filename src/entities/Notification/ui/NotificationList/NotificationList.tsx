@@ -16,23 +16,33 @@ interface NotificationProps {
 export const NotificationList = memo((props: NotificationProps) => {
     const { className } = props;
     // const { t } = useTranslation();
-    const {data, isLoading} = useNotifications(null, {
+    const { data, isLoading } = useNotifications(null, {
         pollingInterval: 10000,
     });
 
     if (isLoading) {
         return (
-            <VStack gap="16" max className={classNames(cls.NotificationList, {}, [className])} >
+            <VStack
+                gap="16"
+                max
+                className={classNames(cls.NotificationList, {}, [className])}
+            >
                 <Skeleton width="100%" border="8px" height="80px" />
                 <Skeleton width="100%" border="8px" height="80px" />
                 <Skeleton width="100%" border="8px" height="80px" />
             </VStack>
         );
     }
-    
+
     return (
-        <VStack max gap='16' className={classNames(cls['notification-list'], {}, [className])}>
-            {data?.map(item => <NotificationItem item={item} key={item.id} />)}
+        <VStack
+            max
+            gap="16"
+            className={classNames(cls['notification-list'], {}, [className])}
+        >
+            {data?.map((item) => (
+                <NotificationItem item={item} key={item.id} />
+            ))}
         </VStack>
     );
 });

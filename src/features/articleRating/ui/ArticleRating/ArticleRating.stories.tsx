@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import ArticleRating from './ArticleRating'
-import { StoreDecorator } from '@/shared/config/storybook'
+import type { Meta, StoryObj } from '@storybook/react';
+import ArticleRating from './ArticleRating';
+import { StoreDecorator } from '@/shared/config/storybook';
 // eslint-disable-next-line ulbi-plugin/layer-imports
 import '@/app/styles/index.scss';
 const meta: Meta<typeof ArticleRating> = {
@@ -10,14 +10,14 @@ const meta: Meta<typeof ArticleRating> = {
     // argTypes: {
     //     backgroundColor: { control: 'color' },
     // },
-}
+};
 
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
 export const Normal: Story = {
     args: {
-        articleId: '1'
+        articleId: '1',
     },
     parameters: {
         mockData: [
@@ -32,18 +32,19 @@ export const Normal: Story = {
                 ],
             },
         ],
-        
     },
-    decorators: [StoreDecorator({
-        user: {
-            authData: { id: '1' }
-        }
-    })]
-}
+    decorators: [
+        StoreDecorator({
+            user: {
+                authData: { id: '1' },
+            },
+        }),
+    ],
+};
 
 export const WithoutRate: Story = {
     args: {
-        articleId: '1'
+        articleId: '1',
     },
     parameters: {
         mockData: [
@@ -55,9 +56,11 @@ export const WithoutRate: Story = {
             },
         ],
     },
-    decorators: [StoreDecorator({
-        user: {
-            authData: { id: '1' }
-        }
-    })]
-}
+    decorators: [
+        StoreDecorator({
+            user: {
+                authData: { id: '1' },
+            },
+        }),
+    ],
+};

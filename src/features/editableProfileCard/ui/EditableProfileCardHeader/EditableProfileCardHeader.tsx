@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
-import { useCallback, type FC } from 'react'
-import { classNames } from '@/shared/lib/classNames/classNames'
-import cls from './EditableProfileCardHeader.module.scss'
+import { useCallback, type FC } from 'react';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import cls from './EditableProfileCardHeader.module.scss';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { Text, TitleTag } from '@/shared/ui/Text';
 import { useTranslation } from 'react-i18next';
@@ -18,11 +18,10 @@ interface ProfilePageHeaderProps {
     readonly?: boolean;
 }
 
-export const EditableProfileCardHeader: FC<ProfilePageHeaderProps> = (props: ProfilePageHeaderProps) => {
-    const {
-        className,
-        readonly
-    } = props;
+export const EditableProfileCardHeader: FC<ProfilePageHeaderProps> = (
+    props: ProfilePageHeaderProps,
+) => {
+    const { className, readonly } = props;
     const { t } = useTranslation('profile');
     const authData = useSelector(getUserAuthData);
     const profileData = useSelector(getProfileData);
@@ -43,39 +42,41 @@ export const EditableProfileCardHeader: FC<ProfilePageHeaderProps> = (props: Pro
     }, [dispatch]);
 
     return (
-        <div className={classNames(cls['profile-page-header'], {}, [className])}>
-            <Text title={{content: t('Профиль'), tag: TitleTag.H1}} />
+        <div
+            className={classNames(cls['profile-page-header'], {}, [className])}
+        >
+            <Text title={{ content: t('Профиль'), tag: TitleTag.H1 }} />
             {canEdit && (
                 <div className={cls['btns-wrapper']}>
-                    {
-                        readonly ?
-                            (<Button 
-                                className={cls['edit-btn']} 
-                                theme={ ButtonTheme.OUTLINE }
-                                onClick={ onEdit }
-                                data-testid="EditableProfileCardHeader.EditButton"
+                    {readonly ? (
+                        <Button
+                            className={cls['edit-btn']}
+                            theme={ButtonTheme.OUTLINE}
+                            onClick={onEdit}
+                            data-testid="EditableProfileCardHeader.EditButton"
+                        >
+                            {t('Редактировать')}
+                        </Button>
+                    ) : (
+                        <div className={cls.btns}>
+                            <Button
+                                className={cls['save-btn']}
+                                theme={ButtonTheme.OUTLINE}
+                                onClick={onSave}
+                                data-testid="EditableProfileCardHeader.SaveButton"
                             >
-                                {t('Редактировать')}
-                            </Button>) :
-                            (<div className={cls.btns}>
-                                <Button 
-                                    className={cls['save-btn']} 
-                                    theme={ ButtonTheme.OUTLINE }
-                                    onClick={ onSave }
-                                    data-testid="EditableProfileCardHeader.SaveButton"
-                                >
-                                    {t('Сохранить')}
-                                </Button>
-                                <Button 
-                                    className={cls['cancel-btn']} 
-                                    theme={ ButtonTheme.OUTLINE_RED }
-                                    onClick={ onCancel }
-                                    data-testid="EditableProfileCardHeader.CancelButton"
-                                >
-                                    {t('Отменить')}
-                                </Button>
-                            </div>)
-                    }
+                                {t('Сохранить')}
+                            </Button>
+                            <Button
+                                className={cls['cancel-btn']}
+                                theme={ButtonTheme.OUTLINE_RED}
+                                onClick={onCancel}
+                                data-testid="EditableProfileCardHeader.CancelButton"
+                            >
+                                {t('Отменить')}
+                            </Button>
+                        </div>
+                    )}
                 </div>
             )}
         </div>

@@ -13,7 +13,14 @@ const sharedUiDirectory = project.getDirectory(uiPath);
 const componentsDirs = sharedUiDirectory?.getDirectories();
 
 function isAbsolute(value: string): boolean {
-    const layers = ['app', 'shared', 'entities', 'features', 'widgets', 'pages'];
+    const layers = [
+        'app',
+        'shared',
+        'entities',
+        'features',
+        'widgets',
+        'pages',
+    ];
     return layers.some((layer) => value.startsWith(layer));
 }
 
@@ -23,7 +30,9 @@ componentsDirs?.forEach((directory) => {
 
     if (!indexFile) {
         const sourceCode = `export * from './${directory.getBaseName()}'`;
-        const file = directory.createSourceFile(indexFilePath, sourceCode, { overwrite: true });
+        const file = directory.createSourceFile(indexFilePath, sourceCode, {
+            overwrite: true,
+        });
 
         void file.save();
     }
@@ -42,7 +51,7 @@ files.forEach((sourceFile) => {
 
         if (isAbsolute(valueWithoutAlias) && isSharedLayer && isUiSlice) {
             const result = valueWithoutAlias.split('/').slice(0, 3).join('/');
-            console.log(result)
+            console.log(result);
             importDeclaration.setModuleSpecifier(`@/${result}`);
         }
     });

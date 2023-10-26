@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import ArticleEditPage from './ArticleEditPage'
+import type { Meta, StoryObj } from '@storybook/react';
+import ArticleEditPage from './ArticleEditPage';
 // eslint-disable-next-line ulbi-plugin/layer-imports
 import '@/app/styles/index.scss';
 const meta: Meta<typeof ArticleEditPage> = {
@@ -9,13 +9,11 @@ const meta: Meta<typeof ArticleEditPage> = {
     // argTypes: {
     //     backgroundColor: { control: 'color' },
     // },
-}
+};
 
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
 export const Light: Story = {
-    args: {
-        
-    },
-}
+    args: {},
+};

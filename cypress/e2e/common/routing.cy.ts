@@ -27,4 +27,4 @@ describe('Роутинг', () => {
             cy.getByTestId('ArticlesPage').should('exist');
         });
     });
-})
+});

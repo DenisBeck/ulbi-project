@@ -1,10 +1,10 @@
-import { type PayloadAction, createSlice } from "@reduxjs/toolkit"
-import type { AddCommentFormSchema } from "../types/addCommentFormSchema"
+import { type PayloadAction, createSlice } from '@reduxjs/toolkit';
+import type { AddCommentFormSchema } from '../types/addCommentFormSchema';
 
 const initialState: AddCommentFormSchema = {
     text: '',
     error: '',
-}
+};
 
 export const addCommentFormSlice = createSlice({
     name: 'addCommentForm',
@@ -12,7 +12,7 @@ export const addCommentFormSlice = createSlice({
     reducers: {
         setText: (state, action: PayloadAction<string>) => {
             state.text = action.payload;
-        }
+        },
     },
     // extraReducers: (builder) => {
     //     builder
@@ -28,8 +28,8 @@ export const addCommentFormSlice = createSlice({
     //             state.error = action.payload;
     //         })
     // },
-})
+});
 
 // Action creators are generated for each case reducer function
-export const { actions: addCommentFormActions } = addCommentFormSlice
-export const { reducer: addCommentFormReducer } = addCommentFormSlice
+export const { actions: addCommentFormActions } = addCommentFormSlice;
+export const { reducer: addCommentFormReducer } = addCommentFormSlice;

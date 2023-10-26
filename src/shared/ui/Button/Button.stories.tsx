@@ -15,7 +15,7 @@ const meta: Meta<typeof Button> = {
     // argTypes: {
     //     backgroundColor: { control: 'color' },
     // },
-}
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -29,21 +29,21 @@ export const Primary: Story = {
 export const Clear: Story = {
     args: {
         children: 'Text',
-        theme: ButtonTheme.CLEAR
+        theme: ButtonTheme.CLEAR,
     },
 };
 
 export const Outline: Story = {
     args: {
         children: 'Text',
-        theme: ButtonTheme.OUTLINE
+        theme: ButtonTheme.OUTLINE,
     },
 };
 
 export const OutlineInverted: Story = {
     args: {
         children: 'Text',
-        theme: ButtonTheme.OUTLINE_INVERTED
+        theme: ButtonTheme.OUTLINE_INVERTED,
     },
 };
 
@@ -51,7 +51,7 @@ export const OutlineSizeM: Story = {
     args: {
         children: 'Text',
         theme: ButtonTheme.OUTLINE,
-        size: ButtonSize.M
+        size: ButtonSize.M,
     },
 };
 
@@ -66,22 +66,22 @@ export const OutlineSizeL: Story = {
 export const OutlineDark: Story = {
     args: {
         children: 'Text',
-        theme: ButtonTheme.OUTLINE
+        theme: ButtonTheme.OUTLINE,
     },
-    decorators: [ThemeDecorator(Theme.DARK)]
+    decorators: [ThemeDecorator(Theme.DARK)],
 };
 
 export const Background: Story = {
     args: {
         children: 'Text',
-        theme: ButtonTheme.BACKGROUND
+        theme: ButtonTheme.BACKGROUND,
     },
 };
 
 export const BackgroundInverted: Story = {
     args: {
         children: 'Text',
-        theme: ButtonTheme.BACKGROUND_INVERTED
+        theme: ButtonTheme.BACKGROUND_INVERTED,
     },
 };
 
@@ -98,7 +98,7 @@ export const SquareSizeS: Story = {
         children: '>',
         theme: ButtonTheme.BACKGROUND_INVERTED,
         square: true,
-        size: ButtonSize.S
+        size: ButtonSize.S,
     },
 };
 
@@ -107,7 +107,7 @@ export const SquareSizeM: Story = {
         children: '>',
         theme: ButtonTheme.BACKGROUND_INVERTED,
         square: true,
-        size: ButtonSize.M
+        size: ButtonSize.M,
     },
 };
 
@@ -116,7 +116,7 @@ export const SquareSizeL: Story = {
         children: '>',
         theme: ButtonTheme.BACKGROUND_INVERTED,
         square: true,
-        size: ButtonSize.L
+        size: ButtonSize.L,
     },
 };
 
@@ -124,6 +124,6 @@ export const Disabled: Story = {
     args: {
         children: '>',
         theme: ButtonTheme.OUTLINE,
-        disabled: true
+        disabled: true,
     },
 };

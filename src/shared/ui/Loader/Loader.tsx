@@ -6,9 +6,9 @@ interface LoaderProps {
     className?: string;
 }
 
-export const Loader: FC<LoaderProps> = ({className}: LoaderProps) => {
+export const Loader: FC<LoaderProps> = ({ className }: LoaderProps) => {
     return (
-        <div className={classNames(cls["lds-ripple"], {}, [className])}>
+        <div className={classNames(cls['lds-ripple'], {}, [className])}>
             <div />
             <div />
         </div>

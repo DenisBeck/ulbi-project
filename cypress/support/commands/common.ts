@@ -12,12 +12,16 @@ declare global {
     }
 }
 
-export const getByTestId = (testId: string): Cypress.Chainable<JQuery<HTMLElement>> => {
+export const getByTestId = (
+    testId: string,
+): Cypress.Chainable<JQuery<HTMLElement>> => {
     return cy.get(`[data-testid="${testId}"]`);
 };
 
-
-export const login = (username: string = 'testuser', password: string = '123'): void => {
+export const login = (
+    username: string = 'testuser',
+    password: string = '123',
+): void => {
     cy.request({
         method: 'POST',
         url: 'http://localhost:8000/login',
@@ -26,7 +30,10 @@ export const login = (username: string = 'testuser', password: string = '123'): 
             password,
         },
     }).then(({ body }) => {
-        window.localStorage.setItem(USER_LOCALSTORAGE_KEY, JSON.stringify(body));
+        window.localStorage.setItem(
+            USER_LOCALSTORAGE_KEY,
+            JSON.stringify(body),
+        );
         return body;
     });
 };

@@ -1,7 +1,7 @@
 /* eslint-disable react/display-name */
-import { memo, type FC, type ReactNode, type HTMLAttributes } from 'react'
-import { classNames } from '@/shared/lib/classNames/classNames'
-import cls from './Card.module.scss'
+import { memo, type FC, type ReactNode, type HTMLAttributes } from 'react';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import cls from './Card.module.scss';
 
 export enum CardTheme {
     NORMAL = 'normal',
@@ -23,7 +23,10 @@ export const Card: FC<CardProps> = memo((props: CardProps) => {
     } = props;
 
     return (
-        <div className={classNames(cls.card, {}, [className, cls[theme]])} {...otherProps}>
+        <div
+            className={classNames(cls.card, {}, [className, cls[theme]])}
+            {...otherProps}
+        >
             {children}
         </div>
     );

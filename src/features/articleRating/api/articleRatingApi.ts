@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-invalid-void-type */
 import { rtkApi } from '@/shared/api/rtkApi';
-import type{ Rating } from '@/entities/Rating';
+import type { Rating } from '@/entities/Rating';
 
 interface GetArticleRatingArg {
     userId: string;

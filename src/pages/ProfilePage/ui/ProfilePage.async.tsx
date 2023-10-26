@@ -1,4 +1,4 @@
-import { lazy } from 'react'
+import { lazy } from 'react';
 
 export const ProfilePageAsync = lazy(async () => await import('./ProfilePage'));
 // export const ProfilePageAsync = lazy(async () => await new Promise(resolve => {
